@@ -20427,7 +20427,9 @@ var pp_alreadyInitialized = false; // Used for the deep linking to make sure not
 
   $.showGeographyDetail = function(url) {
     if ($('.geography__popup').is(':visible')) {
-      $('.geography__popup_content').spin(spin_options);
+      delay(300, function() {
+        return $('.geography__popup_content').spin(spin_options);
+      });
     } else {
       $('.geography__popup').velocity({
         properties: "transition.slideRightIn",

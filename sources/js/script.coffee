@@ -40,7 +40,8 @@ urlInitial = undefined
 
 $.showGeographyDetail = (url)->
 	if $('.geography__popup').is ':visible'
-		$('.geography__popup_content').spin spin_options
+		delay 300, ()->
+			$('.geography__popup_content').spin spin_options
 	else
 		$('.geography__popup').velocity
 				properties: "transition.slideRightIn"
@@ -54,7 +55,7 @@ $.showGeographyDetail = (url)->
 				duration: 400
 				complete: ()->
 					$('.geography__popup_content').spin spin_options
-					
+
 		e.preventDefault()
 
 setHash = (hash) ->

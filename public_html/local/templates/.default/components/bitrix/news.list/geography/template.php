@@ -39,7 +39,7 @@
 	    });
 
 	    <?foreach ($arResult['ITEMS'] as $item):?>
-		    p<?=$item['ID']?> = new ymaps.Placemark(myMap.getCenter(), {
+		    p<?=$item['ID']?> = new ymaps.Placemark([<?=$item['PROPS']['COORDS']?>], {
 	            hintContent: '<?=$item['NAME']?>'
 	        }, {
 	            iconLayout: 'default#image',

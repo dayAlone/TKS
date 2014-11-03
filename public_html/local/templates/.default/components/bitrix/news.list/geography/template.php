@@ -47,9 +47,8 @@
             clusterNumbers: [20],
             clusterIconContentLayout: null
         })
-        var obj = [];
 	    <?foreach ($arResult['ITEMS'] as $item):?>
-		    obj[<?=$item['ID']?>] = new ymaps.Placemark([<?=$item['PROPS']['COORDS']?>], {
+		    p<?=$item['ID']?> = new ymaps.Placemark([<?=$item['PROPS']['COORDS']?>], {
 	            hintContent: '<?=$item['NAME']?>'
 	        }, {
 	            iconLayout: 'default#image',
@@ -57,10 +56,9 @@
 	            iconImageSize: [24, 31],
 	            iconImageOffset: [-12, -31]
 	        });
-	        
+	        myMap.geoObjects.add(p<?=$item['ID']?>);
 		<?endforeach;?>
 		
-		clusterer.add(obj);
     	myMap.geoObjects.add(clusterer);
 	}
 </script>

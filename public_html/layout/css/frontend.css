@@ -5649,6 +5649,9 @@ body {
   padding: 20px 35px;
   font-size: 14px;
 }
+.geography__list_item + .geography__list_item {
+  margin-top: 5px;
+}
 .geography__list_item p {
   font-size: 14px;
 }

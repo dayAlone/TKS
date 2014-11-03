@@ -57,7 +57,9 @@
         }
       });
     }
-    $('.geography__popup_content').load(url);
+    $('.geography__popup_content').load(url, function() {
+      return $('.geography__popup_content').perfectScrollbar('update');
+    });
     return $('.geography__popup_close').one('click', function(e) {
       $('.geography__popup').velocity({
         properties: "transition.slideRightOut",
@@ -229,6 +231,9 @@
       animSpeed: 'medium',
       indentChildren: true,
       childrenIndenter: '&raquo;'
+    });
+    $('.geography__popup_content').perfectScrollbar({
+      suppressScrollX: true
     });
     if ($('.side').length > 0) {
       $('.border-left').css({

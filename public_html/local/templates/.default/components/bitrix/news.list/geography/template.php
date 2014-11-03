@@ -56,6 +56,7 @@
 	            clusterNumbers: [20],
 	            clusterIconContentLayout: null
 	        })
+	        open = []
 		    <?foreach ($arResult['ITEMS'] as $item):?>
 			    p<?=$item['ID']?> = new ymaps.Placemark([<?=$item['PROPS']['COORDS']?>], {
 		            hintContent: '<?=$item['NAME']?>'
@@ -71,6 +72,11 @@
 		        	$('.geography__popup_close').one('click', function(){
 		        		p<?=$item['ID']?>.options.set({iconImageHref: '/layout/images/pin_blue.png'})
 		        	})
+		        	$.each(open, function(){
+		        		this.options.set({iconImageHref: '/layout/images/pin_blue.png'});
+		        	})
+		        	open.push(p<?=$item['ID']?>)
+
 	     		});
 		        myMap.geoObjects.add(p<?=$item['ID']?>);
 			<?endforeach;?>

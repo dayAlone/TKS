@@ -44,8 +44,10 @@ $.showGeographyDetail = (url)->
 				properties: "transition.slideRightIn"
 				options:
 					duration: 400
-						
+	else
+		$('.geography__popup_content').spin spin_options
 	$('.geography__popup_content').load url, ()->
+		$('.geography__popup_content').spin(false);
 		$('.geography__popup_content a[rel^="prettyPhoto"]').prettyPhoto
 			social_tools: ''
 			overlay_gallery: false

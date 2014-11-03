@@ -11,6 +11,7 @@
 			</div>
 		</div>
 	</div>
+	<? $item = $arResult['ITEMS'][0]?>
 	<div class="geography__frame">
 		<div class="geography__popup">
 			<div class="geography__popup_toolbar">
@@ -19,7 +20,7 @@
 				</a>
 			</div>
 			<div class="geography__popup_content">
-				<h4>Регион</h4>
+				
 			</div>
 		</div>
 		<div id="map"></div>
@@ -31,43 +32,51 @@
 </div>
 
 <?$this->SetViewTarget('footer');?>
-
 <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 <script>
-	var myMap;
+	$(function(){
+		var myMap;
 
-	ymaps.ready(init);
+		ymaps.ready(init);
 
-	function init () {
-	    myMap = new ymaps.Map('map', {
-	        center: [66.69261210265907, 95.40570330969672], // Москва
-	        zoom: 3,
-	        type: "yandex#hybrid",
-	        controls: ['geolocationControl', 'fullscreenControl', 'zoomControl']
-	    });
-	    clusterer = new ymaps.Clusterer({
-            // Зададим массив, описывающий иконки кластеров разного размера.
-            clusterIcons: [{
-                href: '/layout/images/pin_blue.png',
-                size: [24, 31],
-                offset: [-12, -31]
-            }],
-            clusterNumbers: [20],
-            clusterIconContentLayout: null
-        })
-	    <?foreach ($arResult['ITEMS'] as $item):?>
-		    p<?=$item['ID']?> = new ymaps.Placemark([<?=$item['PROPS']['COORDS']?>], {
-	            hintContent: '<?=$item['NAME']?>'
-	        }, {
-	            iconLayout: 'default#image',
-	            iconImageHref: '/layout/images/pin_blue.png',
-	            iconImageSize: [24, 31],
-	            iconImageOffset: [-12, -31]
-	        });
-	        myMap.geoObjects.add(p<?=$item['ID']?>);
-		<?endforeach;?>
-		
-    	myMap.geoObjects.add(clusterer);
-	}
+		function init () {
+		    myMap = new ymaps.Map('map', {
+		        center: [66.69261210265907, 95.40570330969672], // Москва
+		        zoom: 3,
+		        type: "yandex#hybrid",
+		        controls: ['geolocationControl', 'fullscreenControl', 'zoomControl']
+		    });
+		    clusterer = new ymaps.Clusterer({
+	            // Зададим массив, описывающий иконки кластеров разного размера.
+	            clusterIcons: [{
+	                href: '/layout/images/pin_blue.png',
+	                size: [24, 31],
+	                offset: [-12, -31]
+	            }],
+	            clusterNumbers: [20],
+	            clusterIconContentLayout: null
+	        })
+		    <?foreach ($arResult['ITEMS'] as $item):?>
+			    p<?=$item['ID']?> = new ymaps.Placemark([<?=$item['PROPS']['COORDS']?>], {
+		            hintContent: '<?=$item['NAME']?>'
+		        }, {
+		            iconLayout: 'default#image',
+		            iconImageHref: '/layout/images/pin_blue.png',
+		            iconImageSize: [24, 31],
+		            iconImageOffset: [-12, -31]
+		        });
+		        p<?=$item['ID']?>.events.add('click', function(e) {
+		        	p<?=$item['ID']?>.options.set({iconImageHref: '/layout/images/pin_red.png'})
+		        	$.showGeographyDetail('/ajax<?=$item["DETAIL_PAGE_URL"]?>')
+		        	$('.geography__popup_close').one('click', function(){
+		        		p<?=$item['ID']?>.options.set({iconImageHref: '/layout/images/pin_blue.png'})
+		        	})
+	     		});
+		        myMap.geoObjects.add(p<?=$item['ID']?>);
+			<?endforeach;?>
+			
+	    	myMap.geoObjects.add(clusterer);
+		}
+	})
 </script>
 <?$this->EndViewTarget();?> 

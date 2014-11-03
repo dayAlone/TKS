@@ -2,6 +2,24 @@ delay = (ms, func) -> setTimeout func, ms
 
 newsInit = false
 
+spin_options = 
+	lines: 13
+	length: 21
+	width: 2
+	radius: 24
+	corners: 0
+	rotate: 0
+	direction: 1
+	color: '#0c4ed0'
+	speed: 1
+	trail: 68
+	shadow: false
+	hwaccel: false
+	className: 'spinner'
+	zIndex: 2e9
+	top: '50%'
+	left: '50%'
+
 map = undefined
 
 size = ->
@@ -19,6 +37,25 @@ size = ->
 	###
 
 urlInitial = undefined
+
+$.showGeographyDetail = (url)->
+	if $('.geography__popup').is ':visible'
+		$('.geography__popup_content').spin spin_options
+	else
+		$('.geography__popup').velocity
+				properties: "transition.slideRightIn"
+				options:
+					duration: 400
+	$('.geography__popup_content').load url
+	$('.geography__popup_close').one 'click', (e)->
+		$('.geography__popup').velocity
+			properties: "transition.slideRightOut"
+			options:
+				duration: 400
+				complete: ()->
+					$('.geography__popup_content').spin spin_options
+					
+		e.preventDefault()
 
 setHash = (hash) ->
 	window.location.hash = hash;
@@ -330,23 +367,7 @@ $(document).ready ->
 
 	timer = false
 
-	$('.modal .text').spin
-		lines: 13
-		length: 21
-		width: 2
-		radius: 24
-		corners: 0
-		rotate: 0
-		direction: 1
-		color: '#0c4ed0'
-		speed: 1
-		trail: 68
-		shadow: false
-		hwaccel: false
-		className: 'spinner'
-		zIndex: 2e9
-		top: '50%'
-		left: '50%'
+	$('.modal .text, .geography__popup_content').spin spin_options
 
 	###
 	initType = ()->
@@ -431,23 +452,6 @@ $(document).ready ->
 	delay 300, ()->
 		size()
 
-
-	mapInit = false
-	if !mapInit && $('#map').length > 0
-		mapInit = true
-		ymaps.ready ()->
-			myMap = new ymaps.Map 'map', {
-				center: $('#map').data('coords').split(',')
-				zoom: 15
-			}
-			myPlacemark = new ymaps.Placemark myMap.getCenter(), {
-				hintContent: 'Аргус СварСервис'
-			},
-			{
-				preset: "twirl#nightDotIcon",
-			}
-
-			myMap.geoObjects.add(myPlacemark);
 	
 	x = undefined
 	$(window).resize ->

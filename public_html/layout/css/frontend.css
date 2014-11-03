@@ -5539,6 +5539,7 @@ body {
   margin-top: 20px;
 }
 .geography__popup {
+  display: none;
   position: absolute;
   right: 0;
   top: 0px;
@@ -5568,6 +5569,35 @@ body {
   color: #63b1ff;
   font-size: 10px;
   font-weight: bold;
+  margin-bottom: 10px;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, #63b1ff 50%);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, #63b1ff 50%);
+  background-image: -o-linear-gradient(top, rgba(0,0,0,0) 50%, #63b1ff 50%);
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, #63b1ff 50%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, #63b1ff 50%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+  background-position: 0 2px;
+}
+.geography__popup_content h4 span {
+  background: #e3edf4;
+  padding-right: 4px;
+}
+.geography__popup_content h2 + h4,
+.geography__popup_content p + h4 {
+  margin-top: 20px;
+}
+.geography__popup_content h2 {
+  color: #0053b3;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0;
+}
+.geography__popup_content p {
+  font-size: 14px;
+  line-height: 23px;
 }
 .geography__popup_close {
   font-size: 11px;

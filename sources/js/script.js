@@ -1,11 +1,30 @@
 (function() {
-  var addTrigger, autoHeight, blur, delay, getCaptcha, map, newsInit, setCaptcha, setHash, size, urlInitial;
+  var addTrigger, autoHeight, blur, delay, getCaptcha, map, newsInit, setCaptcha, setHash, size, spin_options, urlInitial;
 
   delay = function(ms, func) {
     return setTimeout(func, ms);
   };
 
   newsInit = false;
+
+  spin_options = {
+    lines: 13,
+    length: 21,
+    width: 2,
+    radius: 24,
+    corners: 0,
+    rotate: 0,
+    direction: 1,
+    color: '#0c4ed0',
+    speed: 1,
+    trail: 68,
+    shadow: false,
+    hwaccel: false,
+    className: 'spinner',
+    zIndex: 2e9,
+    top: '50%',
+    left: '50%'
+  };
 
   map = void 0;
 
@@ -28,6 +47,32 @@
   };
 
   urlInitial = void 0;
+
+  $.showGeographyDetail = function(url) {
+    if ($('.geography__popup').is(':visible')) {
+      $('.geography__popup_content').spin(spin_options);
+    } else {
+      $('.geography__popup').velocity({
+        properties: "transition.slideRightIn",
+        options: {
+          duration: 400
+        }
+      });
+    }
+    $('.geography__popup_content').load(url);
+    return $('.geography__popup_close').one('click', function(e) {
+      $('.geography__popup').velocity({
+        properties: "transition.slideRightOut",
+        options: {
+          duration: 400,
+          complete: function() {
+            return $('.geography__popup_content').spin(spin_options);
+          }
+        }
+      });
+      return e.preventDefault();
+    });
+  };
 
   setHash = function(hash) {
     window.location.hash = hash;
@@ -178,7 +223,7 @@
   };
 
   $(document).ready(function() {
-    var closeDropdown, mapInit, openDropdown, timer, x;
+    var closeDropdown, openDropdown, timer, x;
     $('.dropdown').slimmenu({
       resizeWidth: '800'
     }, {
@@ -413,24 +458,7 @@
       });
     };
     timer = false;
-    $('.modal .text').spin({
-      lines: 13,
-      length: 21,
-      width: 2,
-      radius: 24,
-      corners: 0,
-      rotate: 0,
-      direction: 1,
-      color: '#0c4ed0',
-      speed: 1,
-      trail: 68,
-      shadow: false,
-      hwaccel: false,
-      className: 'spinner',
-      zIndex: 2e9,
-      top: '50%',
-      left: '50%'
-    });
+    $('.modal .text, .geography__popup_content').spin(spin_options);
 
     /*
     	initType = ()->
@@ -533,23 +561,6 @@
     delay(300, function() {
       return size();
     });
-    mapInit = false;
-    if (!mapInit && $('#map').length > 0) {
-      mapInit = true;
-      ymaps.ready(function() {
-        var myMap, myPlacemark;
-        myMap = new ymaps.Map('map', {
-          center: $('#map').data('coords').split(','),
-          zoom: 15
-        });
-        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-          hintContent: 'Аргус СварСервис'
-        }, {
-          preset: "twirl#nightDotIcon"
-        });
-        return myMap.geoObjects.add(myPlacemark);
-      });
-    }
     x = void 0;
     return $(window).resize(function() {
       clearTimeout(x);

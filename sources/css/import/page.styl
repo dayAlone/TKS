@@ -308,6 +308,7 @@ body
 		margin-top 20px
 		
 	&__popup
+		display none
 		position absolute
 		right 0
 		top 0px
@@ -330,9 +331,24 @@ body
 				margin 0
 				padding 0
 				text-transform: uppercase
-				color #63b1ff
+				color #63b1ff 
 				font-size 10px
 				font-weight bold
+				margin-bottom 10px
+				border-line(#63b1ff, 2px)
+				span
+					background #e3edf4
+					padding-right 4px
+			h2 + h4, p + h4
+				margin-top 20px
+			h2
+				color #0053b3
+				font-size 18px
+				font-weight bold
+				margin-top 0
+			p
+				font-size 14px
+				line-height 23px
 		&_close
 			font-size 11px
 			font-weight: bold

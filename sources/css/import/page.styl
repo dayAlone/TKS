@@ -1,7 +1,7 @@
 @font-face
 	font-family 'Proxima'
-	src url("../fonts/ProximaNova-XBold.ttf")
-	src local('☺'), url('../fonts/ProximaNova-XBold.ttf') format('truetype')
+	src url("../fonts/ProximaNova-Black.ttf")
+	src local('☺'), url('../fonts/ProximaNova-Black.ttf') format('truetype')
 	font-weight 800
 body
 	min-width 960px
@@ -137,6 +137,8 @@ body
 	big
 		font-size 20px
 		line-height 30px
+	&--text
+		background white
 	.text &
 		a
 			color blue3
@@ -172,6 +174,51 @@ body
 			padding 0
 		p
 			font-size 16px
+	&__header
+		full-width()
+		height 400px
+		margin-top -102px
+		background-position center center
+		background-repeat no-repeat
+		margin-bottom 40px
+		position relative
+		color white
+		&-title
+			width 70%
+			margin 0 15%
+			border-bottom 1px solid rgba(255,255,255,.5)
+			font-size 46px
+			height 98px
+			line-height 105px
+			text-transform: uppercase
+			font-weight 800
+			text-align: center
+		&-breadcrumb
+			text-align: center
+			line-height 60px
+			text-transform: uppercase
+			a, span
+				font-size 11px
+				letter-spacing 2px
+				margin 0 3px
+				color white
+				
+				opacity .5
+				font-weight bold
+			a:hover
+				opacity 1
+		&-frame
+			position absolute
+			background-position center center
+			background-repeat no-repeat
+			width 780px
+			left 50%
+			margin-left -390px
+			height 156px
+			top 50%
+			margin-top -78px
+			border 1px solid white
+			
 	&__title
 		margin 0
 		text-transform: uppercase
@@ -213,6 +260,7 @@ body
 				padding 0 32px
 				min-width 186px 
 
+/*
 .about
 	.partners
 		text-align: center
@@ -402,6 +450,7 @@ body
 				background #007bf8
 				top 4px
 				left -15px
+
 .catalog
 	.products
 		&__item
@@ -585,7 +634,6 @@ body
 			color white !important
 			background #0082dc
 			
-
 .years
 	&__item
 		display inline-block
@@ -765,6 +813,7 @@ body
 					@extends .news .news-list .news-list__title
 					font-size 18px
 					background-position 0 18px
+
 .dropdown
 	padding 0
 	position relative
@@ -859,3 +908,4 @@ body
 span.sub-collapser
 	i
 		font-style: normal
+*/

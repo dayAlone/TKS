@@ -22,7 +22,7 @@
   ?>
 </head>
 <body class="<?=$APPLICATION->AddBufferContent("body_class");?>">
-<div class="wrap" <?=(isset($_GLOBALS['BG_IMAGE'])?"style='background-image:url(".$_GLOBALS['BG_IMAGE'].")'":"")?>>
+<div class="wrap">
   <div id="panel"><?$APPLICATION->ShowPanel();?></div>
   <header class="toolbar">
     <div class="container">
@@ -82,7 +82,7 @@
       </div>
     </div>
   </header>
-  <main class="page">
+  <main class="page <?=$APPLICATION->AddBufferContent("page_class");?>">
     <aside class="sidebar">
       <div class="container">
         <a href="/" class="logo"><?=svg('logo')?></a>

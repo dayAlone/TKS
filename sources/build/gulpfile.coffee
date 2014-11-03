@@ -18,6 +18,7 @@ stylus       = require 'gulp-stylus'
 sequence     = require 'run-sequence'
 replace      = require 'gulp-replace'
 watch        = require 'gulp-watch'
+imageop      = require 'gulp-image-optimization'
 
 plugins  = [ 'jquery', 'bootstrap', 'browser', 'fotorama', 'imagesLoaded', 'slimmenu', 'bem', 'hoverIntent', 'spin', 'velocity', 'parsley', 'prettyPhoto' ]
 
@@ -131,6 +132,15 @@ gulp.task 'svg_mini', ->
 	.pipe(replace(/<title>(.*)<\/title>/ig, ''))
 	.pipe gulp.dest "#{layout}/images/svg/"
 
+gulp.task 'img_mini', ->
+	gulp.src [ "#{sources}/images/**/*.jpg", "#{sources}/images/**/*.png" ]
+	.pipe imageop
+        optimizationLevel: 1
+        progressive: true
+        interlaced: true
+    .pipe gulp.dest "#{layout}/images/"
+
+
 # System functions
 
 gulp.task 'reload', ->
@@ -151,6 +161,9 @@ gulp.task 'default', ->
 
 	gulp.watch "#{sources}/images/svg/**/*.svg", ->
 		sequence 'svg_mini'
+
+	gulp.watch "#{sources}/images/*", ->
+		sequence 'img_mini'
 
 	gulp.watch ["./public_html/**/*.php",'!./public_html/bitrix/**'], {'dot':true}, ->
 		sequence 'reload'

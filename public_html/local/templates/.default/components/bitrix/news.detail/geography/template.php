@@ -17,9 +17,11 @@ $item = $arResult;
 		<p><?=$item['~PREVIEW_TEXT']?></p>
 	</small>
 <?endif;?>
-<div class="geography__popup_gallery">
-<?foreach ($item["GALLERY"] as $img):?>
-	<a href="<?=$img['value']?>" rel="prettyPhoto[]" style="background-image: url(<?=$img['small']?>)"></a>
-<?endforeach;?>
-</div>
+<?if(count($item["PROPS"]["PHOTOS"])>0):?>
+	<div class="geography__popup_gallery">
+	<?foreach ($item["PROPS"]["PHOTOS"] as $img):?>
+		<a href="<?=$img['value']?>" rel="prettyPhoto[]" style="background-image: url(<?=$img['small']?>)"></a>
+	<?endforeach;?>
+	</div>
+<?endif;?>
 </div>

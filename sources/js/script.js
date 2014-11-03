@@ -58,6 +58,11 @@
       });
     }
     $('.geography__popup_content').load(url, function() {
+      $('.geography__popup_content a[rel^="prettyPhoto"]').prettyPhoto({
+        social_tools: '',
+        overlay_gallery: false,
+        deeplinking: false
+      });
       $('.geography__popup_content').perfectScrollbar('destroy');
       return $('.geography__popup_content').perfectScrollbar({
         suppressScrollX: true

@@ -46,6 +46,10 @@ $.showGeographyDetail = (url)->
 					duration: 400
 						
 	$('.geography__popup_content').load url, ()->
+		$('.geography__popup_content a[rel^="prettyPhoto"]').prettyPhoto
+			social_tools: ''
+			overlay_gallery: false
+			deeplinking: false
 		$('.geography__popup_content').perfectScrollbar('destroy');
 		$('.geography__popup_content').perfectScrollbar
 			suppressScrollX: true

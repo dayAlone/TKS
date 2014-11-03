@@ -72,7 +72,8 @@
 			        	p<?=$item['ID']?>.options.set({iconImageHref: '/layout/images/pin_red.png'})
 			        	$.showGeographyDetail('/ajax<?=$item["DETAIL_PAGE_URL"]?>')
 			        	$('.geography__popup_close').one('click', function(){
-			        		p<?=$item['ID']?>.options.set({iconImageHref: '/layout/images/pin_blue.png'})
+			        		$.each(open, function(){this.options.set({iconImageHref: '/layout/images/pin_blue.png'});})
+			        		open  = []
 			        	})
 			        	$.each(open, function(){
 			        		this.options.set({iconImageHref: '/layout/images/pin_blue.png'});

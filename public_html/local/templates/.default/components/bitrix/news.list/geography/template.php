@@ -49,14 +49,6 @@
 	        });
 	        myMap.geoObjects.add(p<?=$item['ID']?>);
 		<?endforeach;?>
-
-	    
-
-	    document.getElementById('destroyButton').onclick = function () {
-	        // Для уничтожения используется метод destroy.
-	        myMap.destroy();
-	    };
-
 	}
 </script>
 <?$this->EndViewTarget();?> 

@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"О холдинге", 
+		"/about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Структура", 
+		"/structure/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Индустрии", 
+		"/industries/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"География", 
+		"/geography/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Пресс-центр", 
+		"/press/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Карьера", 
+		"/career/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

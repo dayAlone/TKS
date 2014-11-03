@@ -1,0 +1,861 @@
+@font-face
+	font-family 'Proxima'
+	src url("../fonts/ProximaNova-XBold.ttf")
+	src local('☺'), url('../fonts/ProximaNova-XBold.ttf') format('truetype')
+	font-weight 800
+body
+	min-width 960px
+.index
+	.slider
+		full-width()
+		min-height 640px
+		margin-top -130px
+		&__item
+			full-width()
+			position relative
+			height 100%
+			min-height 640px
+			background-position top center
+			background-size cover
+			padding-top 160px
+			color white
+			&--left
+				.slider__title, .slider__content
+					float left
+		&__title, &__content
+			width 50%
+			float: right
+			clear both
+			max-width 495px
+		
+		&__title
+			text-transform: uppercase
+			font-size 55px
+			margin-bottom 10px
+			font-weight 800
+			margin-top 0
+		&__content
+			font-size 16px
+			line-height 20px
+			margin-bottom 5px
+		&__link
+			margin-top 12px
+			display inline-block
+			color white
+			border 1px solid white
+			height 30px
+			line-height 32px
+			letter-spacing: 3px
+			padding 0 25px
+			text-transform: uppercase
+			font-size 11px
+			font-weight bold
+			&:hover
+				background white
+				color toolbar_top
+	.sections
+		full-width()
+		background #001467
+		&__item
+			height 120px
+			border-right 1px solid #062d77
+			float left
+			text-align: center
+			width (100/7)%
+			t(background-color)
+			&:hover
+				background #003285
+			&:first-of-type
+				border-left 1px solid #062d77
+		&__image
+			margin-top 17px
+		&__text
+			color white
+			font-size 10px
+			text-transform: uppercase
+			line-height 12px
+			font-weight bold
+			max-width 85%
+			display inline-block
+			margin-top 5px
+			@media (min-width: scr_lg)
+				font-size 11px
+	.partners
+		full-width()
+		height 85px
+		line-height 85px
+		text-align: center
+		overflow hidden
+		&__item
+			img
+				vertical-align: center
+				display inline-block
+				margin 0 38px
+				max-height 34px
+				max-width 75px
+	.news
+		full-width()
+		position relative
+		.container
+			position relative
+		&__frame
+			position absolute
+			width 50%
+			right 15px
+			bottom 15px
+			max-width 480px
+			color white
+			padding 14px 18px 10px
+			font-size 13px
+			background rgba(0, 25, 102, .75)
+		&__date
+			font-size 11px
+			color blue
+			font-weight bold
+			margin-bottom 8px
+		&__title
+			line-height 16px
+			text-decoration: underline
+			display inline-block
+			color white
+			&:hover
+				color blue
+		&__more
+			text-transform: uppercase
+			display inline-block
+			margin-top 17px
+			color blue
+			font-size 11px
+			text-decoration: underline
+			font-weight: bold
+
+#map
+	width 100%
+	min-height 570px
+
+.page
+	big
+		font-size 20px
+		line-height 30px
+	.text &
+		a
+			color blue3
+	.border-left
+		&--move
+			left -40px
+		&:after
+			position absolute
+			content ""
+			background #d5dbdf
+			width 1px
+			top 0
+			left -30px
+			height 100%
+	&__divider
+		height 1px 
+		background #c6cdd2
+		width 100%
+		margin 10px 0
+		&--blue
+			background #0070d5
+		& + .products
+			margin-top -10px
+	&__frame
+		background #ffffff
+		
+		padding 35px 45px
+		margin-top 20px
+		margin-right -15px
+		margin-left -15px
+		color #233347
+		.catalog-category &
+			padding 0
+		p
+			font-size 16px
+	&__title
+		margin 0
+		text-transform: uppercase
+		padding 0
+		font-size 35px
+		line-height 35px
+		color #233347
+		font-weight bold
+	&__sub-title
+		font-size 22px
+		margin-bottom 0
+		padding-bottom 0
+	.button
+		display inline-block
+		padding 0 25px
+		cursor pointer
+		font-size 11px
+		line-height 33px
+		margin 20px 0
+		letter-spacing 3px
+		height 30px
+		border 1px solid blue3
+		color blue3
+		text-transform: uppercase
+		font-weight bold
+		t(background, color)
+		text-align: center
+		&:hover
+			background blue3
+			color white
+			text-decoration: none
+		&--big
+			max-width 110%
+			min-width 216px 
+			@media (min-width: scr_sm)
+				min-width 100px
+				padding 0 15px
+			@media (min-width: scr_md)
+				padding 0 32px
+				min-width 186px 
+
+.about
+	.partners
+		text-align: center
+		&__item
+			display inline-block
+			min-height 160px
+			max-width 130px
+			font-weight bold
+			text-transform: uppercase
+			font-size 10px
+			line-height 12px
+			color #233347
+		&__image
+			height 75px
+			line-height 80px
+			img
+				vertical-align: middle
+				max-width 100%
+		&__text
+			max-width 95%
+			display inline-block
+
+
+.catalog-category
+	.page
+		margin-bottom 30px
+	.sections
+		width 100%
+		&__item
+			width 100%
+			margin-bottom 1px
+			t(min-height, .4s)
+			min-height 130px
+			&--open
+				transition-delay 0.2s
+				transition-duraion .2s
+				.sections__content
+					display block
+				.sections__icon
+					opacity 1
+				.sections__title:after
+					background rgba(0, 0, 0, 0) !important
+		&__title
+			width 100%
+			height 130px
+			display inline-block
+			line-height 130px
+			background-size cover
+			background-repeat no-repeat
+			position relative
+			&:after
+				position absolute
+				content ""
+				background rgba(0, 0, 0, .65)
+				t(background-color)
+				width 100%
+				height 100%
+				top 0
+				left 0
+			&:hover
+				&:after
+					background rgba(0, 0, 0, .45)
+				.sections__icon
+					opacity .7
+		&__icon
+			float left
+			width 120px
+			text-align: center
+			opacity .25
+			t(opacity)
+			position relative
+			z-index 2
+			svg
+				display inline-block
+				vertical-align: middle
+				path
+					fill white
+		&__name
+			font-size 35px
+			line-height 137px
+			color white
+			position relative
+			z-index 2
+		&__content
+			display none
+			width 100%
+			padding 50px 120px 30px
+	.sub-sections
+		padding-left 35px
+		padding-bottom 0
+		&__item
+			list-style none
+			margin-bottom 25px
+			t(min-height, .4s)
+			&--open
+				transition-delay 0.2s
+				transition-duraion .2s
+				.sub-sections__content
+					display block
+				.sub-sections__title
+					color #007bf8
+					border-dashed(#007bf8)
+					svg
+						transform rotate(90deg)
+						path
+							fill #007bf8
+		&__content
+			display none
+			width 100%
+			padding-top 15px
+		&__title
+			position relative
+			border-dashed(#8598b8)
+			font-size 20px
+			color #233347
+			&:hover
+				color #007bf8
+				border-dashed(#007bf8)
+				svg
+					path
+						fill #007bf8
+			svg
+				position absolute
+				left -36px
+				top -2px
+				t(transform)
+				path
+					fill #c6cdd2
+					t(fill)
+			&--link
+				border-line(#8598b8)
+				&:hover
+					border-line(#007bf8)
+	.sub-sub-sections
+		padding-left 25px
+		&__item
+			list-style none
+			margin-bottom 10px
+			t(min-height, .4s)
+			&--open
+				transition-delay 0.2s
+				transition-duraion .2s
+				.sub-sub-sections__content
+					display block
+		&__title
+			position relative
+			font-size 15px
+			border-dashed(#8598b8, 15px)
+			color #263a5c
+			&:hover
+				color #007bf8
+				border-dashed(#007bf8, 15px)
+			&:after
+				position absolute
+				content ""
+				width 15px
+				height 2px
+				background #007bf8
+				top 6px
+				left -25px
+			&--link
+				border-line(#8598b8, 15px)
+				&:hover
+					border-line(#007bf8, 15px)
+		&__content
+			display none
+			width 100%
+			padding 15px 0 5px
+	.sub-sub-sub-sections
+		padding-left 15px
+		&__item
+			margin-bottom 5px
+			list-style none
+		&__title
+			font-size 13px
+			position relative
+			color #263a5c
+			border-line(#dadee8, 12px)
+			&:hover
+				color #007bf8
+				border-line(#007bf8, 12px)
+			&:after
+				position absolute
+				content ""
+				width 4px
+				height 4px
+				background #007bf8
+				top 4px
+				left -15px
+.catalog
+	.products
+		&__item
+			width 100%
+			padding 30px 0
+			border-bottom 1px solid #e3e6e9
+			&:last-of-type
+				border-color #c6cdd2
+		&__name
+			display inline
+			font-size 18px
+			font-weight bold
+			color #000000
+			border-line(#d4d4d4, 19px)
+			
+			&:hover
+				color blue2
+				border-line(blue2, 19px)
+		&__text
+			display block
+			margin-top 20px
+			font-size 13px
+			line-height 16px
+			width 100%
+		&__image
+			display block
+			width 100%
+			height 100px
+			background-size contain
+			background-repeat no-repeat
+			background-position center center
+
+	.product
+		width 100%
+		&__name
+			font-size 35px
+			line-height 40px
+			color black
+			text-transform: uppercase
+			margin 0
+			padding 0
+			font-weight bold
+			margin-bottom 20px
+		.product__back
+			text-transform: uppercase
+			font-weight bold
+			color #007bf8
+			border-line(#d2e2fd, 12px)
+			font-size 12px
+			display inline-block
+			margin-top 30px
+			margin-left 13px
+			svg
+				margin-left -13px
+				margin-right 4px
+		&__text
+			font-size 14px
+			color #515050
+			ul
+				padding-left 20px
+			li
+				margin-bottom 10px
+			p, li
+				font-size 14px
+				color #515050
+			p
+				margin-bottom 15px
+		.tabs
+			width 100%
+			margin-top 30px
+			> ul
+				list-style none
+				padding 0
+				margin-bottom 10px
+				> li
+					display inline-block
+					width 50%
+				.active .tabs__link
+					background #0082dc
+			&__link
+				display inline-block
+				width 100%
+				background #8796a2
+				color white
+				font-size 19px
+				height 45px
+				line-height 49px
+				padding-left 20px
+				margin-bottom 10px
+				font-weight bold
+				border-bottom 1px solid #5e7380
+				t(background)
+				&:first-of-type
+					border-right 1px solid #fff
+			&__content
+				display none
+				ul
+					margin-bottom 0
+					padding-left 0
+					li+li
+						padding-top 7px
+				p, li
+					font-size 14px
+					color #515050
+				&.active
+					display block
+		&__image
+			width 100%
+			.row
+				> div
+					padding 0 10px
+			&-big, &-small
+				a
+					display none
+					width 100%
+					height 324px
+					background-size contain
+					background-position center center
+					background-repeat no-repeat
+					border 1px solid #e3e6e9
+					&.active
+						display block
+			&-small
+				a
+					height 75px
+					display block
+					background-size contain
+					background-position top center
+					background-repeat no-repeat
+					margin-bottom 8px
+					&.active
+						border 2px solid #ff282d
+					
+				
+		.params
+			width 100%
+			border 1px solid #697c89
+			padding 18px 15px 10px 15px
+			color #1d2a3a
+			font-size 13px
+			position relative
+			&__title
+				font-weight bold
+				position absolute
+				padding 0 4px
+				background white
+				top -7px
+				left 10px
+				text-transform: uppercase
+			& + .params
+				margin-top 20px
+			.row
+				margin 0
+				& + .row
+					border-top 1px solid #eef2f5
+				padding 7px 0px 3px
+	
+.side
+	p
+		max-width 80%
+		font-size 16px
+
+.pages
+	width 100%
+	margin-top 20px
+	.news-list + &
+		margin-top 40px
+	&__item
+		display inline-block
+		width 27px
+		height 27px
+		text-align: center
+		margin-right 10px
+		border 1px solid #0082dc
+		line-height 30px
+		color #0082dc
+		font-size 13px
+		&:hover
+			color #0082dc
+		&--active
+			color white !important
+			background #0082dc
+			
+
+.years
+	&__item
+		display inline-block
+		font-size 18px
+		font-weight bold
+		color black
+		margin-bottom 25px
+		border-line(#d4d4d4, 18px)
+		&:hover
+			color blue2
+			border-line(blue2, 18px)
+		&--active
+			background transparent 
+			color blue3
+
+.gallery
+	width 100%
+	margin-top 20px
+	.gallery__item
+		display inline-block
+		width 120px
+		height 90px
+		background-size cover
+		background-repeat no-repeat
+		box-shadow inset 0 0 0 1px white
+		border 1px solid #e3e6e9
+		t(border-color)
+		margin 0 5px 5px 0
+		&:hover
+			border-color #d93431
+
+.news
+	.news-list
+		&__item
+			width 100%
+			& + .news-list__item
+				margin-top 50px
+		.news-list__date
+			text-transform: uppercase
+			font-weight: bold
+			color #6e6f79
+			font-size 11px
+			margin-bottom 10px
+		.news-list__title
+			font-size 22px
+			color #2d78d6
+			line-height 30px
+			margin-top 0
+			border-line(#adc2eb, 22px)
+			&:hover
+				color blue2
+				border-line(blue2, 22px)
+		.news-list__text
+			margin-top 15px
+			width 100%
+			font-size 16px
+			color #233347
+	.news-item
+		&__date
+			@extends .news .news-list .news-list__date
+		.news-item__text
+			@extends .news .news-list .news-list__text
+			margin-top 20px
+			ul
+				padding-left 20px
+				margin-bottom 25px
+			p, li
+				font-size 16px
+			p
+				margin-bottom 15px
+			li
+				margin-bottom 10px
+		&__back
+			@extends .catalog .product .product__back
+		&__image
+			max-width 50%
+			margin 0 0 20px 20px
+		&__gallery
+			width 100%
+			margin-top 20px
+		&__small-image
+			@extends .gallery .gallery__item
+		.news-item__title
+			@extends .news .news-list .news-list__title
+			color black
+			background transparent
+			&:hover
+				color black
+				background transparent
+			
+
+.career
+	&-list
+		width 100%
+		margin-top 20px
+		&__item
+			width 100%
+			margin-bottom 15px
+		&__title
+			@extends .news .news-list .news-list__title
+			
+	&-item
+		&__tooltip
+			@extends .news .news-list .news-list__date
+		&__title
+			@extends .news .news-item .news-item__title
+		&__text
+			@extends .news .news-item .news-item__text
+		&__back
+			@extends .catalog .product .product__back
+
+.search-page
+	font-size 14px
+	.page__divider
+		margin 30px 0
+	&__text
+		width 100%
+		margin-top 10px
+	&__text, &__sort
+		font-size 14px
+	&__title
+		@extends .news .news-list .news-list__title
+	small
+		width 100%
+		display inline-block
+	form
+		margin-bottom 30px
+		input[type=text]
+			background transparent
+			border 1px solid blue
+			height 35px
+			line-height 38px
+			border-radius 30px
+			padding 0 50px 0 20px
+			line-height normal
+		button[type=submit]
+			background transparent
+			border 0
+			margin-left -44px
+			display inline-block
+			svg
+				position relative
+				top 8px
+				min-height 20px
+				min-width 20px
+
+.map-columns
+	td
+		width (100/2)%
+		padding-right 60px
+	ul
+		font-size 13px
+		padding-left 0
+		&.map-level-0
+			> li
+				list-style none
+				margin-bottom 20px
+				> ul
+					padding-left 20px
+					margin-top 10px
+					> li
+						> ul
+							padding-left 20px
+							margin-bottom 10px
+							margin-top 5px
+						a
+							@extends .news .news-list .news-list__title
+							font-size 12px
+							line-height 25px
+							background-position 0 10px		
+						> a
+							font-size 16px
+							font-weight normal
+							background-position 0 16px
+						
+				> a
+					@extends .news .news-list .news-list__title
+					font-size 18px
+					background-position 0 18px
+.dropdown
+	padding 0
+	position relative
+	z-index 30
+	ul
+		padding 0
+		position absolute
+		z-index 20
+		li
+			span.sub-collapser
+				display none
+			float left
+			clear both
+			width 100%
+			top 0
+			width 210px
+			border-bottom 1px solid #309cfa
+			background #007bf8
+			t(background)
+			&.opened, &:hover
+				background #001766
+			&:last-of-type
+				border-bottom 0
+			a
+				width 100%
+				font-size 12px
+				color white
+				padding 10px 15px 4px
+				float left
+				line-height 14px
+				
+			ul
+				left 100%
+				margin-left 1px
+	li
+		display inline-block
+		list-style none
+		padding 0
+		&.divider
+			font-size 8px
+			color #c6cdd2
+			border 0
+	> li
+		border-top 1px solid blue2
+		border-bottom 1px solid blue2
+		font-size 12px
+		height 22px
+		line-height 26px
+		margin-right 10px
+		position relative
+		&.text
+			border-color white
+		> a
+			color black
+			position relative
+			z-index 2
+		.sub-collapser
+			color blue2
+			margin-left 3px
+			position relative
+			z-index 2
+			svg
+				path
+					fill blue2
+		&.opened, &.link:hover
+			color white
+			> a
+				color white
+			.sub-collapser
+				svg
+					path
+						fill white
+			&:after
+				content ""
+				position absolute
+				width 100%
+				box-sizing content-box
+				padding 0 10px
+				height 35px
+				margin-top -7px
+				margin-left -10px
+				background #007bf8
+				border-bottom 1px solid #309cfa
+				left 0
+				top 0
+				z-index 0
+		> ul
+			top 29px
+			left -10px
+			display none
+		
+span.sub-collapser
+	i
+		font-style: normal

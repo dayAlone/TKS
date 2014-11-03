@@ -62,6 +62,10 @@
       "css":"/prettyPhoto/css/prettyPhoto.css",
       "files": "/prettyPhoto/images/prettyPhoto/default/*.png"
    },
+   "scrollbar":{
+      "js":"/perfect-scrollbar/src/perfect-scrollbar.js",
+      "css":"/perfect-scrollbar/src/perfect-scrollbar.css"
+   },
    "slick":{
       "js":"/slick/slick/slick.js",
       "css":"/slick/slick/slick.css"

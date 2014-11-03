@@ -11,11 +11,19 @@
 			</div>
 		</div>
 	</div>
-
-	<div id="map">
-		
+	<div class="geography__frame">
+		<div class="geography__popup">
+			<div class="geography__popup_toolbar">
+				<a href="#" class="geography__popup_close">
+					<?=svg('close')?> Закрыть
+				</a>
+			</div>
+			<div class="geography__popup_content">
+				<h4>Регион</h4>
+			</div>
+		</div>
+		<div id="map"></div>
 	</div>
-
 	<?foreach ($arResult['ITEMS'] as $item):?>
 
 	<?endforeach;?>

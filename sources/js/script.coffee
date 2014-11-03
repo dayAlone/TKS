@@ -39,10 +39,7 @@ size = ->
 urlInitial = undefined
 
 $.showGeographyDetail = (url)->
-	if $('.geography__popup').is ':visible'
-		delay 300, ()->
-			$('.geography__popup_content').spin spin_options
-	else
+	if !$('.geography__popup').is ':visible'
 		$('.geography__popup').velocity
 				properties: "transition.slideRightIn"
 				options:

@@ -180,6 +180,25 @@ blur = ()->
 $(document).ready ->
 
 
+	$('.geography-filter').elem('item').click (e)->
+		if !$(this).hasMod 'active'
+			$(this).block('item').mod 'active', false
+			$(this).mod 'active', true
+			$(this).block('item').each ()->
+				if !$(this).hasMod 'active'
+					$($(this).attr('href')).velocity
+						properties: "transition.slideUpOut"
+						options:
+							duration: 300
+				else
+					window.location.hash = $(this).attr('href');
+					$($(this).attr('href')).velocity
+						properties: "transition.slideDownIn"
+						options:
+							duration: 300
+		e.preventDefault()
+
+
 	$('a[rel^="prettyPhoto"]').prettyPhoto
 		social_tools: ''
 		overlay_gallery: false

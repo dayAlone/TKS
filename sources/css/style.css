@@ -2033,7 +2033,7 @@ body {
   width: 100%;
   min-height: 640px;
   margin-top: -130px;
-  margin-bottom: -160px;
+  margin-bottom: -65px;
 }
 .index .slider__item {
   float: left;
@@ -2366,13 +2366,13 @@ body {
 .geography p {
   font-size: 16px;
 }
-.geography .filter {
+.geography-filter {
   background: #a5d0ff;
   height: 57px;
   text-align: center;
   line-height: 66px;
 }
-.geography .filter__title {
+.geography-filter__title {
   color: #000;
   text-transform: uppercase;
   font-weight: bold;
@@ -2383,7 +2383,7 @@ body {
   display: inline-block;
   vertical-align: middle;
 }
-.geography .filter__item {
+.geography-filter__item {
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -2399,8 +2399,8 @@ body {
   padding: 3px 12px 0;
   margin: 0 2px;
 }
-.geography .filter__item--active,
-.geography .filter__item:hover {
+.geography-filter__item--active,
+.geography-filter__item:hover {
   color: #fff;
   background: #0082dc;
 }

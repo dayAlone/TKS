@@ -4,10 +4,10 @@
 			<p>Промышленный холдинг ТКС осуществляет комплексное техническое и технологическое сопровождение проектов по всему миру. Ниже обозначены места, где выполнены или выполняются в настоящее время проекты с участием наших специалистов и с использованием нашего оборудования.</p>
 		</div>
 		<div class="col-xs-3">
-			<div class="filter">
-				<div class="filter__title">Режим<br>показа</div>
-				<a href="#map" class="filter__item filter__item--active">Карта</a>
-				<a href="#list" class="filter__item">Список</a>
+			<div class="geography-filter">
+				<div class="geography-filter__title">Режим<br>показа</div>
+				<a href="#map" class="geography-filter__item geography-filter__item--active">Карта</a>
+				<a href="#list" class="geography-filter__item">Список</a>
 			</div>
 		</div>
 	</div>
@@ -64,6 +64,9 @@
 <script>
 	$(function(){
 		var myMap;
+
+		if(window.location.hash)
+			$('.geography-filter a[href^="'+window.location.hash+'"]').trigger('click')
 
 		ymaps.ready(init);
 

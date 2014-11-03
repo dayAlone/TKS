@@ -235,6 +235,31 @@
 
   $(document).ready(function() {
     var closeDropdown, openDropdown, timer, x;
+    $('.geography-filter').elem('item').click(function(e) {
+      if (!$(this).hasMod('active')) {
+        $(this).block('item').mod('active', false);
+        $(this).mod('active', true);
+        $(this).block('item').each(function() {
+          if (!$(this).hasMod('active')) {
+            return $($(this).attr('href')).velocity({
+              properties: "transition.slideUpOut",
+              options: {
+                duration: 300
+              }
+            });
+          } else {
+            window.location.hash = $(this).attr('href');
+            return $($(this).attr('href')).velocity({
+              properties: "transition.slideDownIn",
+              options: {
+                duration: 300
+              }
+            });
+          }
+        });
+      }
+      return e.preventDefault();
+    });
     $('a[rel^="prettyPhoto"]').prettyPhoto({
       social_tools: '',
       overlay_gallery: false,

@@ -75,7 +75,7 @@
 		        	$.each(open, function(){
 		        		this.options.set({iconImageHref: '/layout/images/pin_blue.png'});
 		        	})
-		        	open.push(p<?=$item['ID']?>)
+		        	open  = [p<?=$item['ID']?>]
 
 	     		});
 		        myMap.geoObjects.add(p<?=$item['ID']?>);

@@ -12,7 +12,9 @@ $item = $arResult;
 <h4><span>Проект</span></h4>
 <p><?=$item['NAME']?></p>
 <?if(isset($item['PREVIEW_TEXT'])):?>
-	<p><?=$item['~PREVIEW_TEXT']?></p>
+	<small>
+		<p><?=$item['~PREVIEW_TEXT']?></p>
+	</small>
 <?endif;?>
 <div class="geography__popup_gallery">
 <?foreach ($item["GALLERY"] as $img):?>

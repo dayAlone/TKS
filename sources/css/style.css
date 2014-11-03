@@ -2195,6 +2195,9 @@ body {
   width: 100%;
   min-height: 570px;
 }
+.page {
+  margin-bottom: 30px;
+}
 .page big {
   font-size: 20px;
   line-height: 30px;
@@ -2358,6 +2361,47 @@ body {
     padding: 0 32px;
     min-width: 186px;
   }
+}
+.geography p {
+  font-size: 16px;
+}
+.geography .filter {
+  background: #a5d0ff;
+  height: 57px;
+  text-align: center;
+  line-height: 66px;
+}
+.geography .filter__title {
+  color: #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: left;
+  line-height: 12px;
+  margin-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.geography .filter__item {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #5e8fc3;
+  color: #bbcce3;
+  line-height: 25px;
+  font-weight: bold;
+  font-size: 12px;
+  height: 25px;
+  padding: 3px 12px 0;
+  margin: 0 2px;
+}
+.geography .filter__item--active,
+.geography .filter__item:hover {
+  color: #fff;
+  background: #0082dc;
 }
 .sidebar {
   width: 100%;

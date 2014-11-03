@@ -2289,14 +2289,14 @@ body {
 }
 .page__header-frame {
   position: absolute;
-  background-position: center center;
+  background-position: center calc(50% - 30px);
   background-repeat: no-repeat;
   width: 780px;
   left: 50%;
   margin-left: -390px;
   height: 156px;
   top: 50%;
-  margin-top: -78px;
+  margin-top: -48px;
   border: 1px solid #fff;
 }
 .page__title {

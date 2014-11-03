@@ -37,7 +37,16 @@
 	        type: "yandex#hybrid",
 	        controls: ['geolocationControl', 'fullscreenControl', 'zoomControl']
 	    });
-
+	    clusterer = new ymaps.Clusterer({
+            // Зададим массив, описывающий иконки кластеров разного размера.
+            clusterIcons: [{
+                href: '/layout/images/pin_blue.png',
+                size: [24, 31],
+                offset: [-12, -31]
+            }],
+            clusterNumbers: [20],
+            clusterIconContentLayout: null
+        })
 	    <?foreach ($arResult['ITEMS'] as $item):?>
 		    p<?=$item['ID']?> = new ymaps.Placemark([<?=$item['PROPS']['COORDS']?>], {
 	            hintContent: '<?=$item['NAME']?>'
@@ -49,6 +58,9 @@
 	        });
 	        myMap.geoObjects.add(p<?=$item['ID']?>);
 		<?endforeach;?>
+		
+		clusterer.add(geoObjects);
+    	myMap.geoObjects.add(clusterer);
 	}
 </script>
 <?$this->EndViewTarget();?> 

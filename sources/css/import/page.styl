@@ -326,7 +326,23 @@ body
 			padding 0 10px
 			text-align: right
 		&_content
-			padding 30px 25px
+			padding 0px 25px 0
+			position relative
+			max-height 671px
+			full-width()
+			overflow: hidden;
+			.scroll
+				full-width()
+				padding 30px 0
+			&.ps-container>.ps-scrollbar-y-rail
+				background #c3d5e3
+				width 5px
+				border-radius 0
+				right 0
+				>.ps-scrollbar-y
+					width 5px
+					background #89a2b4
+					border-radius 0
 			h4
 				margin 0
 				padding 0

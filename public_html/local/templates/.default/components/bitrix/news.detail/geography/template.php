@@ -1,3 +1,4 @@
+<div class="scroll">
 <?
 $item = $arResult;
 ?>
@@ -20,4 +21,5 @@ $item = $arResult;
 <?foreach ($item["GALLERY"] as $img):?>
 	<a href="<?=$img['value']?>" rel="prettyPhoto[]" style="background-image: url(<?=$img['small']?>)"></a>
 <?endforeach;?>
+</div>
 </div>

@@ -44,8 +44,11 @@ $.showGeographyDetail = (url)->
 				properties: "transition.slideRightIn"
 				options:
 					duration: 400
+						
 	$('.geography__popup_content').load url, ()->
-		$('.geography__popup_content').perfectScrollbar('update');
+		$('.geography__popup_content').perfectScrollbar('destroy');
+		$('.geography__popup_content').perfectScrollbar
+			suppressScrollX: true
 	$('.geography__popup_close').one 'click', (e)->
 		$('.geography__popup').velocity
 			properties: "transition.slideRightOut"
@@ -176,9 +179,6 @@ $(document).ready ->
 	    animSpeed:'medium',
 	    indentChildren: true,
 	    childrenIndenter: '&raquo;'
-
-	$('.geography__popup_content').perfectScrollbar
-		suppressScrollX: true
 
 	if $('.side').length > 0
 		$('.border-left').css

@@ -67,16 +67,18 @@
 		            iconImageOffset: [-12, -31]
 		        });
 		        p<?=$item['ID']?>.events.add('click', function(e) {
-		        	p<?=$item['ID']?>.options.set({iconImageHref: '/layout/images/pin_red.png'})
-		        	$.showGeographyDetail('/ajax<?=$item["DETAIL_PAGE_URL"]?>')
-		        	$('.geography__popup_close').one('click', function(){
-		        		p<?=$item['ID']?>.options.set({iconImageHref: '/layout/images/pin_blue.png'})
-		        	})
-		        	$.each(open, function(){
-		        		this.options.set({iconImageHref: '/layout/images/pin_blue.png'});
-		        	})
-		        	open  = [p<?=$item['ID']?>]
-
+		        	console.log($.inArray(p<?=$item['ID']?>, open))
+		        	if($.inArray(p<?=$item['ID']?>, open)==-1) {
+			        	p<?=$item['ID']?>.options.set({iconImageHref: '/layout/images/pin_red.png'})
+			        	$.showGeographyDetail('/ajax<?=$item["DETAIL_PAGE_URL"]?>')
+			        	$('.geography__popup_close').one('click', function(){
+			        		p<?=$item['ID']?>.options.set({iconImageHref: '/layout/images/pin_blue.png'})
+			        	})
+			        	$.each(open, function(){
+			        		this.options.set({iconImageHref: '/layout/images/pin_blue.png'});
+			        	})
+			        	open  = [p<?=$item['ID']?>]
+		        	}
 	     		});
 		        myMap.geoObjects.add(p<?=$item['ID']?>);
 			<?endforeach;?>

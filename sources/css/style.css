@@ -2427,6 +2427,41 @@ body {
   font-size: 16px;
   font-weight: bold;
 }
+.geography__list_gallery {
+  color: #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 11px;
+  margin-top: 5px;
+}
+.geography__list_gallery:hover {
+  color: #0082dc;
+}
+.geography__list_gallery:hover svg path {
+  fill: #0082dc;
+}
+.geography__list_gallery svg {
+  margin-right: 5px;
+  width: 22px;
+  height: 21px;
+  top: -2px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.geography__list_gallery svg path {
+  -webkit-transition-property: fill;
+  -moz-transition-property: fill;
+  -o-transition-property: fill;
+  -ms-transition-property: fill;
+  transition-property: fill;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  fill: #000;
+}
 .geography__list_title {
   text-transform: uppercase;
   font-size: 10px;

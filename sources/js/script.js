@@ -235,79 +235,13 @@
 
   $(document).ready(function() {
     var closeDropdown, openDropdown, timer, x;
-    $('.dropdown').slimmenu({
-      resizeWidth: '800'
-    }, {
-      collapserTitle: 'Main Menu',
-      animSpeed: 'medium',
-      indentChildren: true,
-      childrenIndenter: '&raquo;'
-    });
-    if ($('.side').length > 0) {
-      $('.border-left').css({
-        minHeight: $('.side').height()
-      });
-    }
     $('a[rel^="prettyPhoto"]').prettyPhoto({
       social_tools: '',
       overlay_gallery: false,
       deeplinking: false
     });
-    $('.product__image-small a').click(function(e) {
-      var elm;
-      elm = $($(this).data('id'));
-      if (!elm.hasClass('active')) {
-        $('.product__image-big a').removeClass('active');
-        $('.product__image-small a').removeClass('active');
-        $(this).addClass('active');
-        elm.addClass('active');
-      }
-      return e.preventDefault();
-    });
-    $('.product__tabs a').click(function(e) {
-      e.preventDefault();
-      return $(this).tab('show');
-    });
-    $('.catalog-category .sections a[href=#]').click(function(e) {
-      var block, blockHeight, c, item, items;
-      c = $(this).block().attr('class');
-      item = $(this).closest("." + c + "__item");
-      block = item.find("." + c + "__content");
-      blockHeight = block.outerHeight();
-      items = $(this).parents('*[class*="item"]');
-      console.log($(this).block('content'));
-      if (!item.hasMod('open')) {
-        $.each(items, function(key, el) {
-          return $(el).css({
-            'minHeight': blockHeight + $(el).height()
-          });
-        });
-        block.velocity({
-          properties: "transition.slideDownIn",
-          options: {
-            duration: 300,
-            delay: 200,
-            begin: function() {
-              return item.mod('open', true);
-            }
-          }
-        });
-      } else {
-        $.each(items, function(key, el) {
-          return $(el).css({
-            'minHeight': 0
-          });
-        });
-        block.velocity({
-          properties: "transition.slideUpOut",
-          options: {
-            duration: 200,
-            complete: function() {
-              return item.mod('open', false);
-            }
-          }
-        });
-      }
+    $('.geography__list_gallery').click(function(e) {
+      $.prettyPhoto.open($(this).data('images'));
       return e.preventDefault();
     });
     $('.search-trigger').click(function(e) {

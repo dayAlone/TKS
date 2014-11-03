@@ -19,9 +19,7 @@
 					<?=svg('close')?> Закрыть
 				</a>
 			</div>
-			<div class="geography__popup_content">
-				
-			</div>
+			<div class="geography__popup_content"></div>
 		</div>
 		<div id="map"></div>
 	</div>
@@ -46,7 +44,15 @@
 						</small>
 					<?endif;?>
 				</div>
-				<div class="col-xs-2"></div>
+				<div class="col-xs-2 right">
+					<?if(count($item['PROPS']['PHOTOS'])>0):
+						$images = array();
+						foreach ($item['PROPS']['PHOTOS'] as $img)
+							$images[] = $img['value'];
+					?>
+						<a href="#" class="geography__list_gallery" data-images='<?=json_encode($images)?>'><?=svg('photos')?>фотогалерея</a>
+					<?endif;?>
+				</div>
 			</div>
 		</div>
 	<?endforeach;?>

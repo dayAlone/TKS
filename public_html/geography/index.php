@@ -11,7 +11,7 @@ $APPLICATION->IncludeComponent(
     "SORT_ORDER1"               => "ASC",
     "DETAIL_URL"                => "/geography/#ELEMENT_CODE#/",
     "PROPERTY_CODE"             => Array("REGION", "PHOTOS", "COORDS", "PERIOD"),
-    "CACHE_TYPE"                => "N",
+    "CACHE_TYPE"                => "A",
     "SET_TITLE"                 => "N",
     "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
     "ADD_SECTIONS_CHAIN"        => "N",

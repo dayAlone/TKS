@@ -5641,6 +5641,8 @@ body {
 .geography #map {
   width: 100%;
   height: 600px;
+}
+.geography__list {
   display: none;
 }
 .geography__list_item {

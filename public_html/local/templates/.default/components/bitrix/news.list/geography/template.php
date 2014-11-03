@@ -12,6 +12,10 @@
 		</div>
 	</div>
 
+	<div id="map">
+		
+	</div>
+
 	<?foreach ($arResult['ITEMS'] as $item):?>
 
 	<?endforeach;?>
@@ -20,4 +24,39 @@
 
 <?$this->SetViewTarget('footer');?>
 
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script>
+	var myMap;
+
+	ymaps.ready(init);
+
+	function init () {
+	    myMap = new ymaps.Map('map', {
+	        center: [66.69261210265907, 95.40570330969672], // Москва
+	        zoom: 3,
+	        type: "yandex#hybrid",
+	        controls: ['geolocationControl', 'fullscreenControl', 'zoomControl']
+	    });
+
+	    <?foreach ($arResult['ITEMS'] as $item):?>
+		    p<?=$item['ID']?> = new ymaps.Placemark(myMap.getCenter(), {
+	            hintContent: '<?=$item['NAME']?>'
+	        }, {
+	            iconLayout: 'default#image',
+	            iconImageHref: '/layout/images/pin_blue.png',
+	            iconImageSize: [24, 31],
+	            iconImageOffset: [-12, -31]
+	        });
+	        myMap.geoObjects.add(p<?=$item['ID']?>);
+		<?endforeach;?>
+
+	    
+
+	    document.getElementById('destroyButton').onclick = function () {
+	        // Для уничтожения используется метод destroy.
+	        myMap.destroy();
+	    };
+
+	}
+</script>
 <?$this->EndViewTarget();?> 

@@ -24,21 +24,10 @@
 </div>
 
 <div class="container">
-	<?$APPLICATION->ShowViewContent('page_top');?>
+	
 	<div class="row">
 		<div class="col-xs-3 col-lg-2">
-			<?
-				$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "industries", array(
-				    "IBLOCK_TYPE"  => "news",
-				    "IBLOCK_ID"    => "7",
-				    "TOP_DEPTH"    => "1",
-				    "CACHE_TYPE"   => "A",
-				    "CACHE_NOTES"   =>$_GLOBALS['currentCatalogSection'],
-				    "SECTION_USER_FIELDS" => array("UF_SVG", "UF_TEXT")
-				),
-				false
-				);
-			?>
+			<?$APPLICATION->ShowViewContent('side_left');?>
 		</div>
 		<div class="col-xs-6 col-lg-8 page__content">
 		

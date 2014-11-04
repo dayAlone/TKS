@@ -162,7 +162,7 @@ gulp.task 'default', ->
 	gulp.watch "#{sources}/images/svg/**/*.svg", ->
 		sequence 'svg_mini'
 
-	gulp.watch "#{sources}/images/*", ->
+	gulp.watch [ "#{sources}/images/**/*.jpg", "#{sources}/images/**/*.png" ], ->
 		sequence 'img_mini'
 
 	gulp.watch ["./public_html/**/*.php",'!./public_html/bitrix/**'], {'dot':true}, ->

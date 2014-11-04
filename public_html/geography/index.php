@@ -7,7 +7,7 @@ $APPLICATION->IncludeComponent(
   array(
     "IBLOCK_ID"                 => 5,
     "NEWS_COUNT"                => "9999999",
-    "SORT_BY1"                  => "SORT",
+    "SORT_BY1"                  => "PROPERTY_REGION",
     "SORT_ORDER1"               => "ASC",
     "DETAIL_URL"                => "/geography/#ELEMENT_CODE#/",
     "PROPERTY_CODE"             => Array("REGION", "PHOTOS", "COORDS", "PERIOD"),

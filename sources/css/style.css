@@ -2270,7 +2270,7 @@ body {
 }
 .page .sections-side__description {
   font-size: 9px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #63b1ff;
   text-transform: uppercase;
   font-weight: bold;
@@ -2408,6 +2408,7 @@ body {
   height: 30px;
   border: 1px solid #1273d2;
   color: #1273d2;
+  background: transparent !important;
   text-transform: uppercase;
   font-weight: bold;
   -webkit-transition-property: background;
@@ -2426,6 +2427,13 @@ body {
   background: #1273d2;
   color: #fff;
   text-decoration: none;
+}
+.page .button--black {
+  border-color: #000;
+  color: #000;
+}
+.page .button--black:hover {
+  background: #000;
 }
 .page .button--big {
   max-width: 110%;
@@ -2449,7 +2457,220 @@ body {
   }
   .page >.container >.row >.col-lg-8 {
     width: 60%;
+    padding: 0 30px;
   }
+}
+.page__content h2 {
+  color: #0053b3;
+  font-size: 28px;
+  line-height: 34px;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.page__content h3 {
+  font-weight: normal;
+  font-size: 20px;
+}
+.page__content .title--bold {
+  font-weight: bold;
+}
+.page__content .title--blue {
+  color: #0053b3;
+}
+.page__content a:not(.button) {
+  color: #0053b3;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, #d3dced 50%);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, #d3dced 50%);
+  background-image: -o-linear-gradient(top, rgba(0,0,0,0) 50%, #d3dced 50%);
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, #d3dced 50%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, #d3dced 50%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+  background-position: 0 calc(100% - 2px);
+}
+.page__content a:not(.button):hover {
+  color: #67b3fc;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, #67b3fc 50%);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, #67b3fc 50%);
+  background-image: -o-linear-gradient(top, rgba(0,0,0,0) 50%, #67b3fc 50%);
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, #67b3fc 50%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, #67b3fc 50%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+  background-position: 0 calc(100% - 2px);
+}
+.page__content p {
+  color: #333e47;
+  font-size: 16px;
+  line-height: 23px;
+}
+.page__content p.small {
+  line-height: 17px;
+  font-size: 14px;
+}
+.page__content p.highlight {
+  width: 70%;
+  background: #f3f4f6;
+  border: 1px solid #e1e4e6;
+  border-top: 3px solid #0053b3;
+  text-align: center;
+  padding: 35px 40px 30px;
+  color: #000;
+  font-size: 18px;
+  line-height: 26px;
+}
+.page__content ul {
+  margin-top: 20px;
+}
+.page__content ul li {
+  list-style: none;
+  position: relative;
+}
+.page__content ul li:after {
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 2px;
+  background: #0053b3;
+  left: -30px;
+  top: 9px;
+}
+.page__content .slide a.slide__trigger {
+  font-size: 28px;
+  background-image: -webkit-linear-gradient(left, #0053b3 70%, transparent 70%);
+  background-image: -moz-linear-gradient(left, #0053b3 70%, transparent 70%);
+  background-image: -o-linear-gradient(left, #0053b3 70%, transparent 70%);
+  background-image: -ms-linear-gradient(left, #0053b3 70%, transparent 70%);
+  background-image: linear-gradient(to right, #0053b3 70%, transparent 70%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 12px 1px;
+  -moz-background-size: 12px 1px;
+  background-size: 12px 1px;
+  background-position: 0 28px;
+  padding-right: 25px;
+  position: relative;
+}
+.page__content .slide a.slide__trigger:after {
+  content: "\25B6";
+  font-size: 9px;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  position: relative;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  -ms-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: transform;
+  -moz-transition-duration: transform;
+  -o-transition-duration: transform;
+  -ms-transition-duration: transform;
+  transition-duration: transform;
+  top: 9px;
+  position: absolute;
+  right: 12px;
+  display: inline-block;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -o-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+}
+.page__content .slide a.slide__trigger:hover {
+  background-image: -webkit-linear-gradient(left, #63b1ff 70%, transparent 70%);
+  background-image: -moz-linear-gradient(left, #63b1ff 70%, transparent 70%);
+  background-image: -o-linear-gradient(left, #63b1ff 70%, transparent 70%);
+  background-image: -ms-linear-gradient(left, #63b1ff 70%, transparent 70%);
+  background-image: linear-gradient(to right, #63b1ff 70%, transparent 70%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 12px 1px;
+  -moz-background-size: 12px 1px;
+  background-size: 12px 1px;
+  background-position: 0 28px;
+}
+.page__content .slide a.slide__trigger:hover:after {
+  color: #63b1ff;
+}
+.page__content .slide--open a.slide__trigger {
+  color: #333e47;
+  background-image: -webkit-linear-gradient(left, #333e47 70%, transparent 70%);
+  background-image: -moz-linear-gradient(left, #333e47 70%, transparent 70%);
+  background-image: -o-linear-gradient(left, #333e47 70%, transparent 70%);
+  background-image: -ms-linear-gradient(left, #333e47 70%, transparent 70%);
+  background-image: linear-gradient(to right, #333e47 70%, transparent 70%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 12px 1px;
+  -moz-background-size: 12px 1px;
+  background-size: 12px 1px;
+  background-position: 0 28px;
+}
+.page__content .slide--open a.slide__trigger:after {
+  right: 7px;
+  top: 8px;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.page__content .slide--open a.slide__trigger:hover {
+  color: #63b1ff;
+  background-image: -webkit-linear-gradient(left, #63b1ff 70%, transparent 70%);
+  background-image: -moz-linear-gradient(left, #63b1ff 70%, transparent 70%);
+  background-image: -o-linear-gradient(left, #63b1ff 70%, transparent 70%);
+  background-image: -ms-linear-gradient(left, #63b1ff 70%, transparent 70%);
+  background-image: linear-gradient(to right, #63b1ff 70%, transparent 70%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 12px 1px;
+  -moz-background-size: 12px 1px;
+  background-size: 12px 1px;
+  background-position: 0 28px;
+}
+.page__content .slide--open a.slide__trigger:hover:after {
+  color: #63b1ff;
+}
+.page__content .slide__content {
+  display: none;
+  margin-top: 15px;
+}
+.page__content li {
+  font-size: 16px;
+  line-height: 23px;
+  margin-bottom: 9px;
+}
+.page__content li a {
+  color: #0053b3;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, #d3dced 50%);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, #d3dced 50%);
+  background-image: -o-linear-gradient(top, rgba(0,0,0,0) 50%, #d3dced 50%);
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, #d3dced 50%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, #d3dced 50%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+  background-position: 0 16px;
+}
+.page__content li a:hover {
+  color: #67b3fc;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, #67b3fc 50%);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, #67b3fc 50%);
+  background-image: -o-linear-gradient(top, rgba(0,0,0,0) 50%, #67b3fc 50%);
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, #67b3fc 50%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, #67b3fc 50%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+  background-position: 0 16px;
 }
 .geography p {
   font-size: 16px;

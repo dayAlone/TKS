@@ -260,6 +260,26 @@
       }
       return e.preventDefault();
     });
+    $('.slide').elem('trigger').click(function(e) {
+      if (!$(this).block().hasMod('open')) {
+        $(this).block().mod('open', true);
+        $(this).block('content').velocity({
+          properties: "transition.slideDownIn",
+          options: {
+            duration: 300
+          }
+        });
+      } else {
+        $(this).block().mod('open', false);
+        $(this).block('content').velocity({
+          properties: "transition.slideUpOut",
+          options: {
+            duration: 300
+          }
+        });
+      }
+      return e.preventDefault();
+    });
     $('a[rel^="prettyPhoto"]').prettyPhoto({
       social_tools: '',
       overlay_gallery: false,

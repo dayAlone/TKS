@@ -47,5 +47,5 @@
 				);
 			?>
 		</div>
-		<div class="col-xs-6 col-lg-8">
+		<div class="col-xs-6 col-lg-8 page__content">
 		

@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"О холдинге", 
+		"/about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"История", 
+		"/about/history/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Миссия", 
+		"/about/mission/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Наши разработки", 
+		"/about/development/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Партнеры", 
+		"/about/partners/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

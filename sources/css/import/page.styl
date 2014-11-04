@@ -191,7 +191,7 @@ body
 			font-size 17px
 		&__description
 			font-size 9px
-			letter-spacing 3px
+			letter-spacing 2px
 			color #63b1ff
 			text-transform: uppercase
 			font-weight: bold
@@ -306,6 +306,7 @@ body
 		height 30px
 		border 1px solid blue3
 		color blue3
+		background transparent !important
 		text-transform: uppercase
 		font-weight bold
 		t(background, color)
@@ -314,6 +315,11 @@ body
 			background blue3
 			color white
 			text-decoration: none
+		&--black
+			border-color black
+			color black
+			&:hover
+				background black
 		&--big
 			max-width 110%
 			min-width 216px 
@@ -330,6 +336,110 @@ body
 					width 20%
 				>.col-lg-8
 					width 60%
+					padding 0 30px
+
+.page__content
+	h2
+		color #0053b3
+		font-size 28px
+		line-height 34px
+		padding-top 0
+		margin-top 0
+		margin-bottom 30px
+	h3
+		font-weight normal
+		font-size 20px
+	
+	.title
+		&--bold
+			font-weight bold
+		&--blue
+			color #0053b3
+	a:not(.button)
+		color #0053b3
+		border-line(#d3dced, calc(100% - 2px))
+		&:hover
+			color #67b3fc
+			border-line(#67b3fc, calc(100% - 2px))
+	p
+		color #333e47
+		font-size 16px
+		line-height 23px
+		&.small
+			line-height 17px
+			font-size 14px
+		&.highlight
+			width 70%
+			background #f3f4f6
+			border 1px solid #e1e4e6
+			border-top 3px solid #0053b3
+			
+			text-align: center
+			padding 35px 40px 30px
+			color black
+			font-size 18px
+			line-height 26px
+	ul
+		margin-top 20px
+		li
+			list-style none
+			position relative
+			&:after
+				content ""
+				position absolute
+				width 19px
+				height 2px
+				background #0053b3
+				left -30px
+				top 9px
+	.slide
+		
+		a.slide__trigger
+			font-size 28px
+			border-dashed(#0053b3, 28px)
+			padding-right 25px
+			position relative
+			&:after
+				content "\25B6"
+				font-size 9px
+				transform: rotate(90deg)
+				position relative
+				t(color, transform, right)
+				top 9px
+				position absolute
+				right 12px
+				display: inline-block
+				transform-origin center center
+			&:hover
+				border-dashed(#63b1ff, 28px)
+				&:after
+					color #63b1ff
+		&--open
+			a.slide__trigger
+				color #333e47
+				border-dashed(#333e47, 28px)	
+				&:after
+					right 7px
+					top 8px
+					transform: rotate(-90deg)
+				&:hover
+					color #63b1ff
+					border-dashed(#63b1ff, 28px)
+					&:after
+						color #63b1ff
+		&__content
+			display none
+			margin-top 15px
+	li
+		font-size 16px
+		line-height 23px
+		margin-bottom 9px
+		a
+			color #0053b3
+			border-line(#d3dced, 16px)
+			&:hover
+				color #67b3fc
+				border-line(#67b3fc, 16px)
 	
 .geography
 	p

@@ -1,5 +1,7 @@
-<?if($arParams['SET_FULL_TITLE']=='Y'):?>
-
+<?if($arParams['SET_FULL_TITLE']=='Y'):
+	$section = $arResult['SECTION']['PATH'][0];
+?>
+<?=$section['~DESCRIPTION'])?>
 <?
 endif;
 ?>

@@ -26,5 +26,19 @@ if(intval($_GLOBALS['currentCatalogSection'])>0)
 	  false
 	);
 }
+else {
+	$APPLICATION->IncludeComponent("bitrix:news.detail","industries",Array(
+	"IBLOCK_ID"                 => 7,
+	"ELEMENT_CODE"              => $_REQUEST['ELEMENT_CODE'],
+	"CHECK_DATES"               => "N",
+	"IBLOCK_TYPE"               => "content",
+	"SET_TITLE"                 => "Y",
+	"CACHE_TYPE"                => "A",
+	"PROPERTY_CODE"             => array("PHOTOS", "ABOUT", "ADDITIONAL"),
+	"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+	"ADD_SECTIONS_CHAIN"        => "N",
+	"ADD_ELEMENT_CHAIN"         => "N"
+  ));
+}
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
 ?>

@@ -2731,6 +2731,7 @@ body {
 }
 .industries-list__item ul a.active {
   color: #0053b3;
+  background: transparent;
 }
 .industries-list__title {
   display: inline-block;

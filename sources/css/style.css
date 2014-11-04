@@ -2260,9 +2260,7 @@ body {
   color: #fff;
 }
 .page__header-title {
-  width: 70%;
-  margin: 0 15%;
-  border-bottom: 1px solid rgba(255,255,255,0.5);
+  width: 100%;
   font-size: 46px;
   height: 98px;
   line-height: 105px;
@@ -2271,6 +2269,9 @@ body {
   text-align: center;
 }
 .page__header-breadcrumb {
+  border-top: 1px solid rgba(255,255,255,0.5);
+  width: 70%;
+  margin: 0 15%;
   text-align: center;
   line-height: 60px;
   text-transform: uppercase;

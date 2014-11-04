@@ -13,11 +13,18 @@ $arUrlRewrite = array(
 		"PATH" => "/career/index.php",
 	),
 	array(
-		"CONDITION" => "#^/industries/([\w-_]+)/.*#",
-		"RULE" => "&ELEMENT_CODE=\$1&\$2",
+		"CONDITION" => "#^/industries/([\w-_]+)/([\w-_]+)/.*#",
+		"RULE" => "&SECTION_CODE=\$1&ELEMENT_CODE=\$2&$3",
 		"ID" => "",
 		"PATH" => "/industries/index.php",
 	),
+	array(
+		"CONDITION" => "#^/industries/([\w-_]+)/.*#",
+		"RULE" => "&SECTION_CODE=\$1&\$2",
+		"ID" => "",
+		"PATH" => "/industries/index.php",
+	),
+	
 	array(
 		"CONDITION" => "#^/catalog/([\w-_]+)/.*#",
 		"RULE" => "&ELEMENT_CODE=\$1&\$2",

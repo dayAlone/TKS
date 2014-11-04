@@ -17,7 +17,7 @@ if(count($arResult['SECTIONS'])>0):
 				    "NEWS_COUNT"                => "9999999",
 				    "SORT_BY1"                  => "SORT",
 				    "SORT_ORDER1"               => "ASC",
-				    "DETAIL_URL"                => "/industries/#ELEMENT_CODE#/",
+				    "DETAIL_URL"                => "/industries/#SECTION_CODE#/#ELEMENT_CODE#/",
 				    "PROPERTY_CODE"             => Array("SVG", "DESCRIPTION"),
 				    "CACHE_TYPE"                => "A",
 				    "PARENT_SECTION"            => $arParams['CACHE_NOTES'],

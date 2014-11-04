@@ -20,7 +20,7 @@ if(intval($_GLOBALS['currentCatalogSection'])>0)
 	    "PARENT_SECTION"            => $_GLOBALS['currentCatalogSection'],
 	    "SET_TITLE"                 => "N",
 	    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-	    "ADD_SECTIONS_CHAIN"        => "Y",
+	    "ADD_SECTIONS_CHAIN"        => "N",
 	  ),
 	  false
 	);

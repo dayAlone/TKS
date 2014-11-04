@@ -10,7 +10,7 @@
 <div class="page__header" style="<?=(isset($normal)?'background-image:url('.$normal.')':'')?>">
 	<div class="page__header-frame" style="<?=(isset($blur)?'background-image:url('.$blur.')':'')?>">
 		<div class="page__header-title">
-			<nobr><?=$APPLICATION->AddBufferContent("page_title");?></nobr>
+			<?=$APPLICATION->AddBufferContent("page_title");?>
 		</div>
 		<div class="page__header-breadcrumb">
 			<?

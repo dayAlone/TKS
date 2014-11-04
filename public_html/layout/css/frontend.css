@@ -5572,6 +5572,7 @@ body {
 }
 .page__header-title {
   width: 100%;
+  overflow: hidden;
   font-size: 46px;
   height: 98px;
   line-height: 105px;

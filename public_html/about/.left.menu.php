@@ -7,13 +7,14 @@ $aMenuLinks = Array(
 		Array(), 
 		"" 
 	),
+	/*
 	Array(
 		"История", 
 		"/about/history/", 
 		Array(), 
 		Array(), 
 		"" 
-	),
+	),*/
 	Array(
 		"Миссия", 
 		"/about/mission/", 
@@ -27,13 +28,14 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
-	),
+	)
+	/*,
 	Array(
 		"Партнеры", 
 		"/about/partners/", 
 		Array(), 
 		Array(), 
 		"" 
-	)
+	)*/
 );
 ?>

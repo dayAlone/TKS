@@ -3,6 +3,7 @@ $this->setFrameMode(true);
 if(count($arResult['SECTIONS'])>0):
 ?>
 <div class="sections-side">
+    <h3>Ключевые индустрии</h3>
 		<?foreach ($arResult['SECTIONS'] as $key => &$item):
         ?>
 		<a href="<?=$item['SECTION_PAGE_URL']?>" class="sections-side__item" style="background-image: url(<?=$item['PICTURE']['SRC']?>)">

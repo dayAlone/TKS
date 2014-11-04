@@ -5471,6 +5471,11 @@ body {
   float: left;
   width: 100%;
 }
+.page .sections-side h3 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
 .page .sections-side__item {
   float: left;
   width: 100%;
@@ -5513,7 +5518,7 @@ body {
   position: relative;
 }
 .page .features h2 {
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 35px;
   margin-top: 0;
   padding-top: 0;

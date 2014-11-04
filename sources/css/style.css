@@ -2514,6 +2514,7 @@ body {
   font-size: 14px;
 }
 .page__content p.highlight {
+  display: inline-block;
   width: 70%;
   background: #f3f4f6;
   border: 1px solid #e1e4e6;

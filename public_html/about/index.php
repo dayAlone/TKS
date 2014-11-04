@@ -24,7 +24,9 @@ $APPLICATION->SetTitle('О холдинге');
 
 <p class="small">Успешное парнерство с 40 ведущими промышленными, энергетическими и добывающими предприятиями</p>
 
-<p class="highlight xxl-margin-top  xxl-margin-bottom">Промышленный холдинг ТКС – это зарекомендовавшая себя команда профессионалов. </p>
+<div class="center">
+	<p class="highlight xxl-margin-top  xxl-margin-bottom">Промышленный холдинг ТКС – это зарекомендовавшая себя команда профессионалов. </p>
+</div>
 
 <div class="slide">
 	<a href="#" class="slide__trigger">

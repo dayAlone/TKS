@@ -2,7 +2,8 @@
 $item = $arResult;
 $props = &$item["PROPS"];
 ?>
-
+<h2><?=$arResul['NAME']?></h2>
+<?=$arResult['~DETAIL_TEXT']?>
 <?$this->SetViewTarget('side_left');
 	$section = $arResult['SECTION']['PATH'][0];
 	$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "industries", array(

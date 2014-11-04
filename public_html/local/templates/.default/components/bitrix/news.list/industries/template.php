@@ -2,6 +2,8 @@
 	$section = $arResult['SECTION']['PATH'][0];
 ?>
 <?=$section['~DESCRIPTION']?>
+<div class="page__divider l-margin-top xl-margin-bottom"></div>
+<h3 class="title--bold">Наши компетенции в данном направлении</h3>
 <?
 endif;
 ?>

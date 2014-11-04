@@ -1595,7 +1595,6 @@ body {
   color: #000;
 }
 .container {
-  max-width: 1150px;
   min-width: 980px;
 }
 .wrap {
@@ -2232,6 +2231,37 @@ body {
 }
 .page__divider + .products {
   margin-top: -10px;
+}
+.page .features h2 {
+  font-size: 22px;
+  margin-bottom: 35px;
+}
+.page .features__item {
+  width: 100%;
+  float: left;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.page .features__icon {
+  width: 50px;
+  margin-right: 13px;
+  text-align: center;
+  float: left;
+}
+.page .features__icon svg {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateY(-22%);
+  -moz-transform: translateY(-22%);
+  -o-transform: translateY(-22%);
+  -ms-transform: translateY(-22%);
+  transform: translateY(-22%);
+}
+.page .features__text {
+  float: left;
+  width: 50%;
+  line-height: 15px;
+  color: #475675;
 }
 .page__frame {
   background: #fff;

@@ -24,4 +24,27 @@
 </div>
 
 <div class="container">
-		<?$APPLICATION->ShowViewContent('page_top');?>
+	<?$APPLICATION->ShowViewContent('page_top');?>
+	<div class="row">
+		<div class="col-xs-3">
+			<?
+				$APPLICATION->IncludeComponent(
+				  "bitrix:news.list", 
+				  "features",
+				  array(
+				    "IBLOCK_ID"                 => 7,
+				    "NEWS_COUNT"                => "9999999",
+				    "SORT_BY1"                  => "SORT",
+				    "SORT_ORDER1"               => "ASC",
+				    "DETAIL_URL"                => "/",
+				    "PROPERTY_CODE"             => Array("SVG"),
+				    "CACHE_TYPE"                => "A",
+				    "SET_TITLE"                 => "N",
+				    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+				    "ADD_SECTIONS_CHAIN"        => "N",
+				  ),
+				  false
+				);
+			?>
+		</div>
+		<div class="col-xs-6">

@@ -11,7 +11,7 @@ endif;
 		<?endforeach;?>
 	</ul>
 <?endif;?>
-123
+
 <?if($arParams['SET_FULL_TITLE']=='Y'):
 	$this->SetViewTarget('side_left');
 		$section = $arResult['SECTION']['PATH'][0];

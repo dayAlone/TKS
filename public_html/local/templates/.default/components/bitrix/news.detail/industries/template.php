@@ -2,7 +2,7 @@
 $item = $arResult;
 $props = &$item["PROPS"];
 ?>
-<h2><?=$arResul['NAME']?></h2>
+<h2><?=$arResult['NAME']?></h2>
 <?=$arResult['~DETAIL_TEXT']?>
 <?$this->SetViewTarget('side_left');
 	$section = $arResult['SECTION']['PATH'][0];

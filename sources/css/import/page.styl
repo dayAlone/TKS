@@ -394,11 +394,67 @@ body
 			top -5%
 			margin-top -4px
 			border-right 1px solid #0053b3
+	
 	&__text
 		width 60%
 		font-size 16px
 		padding-left 30px
 			
+
+.development
+	width 100%
+	&__item
+		background #0057ce
+		margin-bottom 10px
+		padding-left 15px
+	&__title
+		padding 17px 0
+		font-size 35px
+		font-weight bold
+		text-align: center
+		width 100%
+		line-height 45px
+		color white
+		max-height 78px
+		span
+			width 100%
+			position relative
+			top -5px
+			display block
+			line-height 10px
+			font-size 10px
+			letter-spacing 3px
+	&__content
+		width 100%
+		background #f1f3f6
+		min-height 78px
+		padding 0 15px
+	&__block
+		min-height 60px
+		padding 20px 0 14px
+		& + .development__block
+			border-top 1px solid #d0d3d7
+	&__trigger
+		font-size 20px
+		line-height 24px
+		padding-left 33px
+		color black
+		background transparent !important
+		display inline-block
+		position relative
+		&:hover:after
+			background #6ab4f9
+		&:after
+			width 19px
+			height 2px
+			t(background)
+			background #0053b3
+			position absolute
+			top 7px
+			left 0
+			content ""
+			
+		
 
 .page__content
 	img

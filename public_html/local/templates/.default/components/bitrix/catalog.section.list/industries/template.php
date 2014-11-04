@@ -5,7 +5,9 @@ if(count($arResult['SECTIONS'])>0):
 <div class="industries-list">
     <div class="industries-list__badge">Индустрии</div>
 	<?foreach ($arResult['SECTIONS'] as $key => &$item):?>
-	   <div class="industries-list__item"></div>
+	   <div class="industries-list__item">
+           <a href="<?=$item['SECTION_PAGE_URL']?>" class="industries-list__title"><?=$item['NAME']?> <span>&#9654;</span></a>
+       </div>
 	<?endforeach;?>
 </div>
 <?endif;?>

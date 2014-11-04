@@ -2408,7 +2408,7 @@ body {
   height: 30px;
   border: 1px solid #1273d2;
   color: #1273d2;
-  background: transparent !important;
+  background: transparent;
   text-transform: uppercase;
   font-weight: bold;
   -webkit-transition-property: background;

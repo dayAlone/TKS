@@ -2280,6 +2280,8 @@ body {
 .page .features h2 {
   font-size: 22px;
   margin-bottom: 35px;
+  margin-top: 0;
+  padding-top: 0;
 }
 .page .features__item {
   width: 100%;
@@ -2287,18 +2289,8 @@ body {
   width: 100%;
   margin-bottom: 30px;
 }
-.page .features__item:first-of-type {
-  margin-bottom: 20px;
-}
-.page .features__item:first-of-type svg {
-  -webkit-transform: translateY(-25%);
-  -moz-transform: translateY(-25%);
-  -o-transform: translateY(-25%);
-  -ms-transform: translateY(-25%);
-  transform: translateY(-25%);
-}
 .page .features__icon {
-  width: 45px;
+  width: 55px;
   margin-right: 13px;
   text-align: center;
   float: left;
@@ -2307,11 +2299,16 @@ body {
   display: inline-block;
   vertical-align: middle;
   max-width: 85%;
+  -webkit-transform: translateY(-22%);
+  -moz-transform: translateY(-22%);
+  -o-transform: translateY(-22%);
+  -ms-transform: translateY(-22%);
+  transform: translateY(-22%);
 }
 .page .features__text {
   float: left;
-  width: 55%;
-  font-size: 13px;
+  width: 60%;
+  font-size: 14px;
   line-height: 15px;
   color: #475675;
 }
@@ -2444,6 +2441,14 @@ body {
   .page .button--big {
     padding: 0 32px;
     min-width: 186px;
+  }
+}
+@media (min-width: 1200px) {
+  .page >.container >.row >.col-lg-2 {
+    width: 20%;
+  }
+  .page >.container >.row >.col-lg-8 {
+    width: 60%;
   }
 }
 .geography p {

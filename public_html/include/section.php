@@ -6,7 +6,7 @@
 
 	$params = $APPLICATION->GetPageProperty('section');
 
-	if(isset($_REQUEST['ELEMENT_CODE'])):
+	if(isset($_REQUEST['ELEMENT_CODE'])||isset($params['NOEMPTY'])):
 		$obCache       = new CPHPCache();
 		$cacheLifetime = 86400; 
 		$cacheID       = $params['CODE'].'_'.$_REQUEST['ELEMENT_CODE']; 
@@ -26,7 +26,7 @@
 			$Open       = false;
 
 			$Sections   = array();
-			$arSort     = array("DEPTH_LEVEL" => "ASC");
+			$arSort     = array("SORT" => "ASC");
 			$arFilter   = array("IBLOCK_ID" => $params['IBLOCK']);
 			$rsSections = CIBlockSection::GetList($arSort, $arFilter);
 			
@@ -43,9 +43,9 @@
 							$Current = $s['ID'];
 					}	
 				endif;
+				$Sections[] = $s['ID'];
 			}
-
-			if(strlen($_REQUEST['ELEMENT_CODE'])==0)
+			if(strlen($_REQUEST['ELEMENT_CODE'])==0&&isset($params['NOEMPTY']))
 				$Current = $Sections[0];
 
 			$_GLOBALS['currentCatalogSection'] = $Current;

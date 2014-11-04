@@ -6,9 +6,9 @@ if(count($arResult['SECTIONS'])>0):
     <div class="industries-list__badge">Индустрии</div>
 	<?foreach ($arResult['SECTIONS'] as $key => &$item):?>
 	   <div class="industries-list__item">
-           <a href="<?=$item['SECTION_PAGE_URL']?>" class="industries-list__title <?=($arParams['CACHE_NOTES']==$item['ID']?"industries-list__title--active":"")?>"><?=$item['NAME']?> <span>&#9654;</span></a>
+           <a href="<?=$item['SECTION_PAGE_URL']?>" class="industries-list__title <?=($arParams['CACHE_NOTES']==$item['ID']?"industries-list__title--active":"")?> <?=($arParams['CACHE_NOTES']==$item['CODE']?"industries-list__title--active":"")?>"><?=$item['NAME']?> <span>&#9654;</span></a>
 			<?
-			if($arParams['CACHE_NOTES']==$item['ID']):
+			if($arParams['CACHE_NOTES']==$item['ID'] || $arParams['CACHE_NOTES']==$item['CODE']):
 	           $APPLICATION->IncludeComponent(
 				  "bitrix:news.list", 
 				  "industries",

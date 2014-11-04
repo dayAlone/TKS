@@ -2,12 +2,29 @@
 	if($arParams['SET_FULL_TITLE']=='Y'):
 		global $APPLICATION;
 		global $USER_FIELD_MANAGER;
-		$section = $arResult['SECTION']['PATH'][0];
-		$aUserField = $USER_FIELD_MANAGER->GetUserFields(
-			'IBLOCK_'.$section['IBLOCK_ID'].'_SECTION',
-			$section['ID']
-		);
-		$APPLICATION->SetTitle($section['NAME'].' '.($section['ID']!=6?$aUserField['UF_TEXT']['VALUE']:""));
+		
+		
+		$obCache       = new CPHPCache();
+		$cacheLifetime = 86400; 
+		$cacheID       = $_REQUEST['SECTION_CODE']; 
+		$cachePath     = '/';
+
+		if( $obCache->InitCache($cacheLifetime, $cacheID, $cachePath) ):
+
+		   $vars = $obCache->GetVars();
+		   $section = $vars['section'];
+
+		elseif( $obCache->StartDataCache() ):
+			
+			CModule::IncludeModule("iblock");
+			$section = $arResult['SECTION']['PATH'][0];
+			$rsResult = CIBlockSection::GetList(array("SORT"=>"ASC"), array("IBLOCK_ID"=>$arResult['ID'], "CODE"=>$_REQUEST['SECTION_CODE']), false, array("UF_TEXT")); 
+			$section = $rsResult->Fetch();
+			$obCache->EndDataCache(array('section' => $section));
+
+		endif;
+
+		$APPLICATION->SetTitle($section['NAME'].' '.($section['ID']!=6?$section['UF_TEXT']:""));
 		$APPLICATION->AddChainItem($section['NAME'].' '.$aUserField['UF_TEXT']['VALUE']);
 	endif;
 ?>

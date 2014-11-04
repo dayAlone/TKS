@@ -7167,9 +7167,16 @@ span.sub-collapser i {
   list-style: none;
   margin-bottom: 20px;
 }
+.map-columns ul.map-level-0 > li:after {
+  display: none;
+}
 .map-columns ul.map-level-0 > li > ul {
   padding-left: 20px;
   margin-top: 10px;
+}
+.map-columns ul.map-level-0 > li > ul > li:after {
+  width: 12px;
+  left: -20px;
 }
 .map-columns ul.map-level-0 > li > ul > li > ul {
   padding-left: 20px;

@@ -1,6 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle('ТКС Холдинг');
+$APPLICATION->SetTitle('Промышленный холдинг ТКС');
 $APPLICATION->SetPageProperty('body_class', "index");
 $APPLICATION->IncludeComponent(
   "bitrix:news.list", 

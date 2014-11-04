@@ -1,8 +1,8 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"ТКС-холдинг", 
-		"http://tkc-group.ru", 
+		"аргус пайплайн сервис", 
+		"http://oooaps.ru", 
 		Array(), 
 		Array(), 
 		"" 

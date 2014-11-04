@@ -1610,27 +1610,6 @@ body {
   content: "";
   display: block;
 }
-.about .wrap {
-  background: #021b64 url("../images/bg-about.jpg") center center no-repeat;
-}
-.contacts .wrap {
-  background: #021b64 url("../images/bg-contacts.jpg") center center no-repeat;
-}
-.catalog .wrap {
-  background: #021b64 url("../images/bg-catalog.jpg") center center no-repeat;
-}
-.catalog-category .wrap {
-  background: #021b64 url("../images/bg-catalog-category.jpg") center center no-repeat;
-}
-.contacts .wrap {
-  background: #021b64 url("../images/bg-contacts.jpg") center center no-repeat;
-}
-.catalog .wrap {
-  background-position: top center;
-}
-.index .wrap {
-  background: #fff;
-}
 html {
   height: 100%;
 }

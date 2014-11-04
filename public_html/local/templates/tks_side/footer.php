@@ -1,4 +1,5 @@
 		</div>
+		<?if(!$APPLICATION->GetPageProperty('hide_right')):?>
 		<div class="col-xs-3 col-lg-2">
 			
 			<?
@@ -13,6 +14,7 @@
 				);
 			?>
 		</div>
+		<?endif;?>
 	</div>
 </div>
 <?

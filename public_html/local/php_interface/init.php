@@ -27,6 +27,17 @@ function page_title()
 	else
 		return $APPLICATION->GetTitle();
 }
+function content_class()
+{
+	global $APPLICATION;
+	if(!$APPLICATION->GetPageProperty('hide_right')) {
+		return "col-xs-6 col-lg-8";
+	}
+	else
+		return "col-xs-9 col-lg-10";
+}
+
+
 function IBlockElementsMenu($IBLOCK_ID)
 {
 	$obCache       = new CPHPCache();

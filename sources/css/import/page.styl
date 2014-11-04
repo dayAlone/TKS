@@ -344,6 +344,9 @@ body
 				>.col-lg-8
 					width 60%
 					padding 0 30px
+				>.col-lg-10
+					width 80%
+					padding 0 30px
 
 .nav-side
 	margin-bottom 45px
@@ -362,6 +365,40 @@ body
 			border-bottom 0
 		&:hover, &--active
 			color #0053b3
+
+.mission
+	&__item
+		display table
+		width 100%
+		padding 18px 20px 10px
+		background #f1f2f4
+		margin-bottom 10px
+		table-layout:fixed
+		> *
+			display table-cell
+			vertical-align: middle
+			min-height 85px
+			table-layout:fixed
+	&__title
+		padding-right 20px
+		width 40%
+		font-weight bold
+		font-size 20px
+		line-height 22px
+		position relative
+		&:after
+			content ""
+			right 0
+			position absolute
+			height 110%
+			top -5%
+			margin-top -4px
+			border-right 1px solid #0053b3
+	&__text
+		width 60%
+		font-size 16px
+		padding-left 30px
+			
 
 .page__content
 	img

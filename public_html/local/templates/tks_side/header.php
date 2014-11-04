@@ -57,5 +57,5 @@
 				);
 			?>
 		</div>
-		<div class="col-xs-6 col-lg-8 page__content">
+		<div class="<?=$APPLICATION->AddBufferContent("content_class");?> page__content">
 		

@@ -20,7 +20,7 @@ if(count($arResult['SECTIONS'])>0):
 				    "DETAIL_URL"                => "/industries/#ELEMENT_CODE#/",
 				    "PROPERTY_CODE"             => Array("SVG", "DESCRIPTION"),
 				    "CACHE_TYPE"                => "A",
-				    "PARENT_SECTION"            => $_GLOBALS['currentCatalogSection'],
+				    "PARENT_SECTION"            => $arParams['CACHE_NOTES'],
 				    "SET_TITLE"                 => "N",
 				    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 				    "ADD_SECTIONS_CHAIN"        => "N",

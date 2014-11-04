@@ -27,7 +27,18 @@
 	
 	<div class="row">
 		<div class="col-xs-3 col-lg-2">
-			<?$APPLICATION->ShowViewContent('side_left');?>
+			<?
+				$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "industries", array(
+						"IBLOCK_TYPE"         => "news",
+						"IBLOCK_ID"           => "7",
+						"TOP_DEPTH"           => "1",
+						"CACHE_TYPE"          => "A",
+						"CACHE_NOTES"         => $_REQUEST['SECTION_CODE'].'_'.$_REQUEST['ELEMENT_CODE'],
+						"SECTION_USER_FIELDS" => array("UF_SVG", "UF_TEXT")
+					),
+					false
+				);
+			?>
 		</div>
 		<div class="col-xs-6 col-lg-8 page__content">
 		

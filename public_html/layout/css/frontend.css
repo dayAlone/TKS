@@ -5693,6 +5693,19 @@ body {
     padding: 0 30px;
   }
 }
+.page__content img.left,
+.page__content img.right {
+  max-width: 45%;
+  margin-bottom: 20px;
+}
+.page__content img.left {
+  float: left;
+  margin-right: 20px;
+}
+.page__content img.right {
+  float: right;
+  margin-left: 20px;
+}
 .page__content h2 {
   color: #0053b3;
   font-size: 28px;

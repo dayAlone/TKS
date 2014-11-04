@@ -25,6 +25,6 @@
 		endif;
 
 		$APPLICATION->SetTitle($section['NAME'].' '.($section['ID']!=6?$section['UF_TEXT']:""));
-		$APPLICATION->AddChainItem($section['NAME'].' '.$aUserField['UF_TEXT']['VALUE']);
+		$APPLICATION->AddChainItem($section['NAME'].' '.$section['UF_TEXT']['VALUE']);
 	endif;
 ?>

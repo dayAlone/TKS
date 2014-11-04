@@ -40,4 +40,25 @@ foreach ($arResult["PROPERTIES"] as $key => $prop):
         break;  
     endswitch;
 endforeach;
+
+$obCache       = new CPHPCache();
+$cacheLifetime = 86400; 
+$cacheID       = $_REQUEST['SECTION_CODE']; 
+$cachePath     = '/';
+
+if( $obCache->InitCache($cacheLifetime, $cacheID, $cachePath) ):
+
+   $vars = $obCache->GetVars();
+   $arResult['SECTION'] = $vars['section'];
+
+elseif( $obCache->StartDataCache() ):
+    
+    CModule::IncludeModule("iblock");
+    $section = $arResult['SECTION']['PATH'][0];
+    $rsResult = CIBlockSection::GetList(array("SORT"=>"ASC"), array("IBLOCK_ID"=>$arResult['IBLOCK_ID'], "CODE"=>$_REQUEST['SECTION_CODE']), false, array("UF_TEXT")); 
+    $arResult['SECTION'] = $rsResult->Fetch();
+    $obCache->EndDataCache(array('section' => $arResult['SECTION']));
+
+endif;
+
 ?>

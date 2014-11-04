@@ -26,13 +26,13 @@
 <div class="container">
 	<?$APPLICATION->ShowViewContent('page_top');?>
 	<div class="row">
-		<div class="col-xs-3">
+		<div class="col-xs-3 col-lg-2">
 			<?
 				$APPLICATION->IncludeComponent(
 				  "bitrix:news.list", 
 				  "features",
 				  array(
-				    "IBLOCK_ID"                 => 7,
+				    "IBLOCK_ID"                 => 8,
 				    "NEWS_COUNT"                => "9999999",
 				    "SORT_BY1"                  => "SORT",
 				    "SORT_ORDER1"               => "ASC",
@@ -47,4 +47,5 @@
 				);
 			?>
 		</div>
-		<div class="col-xs-6">
+		<div class="col-xs-6 col-lg-8">
+		1

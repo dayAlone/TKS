@@ -20,7 +20,7 @@ if(count($arResult['SECTIONS'])>0):
 				    "DETAIL_URL"                => "/industries/#SECTION_CODE#/#ELEMENT_CODE#/",
 				    "PROPERTY_CODE"             => Array("SVG", "DESCRIPTION"),
 				    "CACHE_TYPE"                => "A",
-				    "PARENT_SECTION_CODE"       => $_REQUEST['SECTION_CODE'],
+				    "PARENT_SECTION"            => $item['ID'],
 				    "SET_TITLE"                 => "N",
 				    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 				    "ADD_SECTIONS_CHAIN"        => "N",

@@ -4,6 +4,11 @@ include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php
 $APPLICATION->SetTitle('Индустрии');
 if(!isset($_REQUEST['ELEMENT_CODE']))
 {
+	if(!isset($_REQUEST['SECTION_CODE'])) {
+		$APPLICATION->SetPageProperty('section', array('IBLOCK'=>7, 'NOEMPTY'=>true));
+		require($_SERVER['DOCUMENT_ROOT'].'/include/section.php');
+	}
+
 	$APPLICATION->IncludeComponent(
 	  "bitrix:news.list", 
 	  "industries",
@@ -15,6 +20,7 @@ if(!isset($_REQUEST['ELEMENT_CODE']))
 	    "DETAIL_URL"                => "/industries/#SECTION_CODE#/#ELEMENT_CODE#/",
 	    "PROPERTY_CODE"             => Array("SVG", "DESCRIPTION"),
 	    "CACHE_TYPE"                => "A",
+	    "PARENT_SECTION"            => $_GLOBALS['currentCatalogSection'],
 	    "PARENT_SECTION_CODE"       => $_REQUEST['SECTION_CODE'],
 	    "SET_TITLE"                 => "N",
 	    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",

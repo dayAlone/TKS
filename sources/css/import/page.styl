@@ -465,6 +465,27 @@ body
 	&__item
 		border-bottom 1px solid #e2e5e8
 		min-height 45px
+		ul
+			width 100%
+			display block
+			background #f3f4f6
+			margin-bottom 0px
+			border 1px solid #e2e5e8
+			border-top 3px solid #0053b3
+			padding 10px 15px 5px
+			border-bottom 0
+			list-style none
+			li+li
+				margin-top 10px
+			a
+				font-size 14px
+				color #333e47
+				border-line(#cfd0d3, 13px)
+				&:hover
+					color #0053b3
+					border-line(#0053b3, 13px)
+				&.active
+					color #0053b3
 	&__title
 		display inline-block
 		height 45px

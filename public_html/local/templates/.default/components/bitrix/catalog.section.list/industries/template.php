@@ -8,7 +8,7 @@ if(count($arResult['SECTIONS'])>0):
 	   <div class="industries-list__item">
            <a href="<?=$item['SECTION_PAGE_URL']?>" class="industries-list__title <?=($arParams['CACHE_NOTES']==$item['ID']?"industries-list__title--active":"")?> <?=($_REQUEST['SECTION_CODE']==$item['CODE']?"industries-list__title--active":"")?>"><?=$item['NAME']?> <span>&#9654;</span></a>
 			<?
-			if($arParams['CACHE_NOTES']==$item['ID'] || $arParams['CACHE_NOTES']==$item['CODE']):
+			if($arParams['CACHE_NOTES']==$item['ID'] || $_REQUEST['SECTION_CODE']==$item['CODE']):
 	           $APPLICATION->IncludeComponent(
 				  "bitrix:news.list", 
 				  "industries",

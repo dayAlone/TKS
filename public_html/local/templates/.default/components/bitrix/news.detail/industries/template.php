@@ -11,7 +11,6 @@ $props = &$item["PROPS"];
 	    "IBLOCK_ID"    => "7",
 	    "TOP_DEPTH"    => "1",
 	    "CACHE_TYPE"   => "A",
-	    "CACHE_NOTES"  => $arResult['CODE'],
 	    "SECTION_USER_FIELDS" => array("UF_SVG", "UF_TEXT")
 	),
 	false

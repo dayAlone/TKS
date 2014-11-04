@@ -1,14 +1,20 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
 if(count($arResult['SECTIONS'])>0):
+
+	$parent = false;
+	if(intval($arParams['CACHE_NOTES'])>0)
+		$parent = $arParams['CACHE_NOTES'];
+	else
+		$parent = $_REQUEST['SECTION_CODE'];
 ?>
 <div class="industries-list">
     <div class="industries-list__badge">Индустрии</div>
 	<?foreach ($arResult['SECTIONS'] as $key => &$item):?>
 	   <div class="industries-list__item">
-           <a href="<?=$item['SECTION_PAGE_URL']?>" class="industries-list__title <?=($arParams['CACHE_NOTES']==$item['ID']?"industries-list__title--active":"")?> <?=($_REQUEST['SECTION_CODE']==$item['CODE']?"industries-list__title--active":"")?>"><?=$item['NAME']?> <span>&#9654;</span></a>
+           <a href="<?=$item['SECTION_PAGE_URL']?>" class="industries-list__title <?=($parent==$item['ID'] || $parent==$item['CODE']?"industries-list__title--active":"")?>"><?=$item['NAME']?> <span>&#9654;</span></a>
 			<?
-			if($arParams['CACHE_NOTES']==$item['ID'] || $_REQUEST['SECTION_CODE']==$item['CODE']):
+			if($parent==$item['ID'] || $parent==$item['CODE']):
 	           $APPLICATION->IncludeComponent(
 				  "bitrix:news.list", 
 				  "industries",

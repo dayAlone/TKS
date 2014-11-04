@@ -27,6 +27,16 @@
 	<?$APPLICATION->ShowViewContent('page_top');?>
 	<div class="row">
 		<div class="col-xs-3 col-lg-2">
+			<?php
+              $APPLICATION->IncludeComponent("bitrix:menu", "side", 
+              array(
+                  "ALLOW_MULTI_SELECT" => "Y",
+                  "MENU_CACHE_TYPE"    => "A",
+                  "ROOT_MENU_TYPE"     => "left",
+                  "MAX_LEVEL"          => "2",
+                  ),
+              false);
+              ?>
 			<?
 				$APPLICATION->IncludeComponent(
 				  "bitrix:news.list", 

@@ -2458,6 +2458,15 @@ body {
     padding: 0 30px;
   }
 }
+.nav-side {
+  margin-bottom: 40px;
+}
+.nav-side__item {
+  width: 100%;
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+}
 .page__content img {
   max-width: 100%;
 }

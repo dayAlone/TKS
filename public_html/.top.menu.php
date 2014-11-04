@@ -2,8 +2,8 @@
 $aMenuLinks = Array(
 	Array(
 		"О холдинге", 
-		"/about/", 
-		Array(), 
+		"/about/information/", 
+		Array("/about/"), 
 		Array(), 
 		"" 
 	),

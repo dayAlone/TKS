@@ -2,7 +2,7 @@
 $aMenuLinks = Array(
 	Array(
 		"О холдинге", 
-		"/about/", 
+		"/about/information/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -23,7 +23,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Наши разработки", 
-		"/about/development/", 
+		"/about/developments/", 
 		Array(), 
 		Array(), 
 		"" 

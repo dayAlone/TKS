@@ -2522,6 +2522,10 @@ body {
 }
 .development {
   width: 100%;
+/*	
+		&:hover:after
+			background #6ab4f9
+	*/
 }
 .development__item {
   background: #0057ce;
@@ -2568,9 +2572,7 @@ body {
   background: transparent !important;
   display: inline-block;
   position: relative;
-}
-.development__trigger:hover:after {
-  background: #6ab4f9;
+  color: #0b56b0;
 }
 .development__trigger:after {
   width: 19px;

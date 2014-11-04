@@ -24,8 +24,8 @@
 		<?endif;?>
 		<div class="development__block">
 			<div class="row">
-				<div class="col-xs-9">
-					<a href="#" class="development__trigger"><?=$item['NAME']?></a>
+				<div class="col-xs-12">
+					<div class="development__trigger"><?=$item['NAME']?></div>
 					<div class="development__block_content">
 						<?=$item['~PREVIEW_TEXT']?>
 					</div>

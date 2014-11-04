@@ -17,7 +17,7 @@ $APPLICATION->SetPageProperty('hide_right', true);
 		    "SORT_ORDER1"               => "ASC",
 		    "DETAIL_URL"                => "/",
 		    "PROPERTY_CODE"             => Array("PHOTOS"),
-		    "CACHE_TYPE"                => "N",
+		    "CACHE_TYPE"                => "A",
 		    "PARENT_SECTION"            => " ",
 		    "SET_TITLE"                 => "N",
 		    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",

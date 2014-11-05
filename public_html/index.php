@@ -12,6 +12,7 @@ $APPLICATION->IncludeComponent(
     "SORT_ORDER1"   => "ASC",
     "DETAIL_URL"    => "/",
     "PROPERTY_CODE" => Array("LINK", "LINK_TEXT"),
+    "FIELD_CODE" => Array("DETAIL_PICTURE"),
     "CACHE_TYPE"    => "A",
     "SET_TITLE"     => "N",
   ),

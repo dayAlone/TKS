@@ -1,14 +1,14 @@
 <?
 include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+if(!isset($_REQUEST['SECTION_CODE'])) {
+	$APPLICATION->SetPageProperty('section', array('IBLOCK'=>7, 'NOEMPTY'=>true));
+	require($_SERVER['DOCUMENT_ROOT'].'/include/section.php');
+}
 include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");
 $APPLICATION->SetTitle('Индустрии');
 if(!isset($_REQUEST['ELEMENT_CODE']))
 {
-	if(!isset($_REQUEST['SECTION_CODE'])) {
-		$APPLICATION->SetPageProperty('section', array('IBLOCK'=>7, 'NOEMPTY'=>true));
-		require($_SERVER['DOCUMENT_ROOT'].'/include/section.php');
-	}
-
+	
 	$APPLICATION->IncludeComponent(
 	  "bitrix:news.list", 
 	  "industries",

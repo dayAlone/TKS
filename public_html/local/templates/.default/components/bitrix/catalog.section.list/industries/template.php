@@ -6,9 +6,9 @@ if(count($arResult['SECTIONS'])>0):
     <div class="industries-list__badge">Индустрии</div>
 	<?foreach ($arResult['SECTIONS'] as $key => &$item):?>
 	   <div class="industries-list__item">
-           <a href="<?=$item['SECTION_PAGE_URL']?>" class="industries-list__title <?=($_REQUEST['SECTION_CODE']==$item['CODE']?"industries-list__title--active":"")?>"><?=$item['NAME']?> <span>&#9654;</span></a>
+           <a href="<?=$item['SECTION_PAGE_URL']?>" class="industries-list__title <?=($_REQUEST['SECTION_CODE']==$item['CODE'] || $arParams['CURRENT'] == $item['ID']?"industries-list__title--active":"")?>"><?=$item['NAME']?> <span>&#9654;</span></a>
 			<?
-			if($_REQUEST['SECTION_CODE']==$item['CODE']):
+			if($_REQUEST['SECTION_CODE']==$item['CODE'] || $arParams['CURRENT'] == $item['ID']):
 	           $APPLICATION->IncludeComponent(
 				  "bitrix:news.list", 
 				  "industries",
@@ -20,7 +20,7 @@ if(count($arResult['SECTIONS'])>0):
 				    "DETAIL_URL"                => "/industries/#SECTION_CODE#/#ELEMENT_CODE#/",
 				    "PROPERTY_CODE"             => Array("SVG", "DESCRIPTION"),
 				    "CACHE_TYPE"                => "N",
-				    "PARENT_SECTION_CODE"       => $_REQUEST['SECTION_CODE'],
+				    "PARENT_SECTION_CODE"       => $item['CODE'],
 				    "SET_TITLE"                 => "N",
 				    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 				    "ADD_SECTIONS_CHAIN"        => "N",

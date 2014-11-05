@@ -33,6 +33,7 @@
 						"IBLOCK_ID"           => "7",
 						"TOP_DEPTH"           => "1",
 						"CACHE_TYPE"          => "A",
+						"CURRENT"             => $_GLOBALS['currentCatalogSection'],
 						"CACHE_NOTES"         => $_REQUEST['SECTION_CODE'].'_'.$_REQUEST['ELEMENT_CODE'],
 						"SECTION_USER_FIELDS" => array("UF_SVG", "UF_TEXT")
 					),

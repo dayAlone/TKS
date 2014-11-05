@@ -37,10 +37,7 @@
 							"IBLOCK_ID"  => $params['IBLOCK'],
 							"SECTION_ID" => $s['ID']
 					    );
-						if(CIBlockSection::GetCount($arFilter) > 0)
-							$Open = $s['ID'];
-						else
-							$Current = $s['ID'];
+					    $Current = $s['ID'];
 					}	
 				endif;
 				$Sections[] = $s['ID'];

@@ -22,7 +22,7 @@ function page_title()
 {
 	global $APPLICATION;
 	if($APPLICATION->GetPageProperty('page_title')) {
-		return $APPLICATION->GetPageProperty('page_class');
+		return $APPLICATION->GetPageProperty('page_title');
 	}
 	else
 		return $APPLICATION->GetTitle();

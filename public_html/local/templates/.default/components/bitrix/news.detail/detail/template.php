@@ -2,7 +2,11 @@
 $item = $arResult;
 ?>
 <div class="news-item">
-	<div class="news-item__date"><?=r_date($item['ACTIVE_FROM'])?></div>
+	<span class="news-item__frame">
+	    <span class="news-item__date"><?=r_date($item['ACTIVE_FROM'])?></span>
+	    <span class="news-item__section"><?=end($arResult['SECTION']['PATH'])['NAME']?></span>
+	</span>
+	<div class="news-item__divider"></div>
 	<h1 class="news-item__title"><?=$item['NAME']?></h1>
 	<div class="news-item__text">
 		<?if($item["DETAIL_PICTURE"]):?>

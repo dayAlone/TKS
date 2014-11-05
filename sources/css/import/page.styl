@@ -361,8 +361,22 @@ body
 		padding-top 3px
 		font-size 16px
 		border-bottom 1px solid #e2e5e8
-		&:last-of-type
-			border-bottom 0
+		&--small
+			text-transform: none
+			font-size 15px
+			font-weight normal
+			color #2d78d6
+			padding-top 1px
+			&.nav-side__item--active
+				color black
+				span
+					background transparent
+			span
+				border-line(#d8e2f5, 14px)
+			+ .nav-side__item--small
+				border-top 0
+		&:first--of-type
+			border-top 0
 		&:hover, &--active
 			color #0053b3
 
@@ -915,12 +929,12 @@ body
 				.sub-sections__content
 					display block
 				.sub-sections__title
-					color #007bf8
-					border-dashed(#007bf8)
+					color #2d78d6
+					border-dashed(#2d78d6)
 					svg
 						transform rotate(90deg)
 						path
-							fill #007bf8
+							fill #2d78d6
 		&__content
 			display none
 			width 100%
@@ -931,11 +945,11 @@ body
 			font-size 20px
 			color #233347
 			&:hover
-				color #007bf8
-				border-dashed(#007bf8)
+				color #2d78d6
+				border-dashed(#2d78d6)
 				svg
 					path
-						fill #007bf8
+						fill #2d78d6
 			svg
 				position absolute
 				left -36px
@@ -947,7 +961,7 @@ body
 			&--link
 				border-line(#8598b8)
 				&:hover
-					border-line(#007bf8)
+					border-line(#2d78d6)
 	.sub-sub-sections
 		padding-left 25px
 		&__item
@@ -965,20 +979,20 @@ body
 			border-dashed(#8598b8, 15px)
 			color #263a5c
 			&:hover
-				color #007bf8
-				border-dashed(#007bf8, 15px)
+				color #2d78d6
+				border-dashed(#2d78d6, 15px)
 			&:after
 				position absolute
 				content ""
 				width 15px
 				height 2px
-				background #007bf8
+				background #2d78d6
 				top 6px
 				left -25px
 			&--link
 				border-line(#8598b8, 15px)
 				&:hover
-					border-line(#007bf8, 15px)
+					border-line(#2d78d6, 15px)
 		&__content
 			display none
 			width 100%
@@ -994,14 +1008,14 @@ body
 			color #263a5c
 			border-line(#dadee8, 12px)
 			&:hover
-				color #007bf8
-				border-line(#007bf8, 12px)
+				color #2d78d6
+				border-line(#2d78d6, 12px)
 			&:after
 				position absolute
 				content ""
 				width 4px
 				height 4px
-				background #007bf8
+				background #2d78d6
 				top 4px
 				left -15px
 
@@ -1051,7 +1065,7 @@ body
 		.product__back
 			text-transform: uppercase
 			font-weight bold
-			color #007bf8
+			color #2d78d6
 			border-line(#d2e2fd, 12px)
 			font-size 12px
 			display inline-block
@@ -1216,7 +1230,7 @@ body
 			top 0
 			width 210px
 			border-bottom 1px solid #309cfa
-			background #007bf8
+			background #2d78d6
 			t(background)
 			&.opened, &:hover
 				background #001766
@@ -1280,7 +1294,7 @@ body
 				height 35px
 				margin-top -7px
 				margin-left -10px
-				background #007bf8
+				background #2d78d6
 				border-bottom 1px solid #309cfa
 				left 0
 				top 0
@@ -1303,12 +1317,26 @@ span.sub-collapser
 			width 100%
 			& + .news-list__item
 				margin-top 50px
-		.news-list__date
+		.news-list__frame
+			padding-right 5px
+			background white
+		.news-list__date, .news-list__section
 			text-transform: uppercase
 			font-weight: bold
-			color #6e6f79
+			color white
+			background #a7b3be
 			font-size 11px
 			margin-bottom 10px
+			display inline-block
+			height 20px
+			padding 5px 10px 0
+		.news-list__section
+			background #a5d0ff
+		.news-list__divider
+			width 100%
+			border-top 1px solid #e5e8ec
+			margin-top -20px
+			margin-bottom 25px
 		.news-list__title
 			font-size 22px
 			color #2d78d6
@@ -1326,6 +1354,12 @@ span.sub-collapser
 	.news-item
 		&__date
 			@extends .news .news-list .news-list__date
+		&__section
+			@extends .news .news-list .news-list__section
+		&__frame
+			@extends .news .news-list .news-list__frame
+		&__divider
+			@extends .news .news-list .news-list__divider
 		.news-item__text
 			@extends .news .news-list .news-list__text
 			margin-top 20px

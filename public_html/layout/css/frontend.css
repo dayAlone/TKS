@@ -7395,7 +7395,13 @@ span.sub-collapser i {
 }
 .career-list__item {
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+}
+.career-list__title {
+  font-size: 20px;
+}
+.career-item__text ul {
+  padding-left: 35px;
 }
 .search-page {
   font-size: 14px;
@@ -7488,7 +7494,7 @@ span.sub-collapser i {
 }
 .pages {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 .news-list + .pages {
   margin-top: 40px;
@@ -7503,13 +7509,14 @@ span.sub-collapser i {
   line-height: 30px;
   color: #0082dc;
   font-size: 13px;
+  background: transparent !important;
 }
 .pages__item:hover {
   color: #0082dc;
 }
 .pages__item--active {
   color: #fff !important;
-  background: #0082dc;
+  background: #0082dc !important;
 }
 .sidebar {
   width: 100%;

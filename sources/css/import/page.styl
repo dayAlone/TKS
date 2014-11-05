@@ -1392,22 +1392,27 @@ span.sub-collapser
 
 
 .career
+	
 	&-list
 		width 100%
 		margin-top 20px
 		&__item
 			width 100%
-			margin-bottom 15px
+			margin-bottom 25px
 		&__title
 			@extends .news .news-list .news-list__title
+			font-size 20px
 			
 	&-item
 		&__tooltip
 			@extends .news .news-list .news-list__date
 		&__title
 			@extends .news .news-item .news-item__title
+			
 		&__text
 			@extends .news .news-item .news-item__text
+			ul
+				padding-left 35px
 		&__back
 			@extends .catalog .product .product__back
 
@@ -1491,7 +1496,7 @@ span.sub-collapser
 
 .pages
 	width 100%
-	margin-top 20px
+	margin-top 40px
 	.news-list + &
 		margin-top 40px
 	&__item
@@ -1504,8 +1509,9 @@ span.sub-collapser
 		line-height 30px
 		color #0082dc
 		font-size 13px
+		background transparent !important
 		&:hover
 			color #0082dc
 		&--active
 			color white !important
-			background #0082dc
+			background #0082dc !important

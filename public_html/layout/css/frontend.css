@@ -7468,6 +7468,10 @@ span.sub-collapser i {
   margin-bottom: 10px;
   margin-top: 5px;
 }
+.map-columns ul.map-level-0 > li > ul > li > ul li:after {
+  width: 5px;
+  left: -8px;
+}
 .map-columns ul.map-level-0 > li > ul > li a {
   font-size: 12px;
   line-height: 25px;

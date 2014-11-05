@@ -35,6 +35,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/include/section.php');
       "SET_TITLE"     => "Y",
       "CACHE_TYPE"    => "A",
       "PROPERTY_CODE" => array("PHOTOS", "ABOUT", "ADDITIONAL"),
+    
     ));
   endif;
   ?>

@@ -1,10 +1,11 @@
 <?
 $item = $arResult;
+end($arResult['SECTION']['PATH']);
 ?>
 <div class="news-item">
 	<span class="news-item__frame">
 	    <span class="news-item__date"><?=r_date($item['ACTIVE_FROM'])?></span>
-	    <span class="news-item__section"><?=end($arResult['SECTION']['PATH'])['NAME']?></span>
+	    <span class="news-item__section"><?=$item['NAME']?></span>
 	</span>
 	<div class="news-item__divider"></div>
 	<h1 class="news-item__title"><?=$item['NAME']?></h1>

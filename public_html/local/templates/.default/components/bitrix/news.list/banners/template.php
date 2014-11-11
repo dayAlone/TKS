@@ -6,7 +6,7 @@ if(count($arResult['ITEMS'])>0):
 	<?
 	foreach ($arResult['ITEMS'] as $key => &$item):
     ?>
-	<a href="<?=$item['SECTION_PAGE_URL']?>" class="sections-side__item" style="background-image: url(<?=$item['PREVIEW_PICTURE']['SRC']?>)">
+	<a href="<?=$item["PROPERTIES"]["LINK"]["VALUE"]?>" class="sections-side__item" style="background-image: url(<?=$item['PREVIEW_PICTURE']['SRC']?>)">
         <div class="sections-side__frame">
     		<div class="sections-side__icon">
     			<?=file_get_contents($_SERVER['DOCUMENT_ROOT'].CFile::GetPath($item['PROPERTIES']['SVG']['VALUE']))?>

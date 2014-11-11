@@ -2096,7 +2096,7 @@ body {
 }
 .index .slider .fotorama__nav-wrap {
   position: absolute;
-  bottom: 60px;
+  bottom: 80px;
 }
 .index .slider .fotorama__active .fotorama__dot {
   opacity: 1;

@@ -78,6 +78,10 @@
          "/spin.js/jquery.spin.js"
       ]
    },
+   "scrollbar":{
+      "js":"/perfect-scrollbar/src/perfect-scrollbar.js",
+      "css":"/perfect-scrollbar/src/perfect-scrollbar.css"
+   },
    "tooltip":{
       "js":"/tooltip/js/tooltip.js"
    },

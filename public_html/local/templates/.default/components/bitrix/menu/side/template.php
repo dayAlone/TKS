@@ -1,3 +1,4 @@
+<?if(count($arResult)>0):?>
 <nav class="nav-side">
 	<?
 	$parent = "";
@@ -16,3 +17,4 @@
 		
 	<?endforeach;?>
 </nav>
+<?endif;?>

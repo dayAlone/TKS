@@ -29,7 +29,8 @@
 			$arSort     = array("SORT" => "ASC");
 			$arFilter   = array("IBLOCK_ID" => $params['IBLOCK']);
 			$rsSections = CIBlockSection::GetList($arSort, $arFilter);
-			
+			$First      = false;
+
 			while ($s = $rsSections->Fetch()) {
 				if(strlen($_REQUEST['ELEMENT_CODE'])>0):
 					if($s['CODE']==$_REQUEST['ELEMENT_CODE']) {
@@ -40,10 +41,12 @@
 					    $Current = $s['ID'];
 					}	
 				endif;
+				if(!$First)
+					$First = $s;
 				$Sections[] = $s['ID'];
 			}
 			if(strlen($_REQUEST['ELEMENT_CODE'])==0&&isset($params['NOEMPTY']))
-				$Current = $Sections[0];
+				LocalRedirect("/industries/".$First['CODE'].'/');
 
 			$_GLOBALS['currentCatalogSection'] = $Current;
 			$_GLOBALS['openCatalogSection']    = $Open;

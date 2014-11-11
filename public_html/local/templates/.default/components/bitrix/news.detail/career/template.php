@@ -84,6 +84,7 @@ $item = $arResult;
 				        $cpt = new CCaptcha();
 				        $cpt->SetCodeLength(4);
 				        $cpt->SetCode();
+				        $cpt->SetImageSize(110,35);
 				        $code=$cpt->GetSID();
 				      ?>
 				      <div class="captcha" style="background-image:url(/include/captcha.php?captcha_sid=<?=$code?>)"></div>

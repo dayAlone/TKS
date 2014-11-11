@@ -2,6 +2,9 @@
    "bem":{
       "js":"/jquery.bem/jquery.bem.js"
    },
+   "bgcheck":{
+      "js":"/bgcheck/background-check.js"
+   },
    "blurjs":{
       "js":"/blurjs/blur.js"
    },
@@ -61,10 +64,6 @@
       "js":"/prettyPhoto/js/jquery.prettyPhoto.js",
       "css":"/prettyPhoto/css/prettyPhoto.css",
       "files": "/prettyPhoto/images/prettyPhoto/default/*.png"
-   },
-   "scrollbar":{
-      "js":"/perfect-scrollbar/src/perfect-scrollbar.js",
-      "css":"/perfect-scrollbar/src/perfect-scrollbar.css"
    },
    "slick":{
       "js":"/slick/slick/slick.js",

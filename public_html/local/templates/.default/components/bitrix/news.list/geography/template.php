@@ -72,7 +72,7 @@
 
 		function init () {
 		    myMap = new ymaps.Map('map', {
-		        center: [64.93342232, 98.51197427], // Москва
+		        center: [57.59224209, 72.07521800], // Москва
 		        zoom: 3,
 		        type: "yandex#hybrid",
 		        controls: ['geolocationControl', 'fullscreenControl', 'zoomControl']

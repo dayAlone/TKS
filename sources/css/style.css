@@ -2018,7 +2018,7 @@ body {
   left: 50%;
   color: #fff;
   text-align: center;
-  margin-top: -65px;
+  margin-top: -145px;
   -webkit-transform: translateY(-50%) translateX(-50%);
   -moz-transform: translateY(-50%) translateX(-50%);
   -o-transform: translateY(-50%) translateX(-50%);
@@ -2028,7 +2028,7 @@ body {
   min-height: 100px;
   padding: 40px 20px;
   border: 1px solid #fff;
-  background-position: center calc(50% + 65px);
+  background-position: center calc(50% + 145px);
 }
 .index .slider__badge {
   letter-spacing: 4px;
@@ -2093,6 +2093,26 @@ body {
 }
 .index .slider.background--dark svg path {
   fill: #fff;
+}
+.index .slider .fotorama__nav-wrap {
+  position: absolute;
+  bottom: 100px;
+}
+.index .slider .fotorama__active .fotorama__dot {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.index .slider .fotorama__dot {
+  width: 11px;
+  height: 11px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: 0;
+  background: #fff;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
 }
 .index .slider .fotorama__arr {
   background: transparent;
@@ -2176,27 +2196,19 @@ body {
 .index .news {
   float: left;
   width: 100%;
-  position: relative;
+  position: absolute;
+  bottom: 140px;
 }
 .index .news .container {
   position: relative;
-}
-.index .news__frame {
-  position: absolute;
-  width: 50%;
-  right: 15px;
-  bottom: 15px;
-  max-width: 480px;
-  color: #fff;
-  padding: 14px 18px 10px;
-  font-size: 13px;
-  background: rgba(0,25,102,0.75);
+  max-width: 828px;
+  min-width: 0;
 }
 .index .news__date {
   font-size: 11px;
   color: #0082dc;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .index .news__title {
   line-height: 16px;

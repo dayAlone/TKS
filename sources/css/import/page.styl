@@ -11,19 +11,20 @@ body
 		min-height 640px
 		margin-top -130px
 		margin-bottom -65px
+		
 		&__frame
 			position absolute
 			top 50%
 			left 50%
 			color white
 			text-align: center
-			margin-top -65px
+			margin-top -145px
 			transform translateY(-50%) translateX(-50%)
 			width 786px
 			min-height 100px
 			padding 40px 20px
 			border 1px solid white
-			background-position center calc(50% + 65px)
+			background-position center calc(50% + 145px)
 		&__badge
 			letter-spacing 4px
 			text-transform: uppercase
@@ -80,18 +81,32 @@ body
 			svg
 				path
 					fill white
-		.fotorama__arr
-			background transparent
-			top 0
-			width 50px
-			height 100%
-			svg
+		.fotorama
+			&__nav-wrap
 				position absolute
-				top 50%
-				left 50%
-				margin-top 55px
-				max-width 70%
-				transform translateY(-50%) translateX(-50%)
+				bottom 100px
+			&__active
+				.fotorama__dot
+					opacity 1
+			&__dot
+				width 11px
+				height 11px
+				border-radius 0
+				border 0
+				background white
+				opacity .5
+			&__arr
+				background transparent
+				top 0
+				width 50px
+				height 100%
+				svg
+					position absolute
+					top 50%
+					left 50%
+					margin-top 55px
+					max-width 70%
+					transform translateY(-50%) translateX(-50%)
 	.sections
 		full-width()
 		background #001467
@@ -134,24 +149,17 @@ body
 				max-width 75px
 	.news
 		full-width()
-		position relative
+		position absolute
+		bottom 140px
 		.container
 			position relative
-		&__frame
-			position absolute
-			width 50%
-			right 15px
-			bottom 15px
-			max-width 480px
-			color white
-			padding 14px 18px 10px
-			font-size 13px
-			background rgba(0, 25, 102, .75)
+			max-width 828px
+			min-width 0
 		&__date
 			font-size 11px
 			color blue
 			font-weight bold
-			margin-bottom 8px
+			margin-bottom 10px
 		&__title
 			line-height 16px
 			text-decoration: underline

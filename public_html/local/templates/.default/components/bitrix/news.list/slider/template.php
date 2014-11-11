@@ -1,4 +1,4 @@
-<div class="slider" data-click="false" data-width="100%" data-height="100%" data-minheight="640" data-nav="false" data-autoplay="false" data-transition="crossfade" data-loop="true">
+<div class="slider" data-nav="dots" data-click="false" data-width="100%" data-height="100%" data-minheight="640" data-nav="false" data-autoplay="false" data-transition="crossfade" data-loop="true">
 	<?foreach ($arResult['ITEMS'] as $item):?>
 		<div style="background-image: url(<?=$item['PREVIEW_PICTURE']['SRC']?>)" class="slider__item slider__item--<?=$item['PROPERTIES']['POSITION']['VALUE_XML_ID']?>">
 		  <a href="<?=$item['PROPERTIES']['LINK']['VALUE']?>" class="slider__frame" style="background-image: url(<?=$item['DETAIL_PICTURE']['SRC']?>)">

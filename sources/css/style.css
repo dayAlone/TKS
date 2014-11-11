@@ -1893,8 +1893,7 @@ article {
 .modal .form input[type="text"].parsley-error,
 .modal .form input[type="email"].parsley-error,
 .modal .form textarea.parsley-error {
-  -webkit-box-shadow: 0 0 0 2px #f00;
-  box-shadow: 0 0 0 2px #f00;
+  border-color: #f00 !important;
 }
 .modal .form .parsley-errors-list {
   display: none !important;

@@ -267,10 +267,30 @@ $(document).ready ->
 		getCaptcha()
 		e.preventDefault()
 
+	$('.form input[type=submit]').click (e)->
+		if !$('.form input[type=file]').val()
+			$('.form .file-trigger').addClass 'error'
+
+	$('.file-trigger').click (e)->
+		$(this).parent().find('input[type=file]').trigger 'click'
+		e.preventDefault()
+
+	$('input[type=file]').on 'change', ()->
+		$('.form .file-trigger').removeClass 'error'
+		$('.file-name').text($(this).val().replace(/.+[\\\/]/, ""))
+
 	$('.form').submit (e)->
-		data = $(this).serialize()
-		$.post '/include/send.php', data,
-	        (data) ->
+		data = new FormData(this)
+		
+		$.ajax 
+			type        : 'POST'
+			url         : '/include/send.php'
+			data        : data
+			cache       : false
+			contentType : false
+			processData : false
+			mimeType    : 'multipart/form-data'
+			success     : (data) ->
 	        	data = $.parseJSON(data)
 	        	if data.status == "ok"
 	        		$('.form').hide()
@@ -278,6 +298,7 @@ $(document).ready ->
 	        	else if data.status == "error"
 	        		$('input[name=captcha_word]').addClass('parsley-error')
 	        		getCaptcha()
+
 		e.preventDefault()
 
 	$('.modal').on 'show.bs.modal', (a,b)->

@@ -337,17 +337,39 @@
       getCaptcha();
       return e.preventDefault();
     });
+    $('.form input[type=submit]').click(function(e) {
+      if (!$('.form input[type=file]').val()) {
+        return $('.form .file-trigger').addClass('error');
+      }
+    });
+    $('.file-trigger').click(function(e) {
+      $(this).parent().find('input[type=file]').trigger('click');
+      return e.preventDefault();
+    });
+    $('input[type=file]').on('change', function() {
+      $('.form .file-trigger').removeClass('error');
+      return $('.file-name').text($(this).val().replace(/.+[\\\/]/, ""));
+    });
     $('.form').submit(function(e) {
       var data;
-      data = $(this).serialize();
-      $.post('/include/send.php', data, function(data) {
-        data = $.parseJSON(data);
-        if (data.status === "ok") {
-          $('.form').hide();
-          return $('.form').parents('.modal').find('.success').show();
-        } else if (data.status === "error") {
-          $('input[name=captcha_word]').addClass('parsley-error');
-          return getCaptcha();
+      data = new FormData(this);
+      $.ajax({
+        type: 'POST',
+        url: '/include/send.php',
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        mimeType: 'multipart/form-data',
+        success: function(data) {
+          data = $.parseJSON(data);
+          if (data.status === "ok") {
+            $('.form').hide();
+            return $('.form').parents('.modal').find('.success').show();
+          } else if (data.status === "error") {
+            $('input[name=captcha_word]').addClass('parsley-error');
+            return getCaptcha();
+          }
         }
       });
       return e.preventDefault();

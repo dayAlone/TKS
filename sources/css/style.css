@@ -2612,6 +2612,7 @@ p.vacancy {
 }
 .development {
   width: 100%;
+  margin-bottom: 30px;
 /*	
 		&:hover:after
 			background #6ab4f9

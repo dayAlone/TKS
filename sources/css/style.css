@@ -2717,7 +2717,8 @@ p.vacancy {
 .page__content .title--blue {
   color: #0053b3;
 }
-.page__content a:not(.button) {
+.page__content a:not(.button,
+.page__content .news-item__small-image) {
   color: #0053b3;
   background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, #d3dced 50%);
   background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, #d3dced 50%);
@@ -2730,7 +2731,8 @@ p.vacancy {
   background-size: 2px 2px;
   background-position: 0 calc(100% - 2px);
 }
-.page__content a:not(.button):hover {
+.page__content a:not(.button:hover,
+.page__content .news-item__small-image):hover {
   color: #67b3fc;
   background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, #67b3fc 50%);
   background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, #67b3fc 50%);

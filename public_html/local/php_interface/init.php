@@ -162,7 +162,7 @@ if(!strstr($_SERVER['SCRIPT_NAME'], 'bitrix/admin')):
 		for ($i=0; $i < count($path); $i++)
 			$urls[] = (isset($urls[$i-1])?$urls[$i-1]:"/").$path[$i].'/';
 
-		$urls[]="/";
+		#$urls[]="/";
 
 		$arFilter = Array("IBLOCK_ID"=>4, "PROPERTY_PAGE" => $urls);
 		$res      = CIBlockElement::GetList(Array("PROPERTY_PAGE"=>"ASC"), $arFilter, false, false, $arSelect);

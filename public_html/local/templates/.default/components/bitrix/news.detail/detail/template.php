@@ -16,7 +16,7 @@ $s = end($arResult['SECTION']['PATH']);
 		<?=$item["~DETAIL_TEXT"]?>
 	</div>
 	<div class="news-item__gallery">
-	<?foreach ($item["GALLERY"] as $img):?>
+	<?foreach ($item["PROPS"]["GALLERY"] as $img):?>
 		<a href="<?=$img['value']?>" rel="prettyPhoto[]" class="news-item__small-image" style="background-image: url(<?=$img['small']?>)"></a>
 	<?endforeach;?>
 	</div>

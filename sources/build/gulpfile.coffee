@@ -105,10 +105,6 @@ gulp.task 'css_front', ['css_stylus'], ->
 
 gulp.task 'css_mini', ->
 	gulp.src [ "#{path.css.frontend}/frontend.css"]
-	.pipe csscomb()
-	.pipe autoprefixer
-        browsers: ['last 2 versions'],
-        cascade: false
 	.pipe cssmin()
 	.pipe gulp.dest path.css.frontend
 

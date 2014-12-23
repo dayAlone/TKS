@@ -18,7 +18,7 @@ $APPLICATION->IncludeComponent(
   ),
   false
 );
-$APPLICATION->IncludeComponent(
+/*$APPLICATION->IncludeComponent(
   "bitrix:news.list", 
   "news_index",
   array(
@@ -31,6 +31,6 @@ $APPLICATION->IncludeComponent(
     "SET_TITLE"   => "N",
   ),
   false
-);
+);*/
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
 ?>

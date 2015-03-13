@@ -5427,7 +5427,7 @@ p.vacancy {
   color: #fff;
   margin-bottom: 15px;
   position: relative;
-  z-index: 100;
+  z-index: 10;
 }
 .industries-list__badge:hover {
   color: #fff;

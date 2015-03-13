@@ -1,5 +1,6 @@
 		</div>
-		<div class="col-xs-3 col-lg-2">
+		
+		<div class="col-xs-12 col-md-3 col-lg-2 page__side page__side--right">
 			
 			<?
 				$APPLICATION->IncludeComponent(

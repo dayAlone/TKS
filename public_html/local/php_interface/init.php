@@ -31,10 +31,10 @@ function content_class()
 {
 	global $APPLICATION;
 	if(!$APPLICATION->GetPageProperty('hide_right')) {
-		return "col-xs-6 col-lg-8";
+		return "col-sm-8 col-sm-push-4 col-md-6 col-md-push-3 col-lg-8 col-lg-push-2";
 	}
 	else
-		return "col-xs-9 col-lg-10";
+		return "col-sm-8 col-sm-push-4 col-md-9 col-md-push-3 col-lg-10 col-lg-push-2";
 }
 
 

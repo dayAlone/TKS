@@ -1,32 +1,18 @@
 <?
-/*$aMenuLinks = Array(
+$aMenuLinks = Array(
 	Array(
-		"facebook", 
-		"#", 
+		"vk", 
+		"http://vk.com/tkcgroup", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"twitter", 
-		"#", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"google", 
-		"#", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"pinterest", 
-		"#", 
+		"youtube", 
+		"http://www.youtube.com/channel/UCCKrGSTyI4KoHBikRhOllTg", 
 		Array(), 
 		Array(), 
 		"" 
 	)
-);*/
+);
 ?>

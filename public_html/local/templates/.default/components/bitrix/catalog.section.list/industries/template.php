@@ -3,7 +3,11 @@ $this->setFrameMode(true);
 if(count($arResult['SECTIONS'])>0):
 ?>
 <div class="industries-list">
-    <div class="industries-list__badge">Индустрии</div>
+    <div class="industries-list__badge hidden-xs">Индустрии</div>
+    <a href="#" class="industries-list__badge industries-list__trigger visible-xs">
+    	<span class="on">показать</span><span class="off hidden">скрыть</span> все индустрии
+    </a>
+    <div class="industries-list__frame hidden-xs">
 	<?foreach ($arResult['SECTIONS'] as $key => &$item):?>
 	   <div class="industries-list__item">
            <a href="<?=$item['SECTION_PAGE_URL']?>" class="industries-list__title <?=($_REQUEST['SECTION_CODE']==$item['CODE'] || $arParams['CURRENT'] == $item['ID']?"industries-list__title--active":"")?>"><?=$item['NAME']?> <span>&#9654;</span></a>
@@ -30,5 +34,6 @@ if(count($arResult['SECTIONS'])>0):
 	      	endif;?>
        </div>
 	<?endforeach;?>
+	</div>
 </div>
 <?endif;?>

@@ -90,6 +90,158 @@ $.openModal = (url, id, open)->
 				
 				window.title = $(id).find('.text h1').text()
 
+initPhotoSwipeFromDOM = (gallerySelector) ->
+	# parse slide data (url, title, size ...) from DOM elements 
+	# (children of gallerySelector)
+
+	parseThumbnailElements = (el) ->
+		thumbElements = el.childNodes
+		numNodes = thumbElements.length
+		items = []
+		figureEl = undefined
+		linkEl = undefined
+		size = undefined
+		item = undefined
+		i = 0
+		while i < numNodes
+			figureEl = thumbElements[i]
+			# <figure> element
+			# include only element nodes 
+			if figureEl.nodeType != 1
+				i++
+				continue
+			linkEl = figureEl.children[0]
+			# <a> element
+			size = linkEl.getAttribute('data-size').split('x')
+			# create slide object
+			item =
+				src: linkEl.getAttribute('href')
+				w: parseInt(size[0], 10)
+				h: parseInt(size[1], 10)
+			if figureEl.children.length > 1
+				# <figcaption> content
+				item.title = figureEl.children[1].innerHTML
+			if linkEl.children.length > 0
+				# <img> thumbnail element, retrieving thumbnail url
+				item.msrc = linkEl.children[0].getAttribute('src')
+			item.el = figureEl
+			# save link to element for getThumbBoundsFn
+			items.push item
+			i++
+		return items
+
+	# find nearest parent element
+
+	closest = (el, fn) ->
+		el and (if fn(el) then el else closest(el.parentNode, fn))
+
+	# triggers when user clicks on thumbnail
+
+	onThumbnailsClick = (e) ->
+		e = e or window.event
+		if e.preventDefault then e.preventDefault() else (e.returnValue = false)
+		eTarget = e.target or e.srcElement
+		# find root element of slide
+		clickedListItem = closest(eTarget, (el) ->
+			el.tagName and el.tagName.toUpperCase() == 'FIGURE'
+		)
+		if !clickedListItem
+			return
+		# find index of clicked item by looping through all child nodes
+		# alternatively, you may define index via data- attribute
+		clickedGallery = clickedListItem.parentNode
+		childNodes = clickedListItem.parentNode.childNodes
+		numChildNodes = childNodes.length
+		nodeIndex = 0
+		index = undefined
+		i = 0
+		while i < numChildNodes
+			if childNodes[i].nodeType != 1
+				i++
+				continue
+			if childNodes[i] == clickedListItem
+				index = nodeIndex
+				break
+			nodeIndex++
+			i++
+		
+		if index >= 0
+			# open PhotoSwipe if valid index found
+			openPhotoSwipe index, clickedGallery
+		false
+
+	# parse picture index and gallery index from URL (#&pid=1&gid=2)
+
+	photoswipeParseHash = ->
+		hash = window.location.hash.substring(1)
+		params = {}
+		if hash.length < 5
+			return params
+		vars = hash.split('&')
+		i = 0
+		while i < vars.length
+			if !vars[i]
+								i++
+				continue
+			pair = vars[i].split('=')
+			if pair.length < 2
+								i++
+				continue
+			params[pair[0]] = pair[1]
+			i++
+		if params.gid
+			params.gid = parseInt(params.gid, 10)
+		if !params.hasOwnProperty('pid')
+			return params
+		params.pid = parseInt(params.pid, 10)
+		params
+
+	openPhotoSwipe = (index, galleryElement, disableAnimation) ->
+		pswpElement = document.querySelectorAll('.pswp')[0]
+
+		gallery = undefined
+		options = undefined
+		items = undefined
+		items = parseThumbnailElements(galleryElement)
+		# define options (if needed)
+		options =
+			showAnimationDuration: 100
+			index: index
+			galleryUID: galleryElement.getAttribute('data-pswp-uid')
+			getThumbBoundsFn: (index) ->
+				return
+				# See Options -> getThumbBoundsFn section of documentation for more info
+				thumbnail = items[index].el.getElementsByTagName('img')[0]
+				pageYScroll = window.pageYOffset or document.documentElement.scrollTop
+				rect = thumbnail.getBoundingClientRect()
+
+				data = {
+					x: rect.left
+					y: rect.top + pageYScroll
+					w: rect.width
+				}
+				return data
+		if disableAnimation
+			options.showAnimationDuration = 0
+
+		# Pass data to PhotoSwipe and initialize it
+		gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options)
+		gallery.init()
+		return
+
+	# loop through all gallery elements and bind events
+
+	galleryElements = document.querySelectorAll(gallerySelector)
+	i = 0
+	l = galleryElements.length
+	while i < l
+		galleryElements[i].setAttribute 'data-pswp-uid', i + 1
+		galleryElements[i].onclick = onThumbnailsClick
+		i++
+
+
+
+
 autoHeight = (el, selector='', height_selector = false, use_padding=false, debug=false)->
 	if el.length > 0
 		
@@ -162,7 +314,6 @@ addTrigger = ()->
 		val = $(this).closest('tr').find('input[name*=cords]').val()
 		id = $(this).closest('tr').find('input[name*=cords]').attr 'name'
 		
-		console.log id
 
 		$('#mapPopup .adm-btn-save').data 'id':id
 		
@@ -230,9 +381,31 @@ $(document).ready ->
 		social_tools: ''
 		overlay_gallery: false
 		deeplinking: false
+	$('.industries-list').elem('trigger').click (e)->
+			$('.industries-list').elem('trigger').find('span').toggleClass 'hidden'
+			$('.industries-list').elem('frame').toggleClass 'hidden-xs'
+		e.preventDefault()
+	$('.news-item').elem('gallery').find('a').on 'click', (e)->
+		pswpElement = document.querySelectorAll('.pswp')[0];
+		items = $(this).parent().data('images')
+		galleryOptions = 
+			history : false
+			focus   : false
+			shareEl : false
+			index   : $(this).index()
+		gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, galleryOptions);
+		gallery.init();
+		e.preventDefault()
 
 	$('.geography__list_gallery').click (e)->
-		$.prettyPhoto.open $(this).data('images')
+		pswpElement = document.querySelectorAll('.pswp')[0];
+		items = $(this).data('images')
+		galleryOptions = 
+			history : false
+			focus   : false
+			shareEl : false
+		gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, galleryOptions);
+		gallery.init();
 
 		e.preventDefault()
 
@@ -487,7 +660,7 @@ $(document).ready ->
 				zoom: 15
 			}
 			myPlacemark = new ymaps.Placemark myMap.getCenter(), {
-				hintContent: 'Аргус СварСервис'
+				hintContent: 'Промышленный холдинг ТКС'
 			},
 			{
 				preset: "twirl#nightDotIcon",

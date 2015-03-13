@@ -25,9 +25,8 @@
 
 <div class="container">
 	<?$APPLICATION->ShowViewContent('page_top');?>
-	<div class="row">
-		<div class="col-xs-3 col-lg-2">
-			<?php
+	<div class="visible-xs">
+		<?php
 			$APPLICATION->IncludeComponent("bitrix:menu", "side", 
 			array(
 			  "ALLOW_MULTI_SELECT" => "Y",
@@ -36,31 +35,8 @@
 			  "MAX_LEVEL"          => "2",
 			  ),
 			false);
-			if($APPLICATION->GetDirProperty("show_vacancy")):
 			?>
-			<p class="vacancy">Главная ценность любой компании – её коллектив. Промышленный холдинг ТКС – это сплочённая команда единомышленников, чья целеустремлённость и увлечённость общим делом помогли нам стать одним из лидеров рынка неразрушающего контроля и автоматической сварки в России. Мы находимся в постоянном поиске активных, творческих и энергичных людей, специалистов, которые пополнят наш дружный коллектив.</p>
-			<?
-			endif;
-            if(!$APPLICATION->GetDirProperty("hide_features")):
-				$APPLICATION->IncludeComponent(
-				  "bitrix:news.list", 
-				  "features",
-				  array(
-				    "IBLOCK_ID"                 => 8,
-				    "NEWS_COUNT"                => "9999999",
-				    "SORT_BY1"                  => "SORT",
-				    "SORT_ORDER1"               => "ASC",
-				    "DETAIL_URL"                => "/",
-				    "PROPERTY_CODE"             => Array("SVG"),
-				    "CACHE_TYPE"                => "A",
-				    "SET_TITLE"                 => "N",
-				    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-				    "ADD_SECTIONS_CHAIN"        => "N",
-				  ),
-				  false
-				);
-			endif;
-			?>
-		</div>
+	</div>
+	<div class="row">
 		<div class="<?=$APPLICATION->AddBufferContent("content_class");?> page__content">
 		

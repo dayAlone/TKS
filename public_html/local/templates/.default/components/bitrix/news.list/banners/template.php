@@ -2,7 +2,7 @@
 $this->setFrameMode(true);
 if(count($arResult['ITEMS'])>0):
 ?>
-<div class="sections-side">
+<div class="sections-side sections-side--<?=(count($arResult['ITEMS'])%2==0?2:(count($arResult['ITEMS'])%3==0?3:""))?>">
 	<?
 	foreach ($arResult['ITEMS'] as $key => &$item):
     ?>

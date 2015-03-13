@@ -3,15 +3,12 @@
 	src url("../fonts/ProximaNova-Black.ttf")
 	src local('☺'), url('../fonts/ProximaNova-Black.ttf') format('truetype')
 	font-weight 800
-body
-	min-width 960px
+
 .index
 	.slider
 		full-width()
-		min-height 640px
 		margin-top -130px
 		margin-bottom -65px
-		
 		&__frame
 			position absolute
 			top 50%
@@ -20,23 +17,30 @@ body
 			text-align: center
 			margin-top -65px
 			transform translateY(-50%) translateX(-50%)
-			width 786px
+			
 			min-height 100px
-			padding 40px 20px
+			padding 20px
 			border 1px solid white
 			background-position center calc(50% + 65px)
+			min-width 75%
+			min-width calc(100% - 200px)
+			@media (min-width: scr_md)
+				min-width 786px
+				padding 40px 20px
 		&__badge
 			letter-spacing 4px
 			text-transform: uppercase
 			font-weight bold
-			font-size 15px
+			font-size 11px
 			full-width()
-			margin-bottom 30px
+			margin-bottom 15px
+			@media (min-width: scr_sm)
+				font-size 15px
+				margin-bottom 30px
 		&__item
 			full-width()
 			position relative
 			height 100%
-			min-height 640px
 			background-position center center
 			padding-top 160px
 			color white
@@ -51,17 +55,27 @@ body
 		
 		&__title
 			text-transform: uppercase
-			font-size 46px
-			margin-bottom 45px
+			font-size 20px
+			margin-bottom 15px
 			font-weight 800
 			margin-top 0
 			text-shadow 0.5px 0.9px 3px rgba(0, 0, 0, 0.3)
+			@media (min-width: scr_sm)
+				font-size 46px
+				margin-bottom 45px
 		&__content
-			font-size 16px
+			font-size 12px
 			font-weight bold
-			line-height 20px
+			line-height 16px
 			margin-bottom 5px
-		
+			p
+				margin-bottom 0px
+			@media (min-width: scr_sm)
+				font-size 16px
+				line-height 20px
+				margin-bottom 5px
+				p
+					margin-bottom 10px
 		&__link
 			margin-top 12px
 			display inline-block
@@ -95,11 +109,17 @@ body
 				border 0
 				background white
 				opacity .5
+			&, &__stage, .slider__item
+				min-height 450px
+				@media (min-height: 360px)
+					min-height 580px
 			&__arr
 				background transparent
 				top 0
-				width 50px
+				width 30px
 				height 100%
+				@media (min-width: scr_sm)
+					width 50px
 				svg
 					position absolute
 					top 50%
@@ -107,6 +127,7 @@ body
 					margin-top 55px
 					max-width 70%
 					transform translateY(-50%) translateX(-50%)
+				
 	.sections
 		full-width()
 		background #001467
@@ -182,6 +203,15 @@ body
 
 .page
 	margin-bottom 30px
+	&__side
+		&--right, &--border
+			margin-top 20px
+			padding-top 20px
+			border-top 1px solid #e2e5e8
+			@media (min-width: scr_md)
+				border 0
+				margin-top 0
+				padding-top 0
 	big
 		font-size 20px
 		line-height 30px
@@ -210,19 +240,39 @@ body
 			background #0070d5
 		& + .products
 			margin-top -10px
+	h3.h3--sections
+		font-size 20px
+		margin-top 0
+		margin-bottom 20px
 	.sections-side
 		full-width()
-		h3
-			font-size 20px
-			margin-top 0
-			margin-bottom 20px
+		
 		&__item
-			full-width()
+			float left
 			height 125px
 			background-size cover
 			background-repeat no-repeat
 			background-position center center
 			margin-bottom 10px
+			margin-right 0
+			width 100%
+			@media (min-width: scr_sm)
+				margin-right 10px
+				width (90/3)%
+				width calc(33.333333333333336% - 7px)
+				&:nth-child(3n)
+					margin-right 0
+			@media (min-width: scr_md)
+				width 100%
+		&--2
+			.sections-side__item
+				@media (min-width: scr_sm)
+					width 47%
+					width calc(50% - 7px)
+					&:nth-child(2n)
+						margin-right 0
+				@media (min-width: scr_md)
+					width 100%
 		&__icon
 			height 81px
 			line-height 90px
@@ -255,11 +305,14 @@ body
 			margin-bottom 35px
 			margin-top 0
 			padding-top 0
+			@media (max-width: scr_sm)
+				br
+					display none
+			
 		&__item
 			width 100%
 			full-width()
 			margin-bottom 30px
-					
 		&__icon
 			width 55px
 			margin-right 13px
@@ -289,23 +342,36 @@ body
 			font-size 16px
 	&__header
 		full-width()
-		height 345px
+		height 205px
 		margin-top -102px
 		background-color blue
 		background-position center center
 		background-repeat no-repeat
-		margin-bottom 40px
+		margin-bottom 20px
 		position relative
 		color white
+		overflow: hidden
+		@media (min-width: scr_sm)
+			height 345px
+			margin-bottom 40px
 		&-title
-			width 100%
+			
 			overflow hidden
-			font-size 46px
-			height 98px
-			line-height 105px
+			font-size 26px
+			
 			text-transform: uppercase
 			font-weight 800
 			text-align: center
+			width 100%
+			line-height 22px
+			padding 17px 0 17px
+			@media (min-width: scr_sm)
+				font-size 40px
+				height 98px
+				line-height 105px
+				padding 0
+			@media (min-width: scr_md)
+				font-size 46px
 		&-breadcrumb
 			border-top 1px solid rgba(255,255,255,.5)
 			width 70%
@@ -313,28 +379,38 @@ body
 			text-align: center
 			line-height 60px
 			text-transform: uppercase
+			display none
+			@media (min-width: scr_sm)
+				display block
 			a, span
-				font-size 11px
+				font-size 9px
 				letter-spacing 2px
 				margin 0 3px
 				color white
 				
 				opacity .5
 				font-weight bold
+				@media (min-width: scr_md)
+					font-size 11px
 			a:hover
 				opacity 1
 		&-frame
 			position absolute
-			background-position center calc(50% - 30px)
 			
 			background-repeat no-repeat
-			width 780px
 			left 50%
-			margin-left -390px
-			height 156px
+			transform translateX(-50%)
 			top 50%
-			margin-top -48px
-			border 1px solid white			
+			background-position center calc(50% - 30px)
+			border 1px solid white
+			width 90%
+			@media (min-width: scr_sm)
+				background-position center calc(50% - 30px)
+				width 80%
+				height 156px
+				margin-top -48px
+			@media (min-width: scr_md)
+				width 780px	
 	&__title
 		margin 0
 		text-transform: uppercase
@@ -351,7 +427,7 @@ body
 		display inline-block
 		padding 0 25px
 		cursor pointer
-		font-size 11px
+		font-size 9px
 		line-height 33px
 		margin 20px 0
 		letter-spacing 3px
@@ -363,6 +439,8 @@ body
 		font-weight bold
 		t(background, color)
 		text-align: center
+		@media (min-width: scr_sm)
+			font-size 11px
 		&:hover
 			background blue3
 			color white
@@ -381,14 +459,21 @@ body
 			@media (min-width: scr_md)
 				padding 0 32px
 				min-width 186px 
+
 	@media (min-width: scr_lg)
 		>.container
 			>.row
+				>.col-lg-push-2
+					left 20%
 				>.col-lg-2
 					width 20%
 				>.col-lg-8
 					width 60%
 					padding 0 30px
+				>.col-lg-pull-8
+					right 60%
+				>.col-lg-pull-10
+					right 80%
 				>.col-lg-10
 					width 80%
 					padding 0 30px
@@ -398,24 +483,41 @@ p.vacancy
 	margin 20px 0 45px
 
 .nav-side
-	margin-bottom 45px
+	@media (max-width: scr_sm)
+		border-top 1px solid #e2e5e8
+		border-bottom 1px solid #e2e5e8
+		margin-bottom 30px
+		text-align: center
+		padding 10px 0 7px
+	@media (min-width: scr_sm)
+		margin-bottom 45px
 	&__item
-		width 100%
-		display block
+		display inline-block
 		text-transform: uppercase
 		font-weight bold
 		color #333e47
-		height 45px
-		line-height 45px
 		padding-top 3px
-		font-size 16px
-		border-bottom 1px solid #e2e5e8
+		@media (max-width: scr_sm)
+			font-size 13px
+			margin 0 20px
+			border-line(alpha(#333e47, .3), 14px)
+		@media (min-width: scr_sm)
+			border-bottom 1px solid #e2e5e8
+			font-size 16px
+			height 45px
+			width 100%
+			display block
+			line-height 45px
+			display block
 		&--small
 			text-transform: none
 			font-size 15px
 			font-weight normal
 			color #2d78d6
 			padding-top 1px
+			display none
+			@media (min-width: scr_sm)
+				display block
 			&.nav-side__item--active
 				color black
 				span
@@ -428,8 +530,12 @@ p.vacancy
 			border-top 0
 		&:hover, &--active
 			color #0053b3
+			background transparent
 
 .mission
+	margin-bottom 50px
+	@media (min-width: scr_sm)
+		margin-bottom 0
 	&__item
 		display table
 		width 100%
@@ -437,35 +543,51 @@ p.vacancy
 		background #f1f2f4
 		margin-bottom 10px
 		table-layout:fixed
-		> *
-			display table-cell
-			vertical-align: middle
-			min-height 85px
-			table-layout:fixed
+		@media (min-width: scr_sm)
+			> *
+				display table-cell
+				vertical-align: middle
+				min-height 85px
+				table-layout:fixed
 	&__title
 		padding-right 20px
-		width 40%
+		
 		font-weight bold
-		font-size 20px
-		line-height 22px
+		font-size 18px
+		line-height 20px
 		position relative
-		&:after
-			content ""
-			right 0
-			position absolute
-			height 110%
-			top -5%
-			margin-top -4px
-			border-right 1px solid #0053b3
+		width 100%
+		margin-bottom 10px
+		@media (min-width: scr_sm)
+			margin-bottom 0
+			font-size 16px
+			width 40%
+		@media (min-width: scr_md)
+			font-size 20px
+			line-height 22px
+		@media (min-width: scr_sm)
+			&:after
+				content ""
+				right 0
+				position absolute
+				height 110%
+				top -5%
+				margin-top -4px
+				border-right 1px solid #0053b3
 	
 	&__text
-		width 60%
-		font-size 16px
-		padding-left 30px
+		width 100%
+		font-size 14px
+		@media (min-width: scr_sm)
+			font-size 16px
+			padding-left 20px
+			width 60%
+		@media (min-width: scr_md)
+			padding-left 30px
 			
 
 .development
-	width 100%
+	full-width()
 	margin-bottom 30px
 	&__item
 		background #0057ce
@@ -473,13 +595,15 @@ p.vacancy
 		padding-left 15px
 	&__title
 		padding 17px 0
-		font-size 35px
+		font-size 27px
 		font-weight bold
 		text-align: center
 		width 100%
 		line-height 45px
 		color white
 		max-height 78px
+		@media (min-width: scr_md)
+			font-size 35px
 		span
 			width 100%
 			position relative
@@ -499,13 +623,16 @@ p.vacancy
 		& + .development__block
 			border-top 1px solid #d0d3d7
 	&__trigger
-		font-size 20px
-		line-height 24px
+		font-size 17px
+		line-height 21px
 		padding-left 33px
 		color black
 		background transparent !important
 		display inline-block
 		position relative
+		@media (min-width: scr_md)
+			font-size 20px
+			line-height 24px
 		&:after
 			width 19px
 			height 2px
@@ -527,7 +654,9 @@ p.vacancy
 	img
 		max-width 100%
 		&.left, &.right
-			max-width 45%
+			max-width 100%
+			@media (min-width: scr_sm)
+				max-width 45%
 			margin-bottom: 20px
 		&.left
 			float: left
@@ -537,11 +666,14 @@ p.vacancy
 			margin-left 20px
 	h2
 		color #0053b3
-		font-size 28px
-		line-height 34px
+		font-size 22px
+		line-height 28px
 		padding-top 0
 		margin-top 0
 		margin-bottom 30px
+		@media (min-width: scr_sm)
+			font-size 28px
+			line-height 34px
 	h3
 		font-weight normal
 		font-size 20px
@@ -574,8 +706,11 @@ p.vacancy
 			text-align: center
 			padding 35px 40px 30px
 			color black
-			font-size 18px
-			line-height 26px
+			font-size 16px
+			line-height 20px
+			@media (min-width: scr_sm)
+				font-size 18px
+				line-height 26px
 	ul
 		margin-top 20px
 		li
@@ -639,6 +774,7 @@ p.vacancy
 				border-line(#67b3fc, 16px)
 	
 .industries-list
+	margin-bottom 40px
 	&__badge
 		width 100%
 		height 23px
@@ -651,6 +787,10 @@ p.vacancy
 		text-align: center
 		color white
 		margin-bottom 15px
+		position relative
+		z-index 100
+		&:hover
+			color white
 	&__item
 		border-bottom 1px solid #e2e5e8
 		min-height 45px
@@ -733,7 +873,13 @@ p.vacancy
 	#map
 		width 100%
 		min-height 500px !important
-		
+	&__period
+		@media (max-width: scr_xs)
+			display none
+	&__gallery, &__description
+		@media (max-width: scr_xs)
+			width 100%
+			text-align: left !important
 	&__list
 		display none
 		&_item
@@ -751,12 +897,22 @@ p.vacancy
 		&_region
 			font-size 16px
 			font-weight bold
+			span
+				&.visible-xs
+					display none !important
+					@media (max-width: scr_xs)
+						display block !important
+						font-size 12px
+						font-weight: normal
 		&_gallery
 			color black
 			text-transform: uppercase
 			font-weight: bold
 			font-size 11px
 			margin-top 5px
+			white-space nowrap
+			@media (max-width: scr_xs)
+				margin-top 10px
 			&:hover
 				color blue
 				svg
@@ -781,6 +937,8 @@ p.vacancy
 			padding-bottom 7px
 			margin-bottom 11px
 			border-bottom 1px solid #d0d3d7
+			span
+				
 
 	&__frame
 		overflow hidden

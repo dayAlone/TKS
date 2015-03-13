@@ -21,7 +21,6 @@
     "jquery.cookie": "latest",
     "parsleyjs": "latest",
     "jQuery-Mask-Plugin": "latest",
-    "chosen": "https://github.com/harvesthq/chosen/releases/download/v1.1.0/chosen_v1.1.0.zip",
     "prettyPhoto": "git@github.com:scaron/prettyphoto.git",
     "nested": "git@github.com:suprb/Nested.git",
     "jquery.bem": "*",
@@ -33,7 +32,8 @@
     "tooltip": "git@github.com:medelbou/Tooltip-for-Google-Maps.git",
     "slimmenu": "git@github.com:adnantopal/slimmenu.git",
     "perfect-scrollbar": "~0.5.6",
-    "bgcheck"            : "git@github.com:kennethcachia/background-check.git"
+    "bgcheck"            : "git@github.com:kennethcachia/background-check.git",
+    "photoswipe": "~4.0.2"
   },
   "moduleType": [
     "amd",

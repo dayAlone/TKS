@@ -1,9 +1,9 @@
 <div class="geography">
 	<div class="row">
-		<div class="col-xs-9">
+		<div class="col-md-8 col-lg-9">
 			<p>Промышленный холдинг ТКС осуществляет комплексное техническое и технологическое сопровождение проектов по всему миру. Ниже обозначены места, где выполнены или выполняются в настоящее время проекты с участием наших специалистов и с использованием нашего оборудования.</p>
 		</div>
-		<div class="col-xs-3">
+		<div class="col-md-4 col-lg-3 hidden-xs">
 			<div class="geography-filter">
 				<div class="geography-filter__title">Режим<br>показа</div>
 				<a href="#map" class="geography-filter__item geography-filter__item--active">Карта</a>
@@ -12,7 +12,7 @@
 		</div>
 	</div>
 	<? $item = $arResult['ITEMS'][0]?>
-	<div class="geography__frame">
+	<div class="geography__frame hidden-xs">
 		<div class="geography__popup">
 			<div class="geography__popup_toolbar">
 				<a href="#" class="geography__popup_close">
@@ -24,19 +24,22 @@
 		<div id="map"></div>
 	</div>
 
-	<div id="list" class="geography__list">
+	<div id="list" class="geography__list visible-xs">
 	<?foreach ($arResult['ITEMS'] as $item):?>
 		<div class="geography__list_item">
-			<div class="row geography__list_title no-gutter">
+			<div class="row geography__list_title no-gutter hidden-xs">
 				<div class="col-xs-4">Регион</div>
 				<div class="col-xs-2">Период</div>
 				<div class="col-xs-4">Проект</div>
 				<div class="col-xs-2"></div>
 			</div>
 			<div class="row no-gutter">
-				<div class="col-xs-4 geography__list_region"><?=$item['PROPS']['REGION']?></div>
-				<div class="col-xs-2"><?=$item['PROPS']['PERIOD']?></div>
-				<div class="col-xs-4">
+				<div class="col-xs-12 col-sm-4 geography__list_region m-margin-bottom">
+					<span class="visible-xs"><?=$item['PROPS']['PERIOD']?></span>
+					<?=$item['PROPS']['REGION']?>
+				</div>
+				<div class="col-xs-3 col-sm-2 geography__period"><?=$item['PROPS']['PERIOD']?></div>
+				<div class="col-xs-6 col-sm-4 geography__description">
 					<p><?=$item['NAME']?></p>
 					<?if(isset($item['PREVIEW_TEXT'])):?>
 						<small>
@@ -44,13 +47,10 @@
 						</small>
 					<?endif;?>
 				</div>
-				<div class="col-xs-2 right">
+				<div class="col-xs-3 col-sm-2 right geography__gallery">
 					<?if(count($item['PROPS']['PHOTOS'])>0):
-						$images = array();
-						foreach ($item['PROPS']['PHOTOS'] as $img)
-							$images[] = $img['value'];
 					?>
-						<a href="#" class="geography__list_gallery" data-images='<?=json_encode($images)?>'><?=svg('photos')?>фотогалерея</a>
+						<a href="#" class="geography__list_gallery" data-images='<?=json_encode($item['PROPS']['PHOTOS'])?>'><?=svg('photos')?>фотогалерея</a>
 					<?endif;?>
 				</div>
 			</div>
@@ -88,7 +88,16 @@
 	            clusterIconContentLayout: null
 	        })
 	        open = []
-		    <?foreach ($arResult['ITEMS'] as $item):?>
+		    <?
+		    $data = array();
+		    foreach ($arResult['ITEMS'] as $item):
+		    	$data[$item['ID']] = array(
+						'id'     => $item['ID'],
+						'name'   => $item['NAME'],
+						'coords' => $item['PROPS']['COORDS'],
+						'url'    => $item["DETAIL_PAGE_URL"]
+		    		);
+		    	?>
 			    p<?=$item['ID']?> = new ymaps.Placemark([<?=$item['PROPS']['COORDS']?>], {
 		            hintContent: '<?=$item['NAME']?>'
 		        }, {
@@ -113,8 +122,10 @@
 		        	}
 	     		});
 		        myMap.geoObjects.add(p<?=$item['ID']?>);
-			<?endforeach;?>
-			
+			<?endforeach;
+				$data = json_encode($data, JSON_UNESCAPED_UNICODE);
+			?>
+			console.log(JSON.stringify(<?=$data?>));
 	    	myMap.geoObjects.add(clusterer);
 		}
 	})

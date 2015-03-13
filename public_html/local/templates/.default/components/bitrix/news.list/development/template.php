@@ -1,4 +1,5 @@
 <?if(count($arResult['ITEMS'])>0):?>
+<div class="development">
 	<?
 	$section = 0;
 	foreach ($arResult['ITEMS'] as $item):
@@ -13,13 +14,13 @@
 		?>
 			<div class="development__item">
 	       		<div class="row no-gutter">
-	       			<div class="col-xs-2">
+	       			<div class="col-sm-2">
 	       				<div class="development__title">
 	       					<?=$arResult['SECTIONS'][$section]['NAME']?>
 	       					<span>год</span>
 	       				</div>
 	       			</div>
-	       			<div class="col-xs-10">
+	       			<div class="col-sm-10">
 	       				<div class="development__content">
 		<?endif;?>
 		<div class="development__block">
@@ -38,4 +39,5 @@
    			</div>
    		</div>
    </div>
+</div>
 <?endif;?>

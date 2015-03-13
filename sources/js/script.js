@@ -1,5 +1,5 @@
 (function() {
-  var addTrigger, autoHeight, blur, delay, getCaptcha, map, newsInit, setCaptcha, setHash, size, spin_options, urlInitial;
+  var addTrigger, autoHeight, blur, delay, getCaptcha, initPhotoSwipeFromDOM, map, newsInit, setCaptcha, setHash, size, spin_options, urlInitial;
 
   delay = function(ms, func) {
     return setTimeout(func, ms);
@@ -121,6 +121,158 @@
     }
   };
 
+  initPhotoSwipeFromDOM = function(gallerySelector) {
+    var closest, galleryElements, i, l, onThumbnailsClick, openPhotoSwipe, parseThumbnailElements, photoswipeParseHash, _results;
+    parseThumbnailElements = function(el) {
+      var figureEl, i, item, items, linkEl, numNodes, thumbElements;
+      thumbElements = el.childNodes;
+      numNodes = thumbElements.length;
+      items = [];
+      figureEl = void 0;
+      linkEl = void 0;
+      size = void 0;
+      item = void 0;
+      i = 0;
+      while (i < numNodes) {
+        figureEl = thumbElements[i];
+        if (figureEl.nodeType !== 1) {
+          i++;
+          continue;
+        }
+        linkEl = figureEl.children[0];
+        size = linkEl.getAttribute('data-size').split('x');
+        item = {
+          src: linkEl.getAttribute('href'),
+          w: parseInt(size[0], 10),
+          h: parseInt(size[1], 10)
+        };
+        if (figureEl.children.length > 1) {
+          item.title = figureEl.children[1].innerHTML;
+        }
+        if (linkEl.children.length > 0) {
+          item.msrc = linkEl.children[0].getAttribute('src');
+        }
+        item.el = figureEl;
+        items.push(item);
+        i++;
+      }
+      return items;
+    };
+    closest = function(el, fn) {
+      return el && (fn(el) ? el : closest(el.parentNode, fn));
+    };
+    onThumbnailsClick = function(e) {
+      var childNodes, clickedGallery, clickedListItem, eTarget, i, index, nodeIndex, numChildNodes;
+      e = e || window.event;
+      if (e.preventDefault) {
+        e.preventDefault();
+      } else {
+        e.returnValue = false;
+      }
+      eTarget = e.target || e.srcElement;
+      clickedListItem = closest(eTarget, function(el) {
+        return el.tagName && el.tagName.toUpperCase() === 'FIGURE';
+      });
+      if (!clickedListItem) {
+        return;
+      }
+      clickedGallery = clickedListItem.parentNode;
+      childNodes = clickedListItem.parentNode.childNodes;
+      numChildNodes = childNodes.length;
+      nodeIndex = 0;
+      index = void 0;
+      i = 0;
+      while (i < numChildNodes) {
+        if (childNodes[i].nodeType !== 1) {
+          i++;
+          continue;
+        }
+        if (childNodes[i] === clickedListItem) {
+          index = nodeIndex;
+          break;
+        }
+        nodeIndex++;
+        i++;
+      }
+      if (index >= 0) {
+        openPhotoSwipe(index, clickedGallery);
+      }
+      return false;
+    };
+    photoswipeParseHash = function() {
+      var hash, i, pair, params, vars;
+      hash = window.location.hash.substring(1);
+      params = {};
+      if (hash.length < 5) {
+        return params;
+      }
+      vars = hash.split('&');
+      i = 0;
+      while (i < vars.length) {
+        if (!vars[i]) {
+          i++;
+        }
+        continue;
+        pair = vars[i].split('=');
+        if (pair.length < 2) {
+          i++;
+        }
+        continue;
+        params[pair[0]] = pair[1];
+        i++;
+      }
+      if (params.gid) {
+        params.gid = parseInt(params.gid, 10);
+      }
+      if (!params.hasOwnProperty('pid')) {
+        return params;
+      }
+      params.pid = parseInt(params.pid, 10);
+      return params;
+    };
+    openPhotoSwipe = function(index, galleryElement, disableAnimation) {
+      var gallery, items, options, pswpElement;
+      pswpElement = document.querySelectorAll('.pswp')[0];
+      gallery = void 0;
+      options = void 0;
+      items = void 0;
+      items = parseThumbnailElements(galleryElement);
+      options = {
+        showAnimationDuration: 100,
+        index: index,
+        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+        getThumbBoundsFn: function(index) {
+          var data, pageYScroll, rect, thumbnail;
+          return;
+          thumbnail = items[index].el.getElementsByTagName('img')[0];
+          pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
+          rect = thumbnail.getBoundingClientRect();
+          data = {
+            x: rect.left,
+            y: rect.top + pageYScroll,
+            w: rect.width
+          };
+          return data;
+        }
+      };
+      if (disableAnimation) {
+        options.showAnimationDuration = 0;
+      }
+      gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+      gallery.init();
+    };
+    galleryElements = document.querySelectorAll(gallerySelector);
+    i = 0;
+    l = galleryElements.length;
+    _results = [];
+    while (i < l) {
+      galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+      galleryElements[i].onclick = onThumbnailsClick;
+      _results.push(i++);
+    }
+    return _results;
+  };
+
   autoHeight = function(el, selector, height_selector, use_padding, debug) {
     var count, heights, i, item, item_padding, items, loops, padding, step, x, _i, _ref, _results;
     if (selector == null) {
@@ -214,7 +366,6 @@
       var id, val;
       val = $(this).closest('tr').find('input[name*=cords]').val();
       id = $(this).closest('tr').find('input[name*=cords]').attr('name');
-      console.log(id);
       $('#mapPopup .adm-btn-save').data({
         'id': id
       });
@@ -295,8 +446,36 @@
       overlay_gallery: false,
       deeplinking: false
     });
+    $('.industries-list').elem('trigger').click(function(e) {
+      $('.industries-list').elem('trigger').find('span').toggleClass('hidden');
+      return $('.industries-list').elem('frame').toggleClass('hidden-xs');
+    });
+    e.preventDefault();
+    $('.news-item').elem('gallery').find('a').on('click', function(e) {
+      var gallery, galleryOptions, items, pswpElement;
+      pswpElement = document.querySelectorAll('.pswp')[0];
+      items = $(this).parent().data('images');
+      galleryOptions = {
+        history: false,
+        focus: false,
+        shareEl: false,
+        index: $(this).index()
+      };
+      gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, galleryOptions);
+      gallery.init();
+      return e.preventDefault();
+    });
     $('.geography__list_gallery').click(function(e) {
-      $.prettyPhoto.open($(this).data('images'));
+      var gallery, galleryOptions, items, pswpElement;
+      pswpElement = document.querySelectorAll('.pswp')[0];
+      items = $(this).data('images');
+      galleryOptions = {
+        history: false,
+        focus: false,
+        shareEl: false
+      };
+      gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, galleryOptions);
+      gallery.init();
       return e.preventDefault();
     });
     $('.search-trigger').click(function(e) {
@@ -600,7 +779,7 @@
           zoom: 15
         });
         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-          hintContent: 'Аргус СварСервис'
+          hintContent: 'Промышленный холдинг ТКС'
         }, {
           preset: "twirl#nightDotIcon"
         });

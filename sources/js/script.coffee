@@ -382,8 +382,8 @@ $(document).ready ->
 		overlay_gallery: false
 		deeplinking: false
 	$('.industries-list').elem('trigger').click (e)->
-			$('.industries-list').elem('trigger').find('span').toggleClass 'hidden'
-			$('.industries-list').elem('frame').toggleClass 'hidden-xs'
+		$('.industries-list').elem('trigger').find('span').toggleClass 'hidden'
+		$('.industries-list').elem('frame').toggleClass 'hidden-xs'
 		e.preventDefault()
 	$('.news-item').elem('gallery').find('a').on 'click', (e)->
 		pswpElement = document.querySelectorAll('.pswp')[0];

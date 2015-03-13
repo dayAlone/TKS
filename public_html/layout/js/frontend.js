@@ -30138,9 +30138,9 @@ var pp_alreadyInitialized = false; // Used for the deep linking to make sure not
     });
     $('.industries-list').elem('trigger').click(function(e) {
       $('.industries-list').elem('trigger').find('span').toggleClass('hidden');
-      return $('.industries-list').elem('frame').toggleClass('hidden-xs');
+      $('.industries-list').elem('frame').toggleClass('hidden-xs');
+      return e.preventDefault();
     });
-    e.preventDefault();
     $('.news-item').elem('gallery').find('a').on('click', function(e) {
       var gallery, galleryOptions, items, pswpElement;
       pswpElement = document.querySelectorAll('.pswp')[0];

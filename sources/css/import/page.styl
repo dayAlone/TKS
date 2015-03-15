@@ -15,15 +15,16 @@
 			left 50%
 			color white
 			text-align: center
-			margin-top -65px
 			transform translateY(-50%) translateX(-50%)
-			
 			min-height 100px
 			padding 20px
 			border 1px solid white
-			background-position center calc(50% + 65px)
+			background-position center center
 			min-width 75%
 			min-width calc(100% - 200px)
+			@media (min-width: scr_sm)
+				margin-top -65px
+				background-position center calc(50% + 65px)
 			@media (min-width: scr_md)
 				min-width 786px
 				padding 40px 20px
@@ -1728,9 +1729,10 @@ span.sub-collapser
 	.modal-dialog
 		max-width 830px
 	.close
-		svg
-			path
-				fill white
+		@media (min-width: scr_sm)
+			svg
+				path
+					fill white
 	.required
 		color #717b84
 		font-size 13px

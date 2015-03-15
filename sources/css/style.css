@@ -3326,7 +3326,7 @@ div.pp_default .pp_loaderIcon {
 .toolbar {
   float: left;
   width: 100%;
-  z-index: 20;
+  z-index: 100;
   line-height: 101px;
   position: fixed;
   top: 0;
@@ -3627,7 +3627,7 @@ a.toolbar__phone svg path {
   fill: #0082dc;
 }
 .site-select__trigger:hover {
-  color: #fff;
+  color: #fff !important;
 }
 .site-select__trigger span {
   display: none;
@@ -4218,7 +4218,6 @@ article {
   left: 50%;
   color: #fff;
   text-align: center;
-  margin-top: -65px;
   -webkit-transform: translateY(-50%) translateX(-50%);
   -moz-transform: translateY(-50%) translateX(-50%);
   -o-transform: translateY(-50%) translateX(-50%);
@@ -4227,9 +4226,15 @@ article {
   min-height: 100px;
   padding: 20px;
   border: 1px solid #fff;
-  background-position: center calc(50% + 65px);
+  background-position: center center;
   min-width: 75%;
   min-width: calc(100% - 200px);
+}
+@media (min-width: 768px) {
+  .index .slider__frame {
+    margin-top: -65px;
+    background-position: center calc(50% + 65px);
+  }
 }
 @media (min-width: 992px) {
   .index .slider__frame {
@@ -6962,8 +6967,10 @@ span.sub-collapser i {
 #vacancyDetail .modal-dialog {
   max-width: 830px;
 }
-#vacancyDetail .close svg path {
-  fill: #fff;
+@media (min-width: 768px) {
+  #vacancyDetail .close svg path {
+    fill: #fff;
+  }
 }
 #vacancyDetail .required {
   color: #717b84;

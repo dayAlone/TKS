@@ -24,7 +24,7 @@
 		<div id="map"></div>
 	</div>
 
-	<div id="list" class="geography__list visible-xs">
+	<div id="list" class="geography__list">
 	<?foreach ($arResult['ITEMS'] as $item):?>
 		<div class="geography__list_item">
 			<div class="row geography__list_title no-gutter hidden-xs">

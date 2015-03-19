@@ -23,8 +23,8 @@
 			min-width 75%
 			min-width calc(100% - 200px)
 			@media (min-width: scr_sm)
-				margin-top -65px
-				background-position center calc(50% + 65px)
+				margin-top 35px
+				background-position center calc(50% - 35px)
 			@media (min-width: scr_md)
 				min-width 786px
 				padding 40px 20px
@@ -200,16 +200,23 @@
 
 #map
 	width 100%
-	min-height 570px
+	min-height 270px
+	@media (min-width: scr_sm)
+		min-height 570px
+
 
 .page
 	margin-bottom 30px
+	a[href="#Feedback"]
+		width 100%
+		@media (min-width: scr_xs)
+			width auto
 	&__side
 		&--right, &--border
 			margin-top 20px
 			padding-top 20px
 			border-top 1px solid #e2e5e8
-			@media (min-width: scr_md)
+			@media (min-width: scr_sm)
 				border 0
 				margin-top 0
 				padding-top 0
@@ -484,12 +491,17 @@ p.vacancy
 	margin 20px 0 45px
 
 .nav-side
-	@media (max-width: scr_sm)
-		border-top 1px solid #e2e5e8
-		border-bottom 1px solid #e2e5e8
-		margin-bottom 30px
-		text-align: center
-		padding 10px 0 7px
+	border-top 1px solid #e2e5e8
+	border-bottom 1px solid #e2e5e8
+	margin-bottom 30px
+	text-align: center
+	padding 10px 0 7px
+	@media (min-width: scr_sm)
+		border 0
+		padding 0
+		text-align: left
+		margin-bottom 0
+		
 	@media (min-width: scr_sm)
 		margin-bottom 45px
 	&__item
@@ -498,16 +510,21 @@ p.vacancy
 		font-weight bold
 		color #333e47
 		padding-top 3px
-		@media (max-width: scr_sm)
-			font-size 13px
-			margin 0 20px
-			border-line(alpha(#333e47, .3), 14px)
+		font-size 12px
+		margin 0 8px
+		border-line(alpha(#333e47, .3), 14px)
+		&:first-of-type
+			margin-left 0
+		&:last-of-type
+			margin-right 0
 		@media (min-width: scr_sm)
 			border-bottom 1px solid #e2e5e8
+			background transparent
+			margin 0
+			padding 0
 			font-size 16px
 			height 45px
 			width 100%
-			display block
 			line-height 45px
 			display block
 		&--small
@@ -883,6 +900,8 @@ p.vacancy
 			text-align: left !important
 	&__list
 		display none
+		@media (max-width: scr_xs)
+			display block
 		&_item
 			& + .geography__list_item
 				margin-top 5px
@@ -1729,7 +1748,7 @@ span.sub-collapser
 	.modal-dialog
 		max-width 830px
 	.close
-		@media (min-width: scr_sm)
+		@media (min-width: scr_md)
 			svg
 				path
 					fill white

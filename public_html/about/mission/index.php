@@ -1,10 +1,9 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle('Миссия');
+$APPLICATION->SetTitle("Миссия");
 $APPLICATION->SetPageProperty('hide_right', true);
-?>
-<div class="page__content">
-<h2>Миссия холдинг — предоставлять клиентам решения по неразрушающему контролю и автоматической сварке, основываясь на сочетании наших ценностей:</h2>
+?><div class="page__content">
+<h2>Миссия холдинга — предоставлять клиентам решения по неразрушающему контролю и автоматической сварке, основываясь на сочетании наших ценностей:</h2>
 <div class="mission">
 	<div class="mission__item">
 		<div class="mission__title">Инновационности</div>

@@ -3153,7 +3153,7 @@ a:hover {
   text-decoration: underline;
 }
 .footer a:hover {
-  color: #0082dc;
+  color: #5898ff;
 }
 .footer .map {
   float: left;
@@ -3367,7 +3367,7 @@ div.pp_default .pp_loaderIcon {
   top: -1px;
 }
 .toolbar__tools a:hover {
-  color: #0082dc;
+  color: #5898ff;
 }
 .toolbar__tools a[href="#Nav"] {
   float: right;
@@ -3406,7 +3406,7 @@ a.toolbar__phone svg {
   margin-right: 10px;
 }
 a.toolbar__phone svg path {
-  fill: #0082dc;
+  fill: #5898ff;
 }
 .toolbar .container {
   z-index: 3;
@@ -3441,7 +3441,7 @@ a.toolbar__phone svg path {
   line-height: 35px;
   height: 32px;
   width: 100%;
-  background: #002466;
+  background: #003782;
 }
 .toolbar .search-form__button {
   background: transparent;
@@ -3454,11 +3454,11 @@ a.toolbar__phone svg path {
   filter: alpha(opacity=0);
 }
 .toolbar .search-form__button svg path {
-  fill: #0082dc;
+  fill: #5898ff;
 }
 .toolbar .search-form__text {
   background: transparent;
-  border: 1px solid #0082dc;
+  border: 1px solid #5898ff;
   height: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
@@ -3478,7 +3478,7 @@ a.toolbar__phone svg path {
   position: relative;
 }
 .toolbar .search-trigger svg path {
-  fill: #0082dc;
+  fill: #5898ff;
 }
 .toolbar .nav {
   float: left;
@@ -3509,13 +3509,13 @@ a.toolbar__phone svg path {
   }
 }
 .toolbar .nav__item--active {
-  color: #0082dc;
+  color: #5898ff;
 }
 .toolbar .nav__item:first-of-type {
   padding-left: 0;
 }
 .toolbar .nav__item:hover {
-  color: #0082dc;
+  color: #5898ff;
   text-decoration: none;
 }
 .toolbar .shield {
@@ -3544,7 +3544,7 @@ a.toolbar__phone svg path {
 }
 .toolbar .shield:before {
   content: "";
-  background: #002466;
+  background: #003782;
   height: 100%;
   position: absolute;
   width: 400%;
@@ -3564,7 +3564,7 @@ a.toolbar__phone svg path {
   }
 }
 .toolbar .shield__right svg path {
-  fill: #002466;
+  fill: #003782;
 }
 @media (min-width: 992px) {
   .toolbar .shield__right {
@@ -3577,7 +3577,7 @@ a.toolbar__phone svg path {
   height: 45px;
   width: 100%;
   content: "";
-  background: #002466;
+  background: #003782;
   top: 0;
   left: 0;
   z-index: 1;
@@ -3589,7 +3589,7 @@ a.toolbar__phone svg path {
   }
 }
 .toolbar:before {
-  background: rgba(0,87,206,0.8);
+  background: rgba(0,55,130,0.5);
   height: 91px;
   display: none;
 }
@@ -3625,7 +3625,7 @@ a.toolbar__phone svg path {
   margin-left: 5px;
 }
 .site-select__trigger svg path {
-  fill: #0082dc;
+  fill: #5898ff;
 }
 .site-select__trigger:hover {
   color: #fff !important;
@@ -3648,7 +3648,7 @@ a.toolbar__phone svg path {
   position: absolute;
   top: 3px;
   left: -13px;
-  background: #0082dc;
+  background: #5898ff;
   width: 200px;
   padding: 30px 13px 5px;
   -webkit-border-radius: 5px;
@@ -3672,7 +3672,7 @@ a.toolbar__phone svg path {
   transition-duration: 0.3s;
 }
 .site-select__link:hover {
-  color: #002466;
+  color: #003782 !important;
   text-decoration: none;
 }
 .search {
@@ -3683,7 +3683,7 @@ a.toolbar__phone svg path {
 }
 .search__input {
   width: 100%;
-  border: 1px solid #0082dc;
+  border: 1px solid #5898ff;
   -webkit-border-radius: 20px;
   border-radius: 20px;
   height: 20px;
@@ -3747,7 +3747,7 @@ a.toolbar__phone svg path {
   cursor: pointer;
   margin: 0 4px;
   position: relative;
-  background: #0082dc;
+  background: #5898ff;
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
@@ -3874,7 +3874,7 @@ article {
 }
 .modal-content .date {
   font-weight: bold;
-  color: #0082dc;
+  color: #5898ff;
 }
 .modal-content .divider {
   float: left;
@@ -3901,7 +3901,7 @@ article {
   .modal-content {
     min-height: none;
     padding: 50px 60px;
-    border: 1px solid #0082dc;
+    border: 1px solid #5898ff;
   }
 }
 .modal-content--white {
@@ -3950,7 +3950,7 @@ article {
   max-width: 30px;
 }
 .modal-content .close svg path {
-  fill: #0082dc;
+  fill: #5898ff;
 }
 @media (min-width: 992px) {
   .modal-content .close {
@@ -3985,18 +3985,30 @@ article {
 }
 .toolbar .nav__item:hover,
 .toolbar .nav__item--active {
-  color: #002466;
+  color: #003782;
 }
 @media (min-width: 768px) {
   .toolbar .nav__item {
     font-size: 15px;
     padding: 3px 10.2px 0;
   }
+  .en .toolbar .nav__item {
+    padding: 3px 21px 0;
+  }
+  .en .toolbar .nav__item:first-of-type {
+    padding-left: 0;
+  }
 }
 @media (min-width: 1200px) {
   .toolbar .nav__item {
     font-size: 16px;
     padding: 3px 17.4px 0;
+  }
+  .en .toolbar .nav__item {
+    padding: 3px 30px 0;
+  }
+  .en .toolbar .nav__item:first-of-type {
+    padding-left: 0;
   }
 }
 #Feedback .form {
@@ -4007,7 +4019,7 @@ article {
 .modal .modal-content--white .form input[type="text"],
 .modal .modal-content--white .form input[type="email"],
 .modal .modal-content--white .form textarea {
-  border: 1px solid #0082dc;
+  border: 1px solid #5898ff;
 }
 .modal .modal-content--white .form input[type="submit"] {
   color: #00aafa;
@@ -4127,7 +4139,7 @@ article {
   border-radius: 30px;
   height: 30px;
   font-size: 14px;
-  border: 2px solid #0082dc;
+  border: 2px solid #5898ff;
   padding: 5px 25px 0;
   font-weight: bold;
   text-transform: uppercase;
@@ -4143,7 +4155,7 @@ article {
   transition-duration: color;
 }
 .modal .form input[type="submit"]:hover {
-  background: #0082dc;
+  background: #5898ff;
   color: #000;
 }
 .modal-title {
@@ -4326,7 +4338,7 @@ article {
 }
 .index .slider__link:hover {
   background: #fff;
-  color: #002466;
+  color: #003782;
 }
 .index .slider.background--dark svg path {
   fill: #fff;
@@ -4460,7 +4472,7 @@ article {
 }
 .index .news__date {
   font-size: 11px;
-  color: #0082dc;
+  color: #5898ff;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -4471,13 +4483,13 @@ article {
   color: #fff;
 }
 .index .news__title:hover {
-  color: #0082dc;
+  color: #5898ff;
 }
 .index .news__more {
   text-transform: uppercase;
   display: inline-block;
   margin-top: 17px;
-  color: #0082dc;
+  color: #5898ff;
   font-size: 11px;
   text-decoration: underline;
   font-weight: bold;
@@ -4702,7 +4714,7 @@ article {
   width: 100%;
   height: 205px;
   margin-top: -102px;
-  background-color: #0082dc;
+  background-color: #5898ff;
   background-position: center center;
   background-repeat: no-repeat;
   margin-bottom: 20px;
@@ -5580,7 +5592,7 @@ p.vacancy {
 .geography-filter__item--active,
 .geography-filter__item:hover {
   color: #fff;
-  background: #0082dc;
+  background: #5898ff;
 }
 .geography #map {
   width: 100%;
@@ -5649,10 +5661,10 @@ p.vacancy {
   }
 }
 .geography__list_gallery:hover {
-  color: #0082dc;
+  color: #5898ff;
 }
 .geography__list_gallery:hover svg path {
-  fill: #0082dc;
+  fill: #5898ff;
 }
 .geography__list_gallery svg {
   margin-right: 5px;
@@ -5706,7 +5718,7 @@ span
   box-shadow: 0 0 10px rgba(0,0,0,0.75);
 }
 .geography__popup_toolbar {
-  background: #0082dc;
+  background: #5898ff;
   color: #fff;
   height: 29px;
   line-height: 32px;
@@ -6901,7 +6913,7 @@ span.sub-collapser i {
 }
 .search-page form input[type=text] {
   background: transparent;
-  border: 1px solid #0082dc;
+  border: 1px solid #5898ff;
   height: 35px;
   line-height: 38px;
   -webkit-border-radius: 30px;

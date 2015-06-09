@@ -57,8 +57,15 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"зто", 
+		"нзто", 
 		"#", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"лизингстроймаш", 
+		"http://www.lsmgroup.ru", 
 		Array(), 
 		Array(), 
 		"" 

@@ -29,7 +29,7 @@ if($APPLICATION->GetPageProperty('popup')):?>
 <div id="Sites" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content"><a data-dismiss="modal" href="#" class="close"><?=svg('close')?></a>
-      <div class="modal-title">Сайты холдинга</div>
+      <div class="modal-title"><?=(LANGUAGE_ID=="ru"?"Сайты холдинга":"Holding websites")?></div>
       <?php
         $APPLICATION->IncludeComponent("bitrix:menu", "left_popup", 
         array(
@@ -45,8 +45,8 @@ if($APPLICATION->GetPageProperty('popup')):?>
 <div id="Search" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content"><a data-dismiss="modal" href="#" class="close"><?=svg('close')?></a>
-      <div class="modal-title">Поиск</div>
-      <form class="search">
+      <div class="modal-title"><?=(LANGUAGE_ID=="ru"?"Поиск":"Search")?></div>
+      <form class="search" action="/search/">
         <input type="text" name="q" class="search__input">
         <button type="submit" value="" class="search__submit"><?=svg('seach')?>
         </button>
@@ -57,10 +57,10 @@ if($APPLICATION->GetPageProperty('popup')):?>
 <div id="Contacts" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content"><a data-dismiss="modal" href="#" class="close"><?=svg('close')?></a>
-      <div class="modal-title">связаться с нами</div><a href="tel:+78002005001" class="phone">8 800 200 500 1</a>
-      <div class="full-width center"><a href="#" class="form-trigger">напишите нам</a></div>
+      <div class="modal-title"><?=(LANGUAGE_ID=="ru"?"связаться с нами":"contacts")?></div><a href="tel:+78002005001" class="phone">8 800 200 500 1</a>
+      <div class="full-width center"><a href="#" class="form-trigger"><?=(LANGUAGE_ID=="ru"?"напишите нам":"mail us")?></a></div>
       <?
-        require($_SERVER['DOCUMENT_ROOT'].'/include/form.php');
+        require($_SERVER['DOCUMENT_ROOT'].'/include/form-'.LANGUAGE_ID.'.php');
       ?>
     </div>
   </div>
@@ -69,7 +69,7 @@ if($APPLICATION->GetPageProperty('popup')):?>
   <div class="modal-dialog">
     <div class="modal-content modal-content--white"><a data-dismiss="modal" href="#" class="close"><?=svg('close')?></a>
     <?
-      require($_SERVER['DOCUMENT_ROOT'].'/include/form.php');
+      require($_SERVER['DOCUMENT_ROOT'].'/include/form-'.LANGUAGE_ID.'.php');
     ?>
     </div>
   </div>
@@ -78,13 +78,13 @@ if($APPLICATION->GetPageProperty('popup')):?>
   <div class="container">
     <div class="row">
       <div class="col-xs-8 col-sm-3 col-sm-4 col-md-3">
-        <div class="copyright">© <?=date('Y')?> ООО «ТКС-Холдинг» </div>
+        <div class="copyright">© <?=date('Y')?> <?=(LANGUAGE_ID=="ru"?"ООО «ТКС-Холдинг»":"TKC Industrial holding")?></div>
       </div>
       <div class="col-sm-3 col-md-2">
-        <div class="contacts"><span><?=COption::GetOptionString("grain.customsettings","footer_address")?> <br></span><a href="mailto:<?=COption::GetOptionString("grain.customsettings","footer_email")?>" class="contacts_link"><?=COption::GetOptionString("grain.customsettings","footer_email")?></a></div>
+        <div class="contacts"><span><?=(LANGUAGE_ID=="ru"?"119048, МОСКВА, УЛ. УСАЧЁВА, 35А":"MOSCOW, RUSSIA, USACHEVA STREET, 35A")?> <br></span><a href="mailto:<?=COption::GetOptionString("grain.customsettings","footer_email")?>" class="contacts_link"><?=COption::GetOptionString("grain.customsettings","footer_email")?></a></div>
       </div>
       <div class="col-sm-2">
-        <div class="map"><a href="/map/">карта сайта</a></div>
+        <div class="map"><a href="/map/"><?=(LANGUAGE_ID=="ru"?"карта сайта":"sitemap")?></a></div>
       </div>
       <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 social">
         <nobr>
@@ -100,8 +100,11 @@ if($APPLICATION->GetPageProperty('popup')):?>
         ?>
         </nobr>
       </div>
-      <div class="col-md-3 col-lg-3 visible-md-block visible-lg-block"><a href="http://radia.ru" target="_blank" class="radia"><?=svg('radia')?>
-          <div class="radia__content">разработка сайта <br>radia interactive</div></a></div>
+      <div class="col-md-3 col-lg-3 visible-md-block visible-lg-block">
+        <a href="http://radia.ru" target="_blank" class="radia"><?=svg('radia')?>
+          <div class="radia__content"><?=(LANGUAGE_ID=="ru"?"разработка сайта":"developed by")?> <br>radia interactive</div></a>
+          
+          </div>
     </div>
   </div>
 </footer>

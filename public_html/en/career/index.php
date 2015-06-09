@@ -1,6 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle('Карьера');
+$APPLICATION->SetTitle('Career');
 $APPLICATION->SetPageProperty('hide_right', true);
 $APPLICATION->SetPageProperty('body_class', "career");
 if(!isset($_REQUEST['ELEMENT_CODE'])):

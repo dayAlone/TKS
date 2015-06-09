@@ -1,6 +1,3 @@
 <?
-$sSectionName = 'Контакты';
-$arDirProperties = array(
-	'title' => 'Контакты',
-);
+$sSectionName = 'Contacts';
 ?>

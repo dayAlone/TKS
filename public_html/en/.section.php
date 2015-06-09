@@ -1,3 +1,3 @@
 <?
-$sSectionName = 'Главная';
+$sSectionName = 'Home';
 ?>

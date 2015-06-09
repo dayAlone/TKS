@@ -1,6 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle("Контакты");
+$APPLICATION->SetTitle("Contacts");
 $APPLICATION->SetPageProperty('body_class', "contacts");?><div class="page__content">
 	<h2>Головной офис</h2>
 	<div class="row">

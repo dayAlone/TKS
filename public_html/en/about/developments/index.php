@@ -9,7 +9,7 @@ $APPLICATION->SetPageProperty('hide_right', true);
 		  "bitrix:news.list", 
 		  "development",
 		  array(
-		    "IBLOCK_ID"                 => 10,
+		    "IBLOCK_ID"                 => 12,
 		    "NEWS_COUNT"                => "9999999",
 		    "SORT_BY1"                  => "SECTION_ID",
 		    "SORT_ORDER1"               => "ASC",

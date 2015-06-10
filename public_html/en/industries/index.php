@@ -35,7 +35,7 @@ else {
 	"IBLOCK_ID"                 => 13,
 	"ELEMENT_CODE"              => $_REQUEST['ELEMENT_CODE'],
 	"CHECK_DATES"               => "N",
-	"IBLOCK_TYPE"               => "content",
+	"IBLOCK_TYPE"               => "content_en",
 	"SET_TITLE"                 => "N",
 	"CACHE_TYPE"                => "A",
 	"PROPERTY_CODE"             => array("PHOTOS", "ABOUT", "ADDITIONAL"),

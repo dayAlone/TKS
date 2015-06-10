@@ -29,7 +29,7 @@
 			<?
 				$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "industries", array(
 						"IBLOCK_TYPE"         => "news",
-						"IBLOCK_ID"           => "7",
+						"IBLOCK_ID"           => (LANGUAGE_ID=='ru'?7:13),
 						"TOP_DEPTH"           => "1",
 						"CACHE_TYPE"          => "A",
 						"CURRENT"             => $_GLOBALS['currentCatalogSection'],

@@ -7,7 +7,7 @@
 				  "bitrix:news.list", 
 				  "banners",
 				  array(
-				    "IBLOCK_ID"                 => 9,
+				    "IBLOCK_ID"                 => (LANGUAGE_ID=='ru'?9:14),
 				    "NEWS_COUNT"                => "9999999",
 				    "SORT_BY1"                  => "SORT",
 				    "SORT_ORDER1"               => "ASC",

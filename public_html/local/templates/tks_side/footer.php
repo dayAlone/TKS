@@ -23,7 +23,7 @@
 				  "bitrix:news.list", 
 				  "features",
 				  array(
-				    "IBLOCK_ID"                 => 8,
+				    "IBLOCK_ID"                 => (LANGUAGE_ID=='ru'?8:15),
 				    "NEWS_COUNT"                => "9999999",
 				    "SORT_BY1"                  => "SORT",
 				    "SORT_ORDER1"               => "ASC",
@@ -45,7 +45,7 @@
 			<?
 				$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "sections_side", array(
 				    "IBLOCK_TYPE"  => "news",
-				    "IBLOCK_ID"    => "7",
+				    "IBLOCK_ID"    => (LANGUAGE_ID=='ru'?7:13),
 				    "TOP_DEPTH"    => "1",
 				    "CACHE_TYPE"   => "A",
 				    "SECTION_USER_FIELDS" => array("UF_SVG", "UF_TEXT")

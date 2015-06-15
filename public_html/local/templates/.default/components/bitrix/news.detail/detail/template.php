@@ -4,7 +4,7 @@ $s = end($arResult['SECTION']['PATH']);
 ?>
 <div class="news-item">
 	<span class="news-item__frame">
-	    <span class="news-item__date"><?=r_date($item['ACTIVE_FROM'])?></span>
+	    <span class="news-item__date"><?=(LANGUAGE_ID=='ru'?r_date($item['ACTIVE_FROM']):date('d.m.Y', $item['ACTIVE_FROM'])?></span>
 	    <span class="news-item__section"><?=$s['NAME']?></span>
 	</span>
 	<div class="news-item__divider"></div>

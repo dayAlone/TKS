@@ -13,7 +13,7 @@ if($APPLICATION->GetPageProperty('popup')):?>
 <div id="Nav" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content"><a data-dismiss="modal" href="#" class="close"><?=svg('close')?></a>
-      <div data-variant="russian,english" class="lang-trigger lang-trigger--lang_russian"><span class="lang-trigger__label">RU</span><span class="lang-trigger__carriage"></span><span class="lang-trigger__label">EN</span></div>
+      <div data-variant="russian,english" class="lang-trigger <?=(LANGUAGE_ID=="ru"?"lang-trigger--lang_russian":"lang-trigger--lang_english")?>"><span class="lang-trigger__label">RU</span><span class="lang-trigger__carriage"></span><span class="lang-trigger__label">EN</span></div>
       <?php
         $APPLICATION->IncludeComponent("bitrix:menu", "left_popup", 
         array(
@@ -77,8 +77,11 @@ if($APPLICATION->GetPageProperty('popup')):?>
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-xs-8 col-sm-3 col-sm-4 col-md-3">
-        <div class="copyright">© <?=date('Y')?> <?=(LANGUAGE_ID=="ru"?"ООО «ТКС-Холдинг»":"TKC Industrial holding")?></div>
+      <div class="hidden-sm col-lg-1 col-md-1">
+        <a href="/" class="footer__logo"><?=svg('logo_left')?></a>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-3">
+        <div class="copyright">© <?=date('Y')?> <br><?=(LANGUAGE_ID=="ru"?"ООО «ТКС-Холдинг»":"TKC Industrial holding")?></div>
       </div>
       <div class="col-sm-3 col-md-2">
         <div class="contacts"><span><?=(LANGUAGE_ID=="ru"?"119048, МОСКВА, УЛ. УСАЧЁВА, 35А":"MOSCOW, RUSSIA, USACHEVA STREET, 35A")?> <br></span><a href="mailto:<?=COption::GetOptionString("grain.customsettings","footer_email")?>" class="contacts_link"><?=COption::GetOptionString("grain.customsettings","footer_email")?></a></div>
@@ -86,7 +89,7 @@ if($APPLICATION->GetPageProperty('popup')):?>
       <div class="col-sm-2">
         <div class="map"><a href="/map/"><?=(LANGUAGE_ID=="ru"?"карта сайта":"sitemap")?></a></div>
       </div>
-      <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 social">
+      <div class="col-xs-3 col-md-1 social">
         <nobr>
         <?php
             $APPLICATION->IncludeComponent("bitrix:menu", "social", 
@@ -100,7 +103,7 @@ if($APPLICATION->GetPageProperty('popup')):?>
         ?>
         </nobr>
       </div>
-      <div class="col-md-3 col-lg-3 visible-md-block visible-lg-block">
+      <div class="col-md-3 visible-md-block visible-lg-block">
         <a href="http://radia.ru" target="_blank" class="radia"><?=svg('radia')?>
           <div class="radia__content"><?=(LANGUAGE_ID=="ru"?"разработка сайта":"developed by")?> <br>radia interactive</div></a>
           

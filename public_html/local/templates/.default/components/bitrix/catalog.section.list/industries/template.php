@@ -10,7 +10,9 @@ if(count($arResult['SECTIONS'])>0):
     <div class="industries-list__frame hidden-xs">
 	<?foreach ($arResult['SECTIONS'] as $key => &$item):?>
 	   <div class="industries-list__item">
-           <a href="<?=$item['SECTION_PAGE_URL']?>" class="industries-list__title <?=($_REQUEST['SECTION_CODE']==$item['CODE'] || $arParams['CURRENT'] == $item['ID']?"industries-list__title--active":"")?>"><?=$item['NAME']?> <span>&#9654;</span></a>
+           <a href="<?=$item['SECTION_PAGE_URL']?>" class="industries-list__title <?=($_REQUEST['SECTION_CODE']==$item['CODE'] || $arParams['CURRENT'] == $item['ID']?"industries-list__title--active":"")?>">
+           	<span class="industries-list__text"><?=$item['NAME']?></span> <span class="industries-list__arrow">&#9654;</span>
+           	</a>
 			<?
 			if($_REQUEST['SECTION_CODE']==$item['CODE'] || $arParams['CURRENT'] == $item['ID']):
 	           $APPLICATION->IncludeComponent(

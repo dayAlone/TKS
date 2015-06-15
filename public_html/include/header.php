@@ -81,7 +81,7 @@
     <div class="container visible-sm visible-xs">
       <div class="row no-gutter-sm">
         <div class="col-sm-4 col-xs-7 xs-center sm-left">
-          <a href="/" class="logo"><?=svg('logo')?></a>
+          <a href="/" class="logo"><?=svg('logo-'.LANGUAGE_ID)?></a>
           <div class="shield">
             <div class="shield__right"><?=svg('shield-r')?></div>
           </div>

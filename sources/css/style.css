@@ -3126,12 +3126,11 @@ a:hover {
   width: 100%;
   position: relative;
   z-index: 20;
-  color: #a3a3a3;
+  color: #6e7a87;
   overflow: hidden;
-  background: #000;
-  border-top: 1px solid #212121;
-  min-height: 65px;
-  padding: 22px 0 13px;
+  background: #010d1b;
+  height: 100px;
+  padding: 39px 0 13px;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 10px;
@@ -3149,7 +3148,7 @@ a:hover {
   white-space: nowrap;
 }
 .footer a {
-  color: #a3a3a3;
+  color: #6e7a87;
   text-decoration: underline;
 }
 .footer a:hover {
@@ -3215,6 +3214,13 @@ a:hover {
   vertical-align: middle;
   max-height: 100%;
   max-width: 100%;
+}
+.footer__logo {
+  margin-top: -25px;
+  display: block;
+}
+.footer__logo svg {
+  width: 70px;
 }
 .footer .radia {
   float: right;
@@ -3804,8 +3810,8 @@ body {
   float: left;
   width: 100%;
   min-height: 100%;
-  padding-bottom: 65px;
-  margin-bottom: -65px;
+  padding-bottom: 100px;
+  margin-bottom: -100px;
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -5473,6 +5479,22 @@ p.vacancy {
 .industries-list__badge:hover {
   color: #fff;
 }
+.industries-list__text {
+  line-height: 20px;
+  display: inline-block;
+}
+.industries-list__arrow {
+  font-size: 8px;
+  color: #63b1ff;
+  display: inline-block;
+  position: relative;
+  top: -4px;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
 .industries-list__item {
   border-bottom: 1px solid #e2e5e8;
   min-height: 45px;
@@ -5540,18 +5562,6 @@ p.vacancy {
 }
 .industries-list__title--active {
   color: #0053b3;
-}
-.industries-list__title span {
-  font-size: 8px;
-  color: #63b1ff;
-  display: inline-block;
-  position: relative;
-  top: -4px;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
 }
 .geography p {
   font-size: 16px;

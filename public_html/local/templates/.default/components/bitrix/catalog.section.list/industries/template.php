@@ -3,9 +3,9 @@ $this->setFrameMode(true);
 if(count($arResult['SECTIONS'])>0):
 ?>
 <div class="industries-list">
-    <div class="industries-list__badge hidden-xs">Индустрии</div>
+    <div class="industries-list__badge hidden-xs"><?=GetMessage('IND')?></div>
     <a href="#" class="industries-list__badge industries-list__trigger visible-xs">
-    	<span class="on">показать</span><span class="off hidden">скрыть</span> все индустрии
+    	<span class="on"><?=GetMessage('SHOW')?></span><span class="off hidden"><?=GetMessage('HIDE')?></span> <?=GetMessage('ALL')?>
     </a>
     <div class="industries-list__frame hidden-xs">
 	<?foreach ($arResult['SECTIONS'] as $key => &$item):?>

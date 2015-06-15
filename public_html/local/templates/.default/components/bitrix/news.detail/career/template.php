@@ -2,7 +2,7 @@
 $item = $arResult;
 ?>
 <div class="career-item">
-	<div class="career-item__tooltip">вакансия</div>
+	<div class="career-item__tooltip"><?=GetMessage('VACANCY')?></div>
 	<h1 class="career-item__title"><?=$item['NAME']?></h1>
 	<div class="career-item__text">
 		<?if($item["DETAIL_PICTURE"]):?>
@@ -15,9 +15,9 @@ $item = $arResult;
 		<a href="<?=$img['value']?>" rel="prettyPhoto[]" class="career-item__small-image" style="background-image: url(<?=$img['small']?>)"></a>
 	<?endforeach;?>
 	</div>
-	<a data-toggle="modal" data-target="#vacancyDetail" href="#newsDetail" class="button">Откликнуться на вакансию</a>
+	<a data-toggle="modal" data-target="#vacancyDetail" href="#newsDetail" class="button"><?=GetMessage('APPLY')?></a>
 	<br>
-	<a href="/career/" class="career-item__back"><?=svg('back')?> вернуться к списку вакансий</a>
+	<a href="/career/" class="career-item__back"><?=svg('back')?> <?=GetMessage('BACK')?></a>
 </div>
 <?$this->SetViewTarget('footer');?>
 <div id="vacancyDetail" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">

@@ -5,7 +5,7 @@ $APPLICATION->SetPageProperty('hide_right', true);
 $APPLICATION->SetPageProperty('body_class', "career");
 if(!isset($_REQUEST['ELEMENT_CODE'])):
   ?>
-  <h3 class="title--bold">Сегодня в нашей компании открыты следующие вакансии:</h3>
+  <h3 class="title--bold">All job opportunities are here a detailed description:</h3>
   <?
   $APPLICATION->AddChainItem('Карьера');
   $APPLICATION->IncludeComponent(

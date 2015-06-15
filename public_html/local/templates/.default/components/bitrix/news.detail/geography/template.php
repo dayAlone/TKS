@@ -3,14 +3,14 @@
 $item = $arResult;
 ?>
 <?if(isset($item['PROPS']['REGION'])):?>
-	<h4><span>Регион</span></h4>
+	<h4><span><?=GetMessage('REGION')?></span></h4>
 	<h2><?=$item['PROPS']['REGION']?></h2>
 <?endif;?>
 <?if(isset($item['PROPS']['PERIOD'])):?>
-	<h4><span>Период</span></h4>
+	<h4><span><?=GetMessage('PERIOD')?></span></h4>
 	<p><?=$item['PROPS']['PERIOD']?></p>
 <?endif;?>
-<h4><span>Проект</span></h4>
+<h4><span><?=GetMessage('PROJECT')?></span></h4>
 <p><?=$item['NAME']?></p>
 <?if(isset($item['PREVIEW_TEXT'])):?>
 	<small>

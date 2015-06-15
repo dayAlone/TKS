@@ -20,7 +20,7 @@
 			<?
 			else:
 			?>
-			<p class="vacancy">•	The most important merit of any company lies in its personnel.  The TKC Industrial Holding is a close-knit team of like-minded people, whose purpose-driven and enthusiastic approach has helped us become one of the leaders of non-destructive testing and automatic welding market in Russia. We are constantly seeking dynamic, creative and energetic people and experts who will join our friendly team. </p>
+			<p class="vacancy">The most important merit of any company lies in its personnel.  The TKC Industrial Holding is a close-knit team of like-minded people, whose purpose-driven and enthusiastic approach has helped us become one of the leaders of non-destructive testing and automatic welding market in Russia. We are constantly seeking dynamic, creative and energetic people and experts who will join our friendly team. </p>
 			<?
 			endif;
 			endif;

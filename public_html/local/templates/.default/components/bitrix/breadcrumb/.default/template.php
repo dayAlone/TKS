@@ -11,9 +11,9 @@ for($index = 0, $itemSize = $num_items; $index < $itemSize; $index++)
 	$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
 	if(!in_array($title, $elements)):
 		if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1)
-			$strReturn .= '<a href="'.$arResult[$index]["LINK"].'" title="'.$title.'">'.$title.'</a><span>></span>';
+			$strReturn .= ($index != 0?"<span>></span>":"").'<a href="'.$arResult[$index]["LINK"].'" title="'.$title.'">'.$title.'</a>';
 		else
-			$strReturn .= '<span>'.$title.'</span></li>';
+			$strReturn .= ($index != 0?"<span>></span>":"").'<span>'.$title.'</span></li>';
 
 		$elements[] = $title;
 	endif;

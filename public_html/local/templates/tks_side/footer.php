@@ -14,9 +14,15 @@
 			</div>
 			<?
 			if($APPLICATION->GetDirProperty("show_vacancy")):
+				if(LANGUAGE_ID=='ru'):
 			?>
 			<p class="vacancy">Главная ценность любой компании – её коллектив. Промышленный холдинг ТКС – это сплочённая команда единомышленников, чья целеустремлённость и увлечённость общим делом помогли нам стать одним из лидеров рынка неразрушающего контроля и автоматической сварки в России. Мы находимся в постоянном поиске активных, творческих и энергичных людей, специалистов, которые пополнят наш дружный коллектив.</p>
 			<?
+			else:
+			?>
+			<p class="vacancy">•	The most important merit of any company lies in its personnel.  The TKC Industrial Holding is a close-knit team of like-minded people, whose purpose-driven and enthusiastic approach has helped us become one of the leaders of non-destructive testing and automatic welding market in Russia. We are constantly seeking dynamic, creative and energetic people and experts who will join our friendly team. </p>
+			<?
+			endif;
 			endif;
             if(!$APPLICATION->GetDirProperty("hide_features")):
 				$APPLICATION->IncludeComponent(

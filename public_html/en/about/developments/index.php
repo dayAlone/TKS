@@ -1,6 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle("Наши разработки");
+$APPLICATION->SetTitle("Developments");
 $APPLICATION->SetPageProperty('hide_right', true);
 ?><div class="page__content">
 	<h2>Технологии, которые мы внедрили</h2>
@@ -24,7 +24,13 @@ $APPLICATION->SetPageProperty('hide_right', true);
 		  false
 		);
 	?>
-	<p>Совместно с компанией Sonotron NDT мы разработали систему автоматизированного ультразвукового контроля сварных стыков трубопроводов Argovision, обеспечивающую высокую достоверность и производительность контроля, а также соблюдение требований наиболее применяемых международных стандартов: API 1104, DNV-OS-F101, ASTM 1961. Система внесена в государственный реестр средств измерений РФ и в Реестр сварочного, вспомогательного оборудования, оборудования и материалов для контроля и диагностики сварных соединений, технические условия которых соответствуют техническим требованиям ОАО «Газпром».</p>
+	<p>Among its notable accomplishments, the group designed and developed the Argovision AUT 
+system for NDT of pipeline field welded joints in cooperation with specialists from Sono­tron NDT 
+of Israel. The system pro­vides high accuracy and productivity NDT, as well as full compliance 
+with such major inter­national standards as API 1104, DNV-OS-F101, ASTM 1961. The system is 
+registered with Rus­sian State Registry of Measuring Systems, as well as approved and listed in 
+the Gazprom Registry of Welding Equipment, Welding Ac­cessories, NDT and Diagnostics Equipment and 
+Consumables.</p>
 	
 </div>
 <?

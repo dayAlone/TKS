@@ -1,6 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle('Миссия');
+$APPLICATION->SetTitle('Mission');
 $APPLICATION->SetPageProperty('hide_right', true);
 ?>
 <div class="page__content">

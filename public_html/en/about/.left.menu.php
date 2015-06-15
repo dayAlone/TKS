@@ -1,7 +1,7 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"О холдинге", 
+		"About us", 
 		"/about/information/", 
 		Array(), 
 		Array(), 
@@ -16,14 +16,14 @@ $aMenuLinks = Array(
 		"" 
 	),*/
 	Array(
-		"Миссия", 
+		"Mission", 
 		"/about/mission/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Наши разработки", 
+		"Developments", 
 		"/about/developments/", 
 		Array(), 
 		Array(), 

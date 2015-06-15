@@ -1,3 +1,3 @@
 <?
-$sSectionName = 'Индустрии';
+$sSectionName = 'Industries';
 ?>

@@ -1,6 +1,6 @@
 <?
-$sSectionName = 'Наши разработки';
+$sSectionName = 'Developments';
 $arDirProperties = array(
-	'title' => 'Наши разработки',
+	'title' => 'Developments',
 );
 ?>

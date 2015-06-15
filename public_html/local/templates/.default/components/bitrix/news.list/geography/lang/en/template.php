@@ -7,6 +7,6 @@ $MESS['CLOSE'] = "Close";
 $MESS['REGION'] = "Region";
 $MESS['PERIOD'] = "Period";
 $MESS['PROJECT'] = "Project";
-$MESS['PHOTO'] = "•	Photo Gallery";
+$MESS['PHOTO'] = "Photo Gallery";
 $MESS['LANG'] = "en_US";
 ?>

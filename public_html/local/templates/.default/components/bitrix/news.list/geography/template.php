@@ -1,13 +1,13 @@
 <div class="geography">
 	<div class="row">
 		<div class="col-md-8 col-lg-9">
-			<p>Промышленный холдинг ТКС осуществляет комплексное техническое и технологическое сопровождение проектов по всему миру. Ниже обозначены места, где выполнены или выполняются в настоящее время проекты с участием наших специалистов и с использованием нашего оборудования.</p>
+			<p><?=GetMessage('TEXT')?></p>
 		</div>
 		<div class="col-md-4 col-lg-3 hidden-xs">
 			<div class="geography-filter">
-				<div class="geography-filter__title">Режим<br>показа</div>
-				<a href="#map" class="geography-filter__item geography-filter__item--active">Карта</a>
-				<a href="#list" class="geography-filter__item">Список</a>
+				<div class="geography-filter__title"><?=GetMessage('VIEW')?></div>
+				<a href="#map" class="geography-filter__item geography-filter__item--active"><?=GetMessage('MAP')?></a>
+				<a href="#list" class="geography-filter__item"><?=GetMessage('LIST')?></a>
 			</div>
 		</div>
 	</div>
@@ -16,7 +16,7 @@
 		<div class="geography__popup">
 			<div class="geography__popup_toolbar">
 				<a href="#" class="geography__popup_close">
-					<?=svg('close')?> Закрыть
+					<?=svg('close')?> <?=GetMessage('CLOSE')?>
 				</a>
 			</div>
 			<div class="geography__popup_content"></div>
@@ -28,9 +28,9 @@
 	<?foreach ($arResult['ITEMS'] as $item):?>
 		<div class="geography__list_item">
 			<div class="row geography__list_title no-gutter hidden-xs">
-				<div class="col-xs-4">Регион</div>
-				<div class="col-xs-2">Период</div>
-				<div class="col-xs-4">Проект</div>
+				<div class="col-xs-4"><?=GetMessage('REGION')?></div>
+				<div class="col-xs-2"><?=GetMessage('PERIOD')?></div>
+				<div class="col-xs-4"><?=GetMessage('PROJECT')?></div>
 				<div class="col-xs-2"></div>
 			</div>
 			<div class="row no-gutter">
@@ -50,7 +50,7 @@
 				<div class="col-xs-3 col-sm-2 right geography__gallery">
 					<?if(count($item['PROPS']['PHOTOS'])>0):
 					?>
-						<a href="#" class="geography__list_gallery" data-images='<?=json_encode($item['PROPS']['PHOTOS'])?>'><?=svg('photos')?>фотогалерея</a>
+						<a href="#" class="geography__list_gallery" data-images='<?=json_encode($item['PROPS']['PHOTOS'])?>'><?=svg('photos')?><?=GetMessage('PHOTO')?></a>
 					<?endif;?>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 </div>
 
 <?$this->SetViewTarget('footer');?>
-<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="//api-maps.yandex.ru/2.1/?lang=<?=GetMessage('LANG')?>" type="text/javascript"></script>
 <script>
 	$(function(){
 		var myMap;

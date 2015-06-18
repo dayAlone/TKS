@@ -20,5 +20,5 @@ $item = $arResult;
 	<a href="/career/" class="career-item__back"><?=svg('back')?> <?=GetMessage('BACK')?></a>
 </div>
 <?$this->SetViewTarget('footer');
-require($_SERVER['DOCUMENT_ROOT'].'/include/vancancy-'.LANGUAGE_ID.'.php');
+require($_SERVER['DOCUMENTS_ROOT'].'/include/vancancy-'.LANGUAGE_ID.'.php');
 $this->EndViewTarget();?> 

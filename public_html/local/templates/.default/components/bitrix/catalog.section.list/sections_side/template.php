@@ -2,7 +2,7 @@
 $this->setFrameMode(true);
 if(count($arResult['SECTIONS'])>0):
 ?>
-<h3 class="h3--sections">Ключевые индустрии</h3>
+<h3 class="h3--sections"><?=$arParams['TITLE']?></h3>
 <div class="sections-side">
     	<?foreach ($arResult['SECTIONS'] as $key => &$item):
         ?>

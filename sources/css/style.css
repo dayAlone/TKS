@@ -3826,6 +3826,226 @@ article {
   position: relative;
   z-index: 10;
 }
+.vote {
+  margin-top: 20px;
+}
+.vote .parsley-errors-list {
+  padding-left: 0;
+  margin-top: 0;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -ms-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.vote .parsley-errors-list.filled {
+  margin-top: -15px;
+}
+.vote .parsley-errors-list li {
+  font-size: 13px;
+  color: #f00;
+  white-space: nowrap;
+}
+.vote .parsley-errors-list li:before,
+.vote .parsley-errors-list li:after {
+  display: none;
+}
+.vote__title {
+  border-bottom: 1px solid #5b9afc;
+  color: rgba(0,0,0,0.7);
+  font-size: 13px;
+  padding-bottom: 3px;
+}
+.vote__question {
+  padding: 10px 0 0;
+  border-bottom: 1px solid #e2e3e4;
+  line-height: 80px;
+}
+.vote__text {
+  font-size: 16px;
+  color: #1b1d28;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 20px;
+}
+.vote__label {
+  font-weight: normal;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+}
+.vote__label,
+input[type="radio"].vote__input {
+  width: 19px;
+  height: 19px;
+  margin: 0 3px 0 0;
+}
+@media (min-width: 1200px) {
+  .vote__label,
+  input[type="radio"].vote__input {
+    margin: 0 5px 0 0;
+  }
+}
+.vote__submit {
+  width: 180px;
+  text-transform: uppercase;
+  height: 40px;
+  line-height: 40px;
+  padding-top: 3px;
+  background: #5898ff;
+  color: #fff;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -ms-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  border: 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.vote__submit:hover {
+  background: #1273d2;
+}
+.vote__textarea {
+  margin-top: 15px;
+  width: 100%;
+  resize: none;
+  padding: 10px 15px;
+  border: 1px solid #9f9f9f;
+}
+.vote__textarea:focus {
+  border-color: #1273d2;
+  outline: 0;
+}
+input[type="radio"].vote__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid rgba(0,0,0,0.7);
+  -webkit-border-radius: 21px;
+  border-radius: 21px;
+  -webkit-box-shadow: inset 0 0 0 4px #fff;
+  box-shadow: inset 0 0 0 4px #fff;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -ms-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+input[type="radio"].vote__input:hover {
+  border-color: #1273d2;
+}
+input[type="radio"].vote__input:checked {
+  background: #1273d2;
+  border-color: #1273d2;
+}
+.vote__input-frame {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 18px;
+  margin-top: 2px;
+}
+.vote-promo {
+  background: #020e1a;
+  color: #cecbcc;
+  padding: 13px 0 10px;
+  font-size: 15px;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 1000000;
+  display: none;
+}
+@media (min-width: 992px) {
+  .vote-promo {
+    display: block;
+  }
+}
+.vote-promo p {
+  position: relative;
+  top: 3px;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+.vote-promo p.one {
+  line-height: 38px;
+}
+.vote-promo__divider {
+  width: 100%;
+}
+.vote-promo__hide {
+  color: #cecbcc;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(206,203,204,0.4) 50%);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(206,203,204,0.4) 50%);
+  background-image: -o-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(206,203,204,0.4) 50%);
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(206,203,204,0.4) 50%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(206,203,204,0.4) 50%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+  background-position: 0 13px;
+  font-size: 13px;
+  display: inline-block;
+  top: -3px;
+  position: relative;
+}
+.vote-promo__hide:hover {
+  text-decoration: none;
+}
+.vote-promo__hide:hover {
+  color: #5898ff;
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(88,152,255,0.4) 50%);
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(88,152,255,0.4) 50%);
+  background-image: -o-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(88,152,255,0.4) 50%);
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(88,152,255,0.4) 50%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(88,152,255,0.4) 50%);
+  background-repeat: repeat-x;
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+  background-position: 0 13px;
+}
+.vote-promo__hide:hover:hover {
+  text-decoration: none;
+}
+.vote-promo__action {
+  display: inline-block;
+  border: 1px solid #5898ff;
+  color: #5898ff;
+  height: 36px;
+  line-height: 36px;
+  padding-top: 2px;
+  vertical-align: middle;
+  margin-top: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  min-width: 180px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+.vote-promo__action:hover {
+  color: #020e1a;
+  background: #5898ff;
+}
 @media (min-width: 992px) {
   .toolbar .logo {
     margin-left: 0px;
@@ -3991,7 +4211,7 @@ article {
 }
 .toolbar .nav__item:hover,
 .toolbar .nav__item--active {
-  color: #003782;
+  color: #5b9afc !important;
 }
 @media (min-width: 768px) {
   .toolbar .nav__item {
@@ -5484,7 +5704,9 @@ p.vacancy {
   display: inline-block;
   vertical-align: middle;
 }
-.industries-list__arrow {
+.industries-list__arrow,
+.industries-list__title span:not(.industries-list__arrow),
+.industries-list__title span:not(.industries-list__text) {
   font-size: 8px;
   color: #63b1ff;
   display: inline-block;

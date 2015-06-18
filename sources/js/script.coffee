@@ -650,6 +650,11 @@ $(document).ready ->
 		x = delay 200, ()->
 			size()
 
+	$('.vote-promo').elem('hide').click (e)->
+		$(this).block().slideUp 300
+		if $(this).hasMod 'total'
+			$.cookie('hide_vote', 'Y', { expires: 30, path: '/' });
+		e.preventDefault()
 
 	mapInit = false
 	if !mapInit && $('.contacts #map').length > 0

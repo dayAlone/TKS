@@ -20,7 +20,7 @@ replace      = require 'gulp-replace'
 watch        = require 'gulp-watch'
 imageop      = require 'gulp-image-optimization'
 
-plugins  = [ 'jquery', 'bootstrap', 'browser', 'scrollbar', 'fotorama', 'photoswipe', 'imagesLoaded', 'bgcheck', 'slimmenu', 'bem', 'hoverIntent', 'spin', 'velocity', 'parsley', 'prettyPhoto' ]
+plugins  = [ 'jquery', 'bootstrap', 'browser', 'scrollbar', 'fotorama', 'photoswipe', 'cookie', 'imagesLoaded', 'bgcheck', 'slimmenu', 'bem', 'hoverIntent', 'spin', 'velocity', 'parsley', 'prettyPhoto' ]
 
 layout   = './public_html/layout'
 sources  = './sources/'
@@ -163,8 +163,8 @@ gulp.task 'default', ->
 	gulp.watch [ "#{sources}/images/**/*.jpg", "#{sources}/images/**/*.png" ], ->
 		sequence 'img_mini'
 
-	gulp.watch ["./public_html/**/*.php",'!./public_html/bitrix/**'], {'dot':true}, ->
-		sequence 'reload'
+	#gulp.watch ["./public_html/**/*.php",'!./public_html/bitrix/**'], {'dot':true}, ->
+	#	sequence 'reload'
 	
 	gulp.watch ["#{path.css.sources}/bootstrap/bootstrap.less", "./sources/build/plugins.json"], ->
 		sequence 'css_bootstrap', 'css_plugins', 'copy', 'css_front', 'reload'

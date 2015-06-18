@@ -23,6 +23,26 @@
   ?>
 </head>
 <body class="<?=$APPLICATION->AddBufferContent("body_class");?> <?=LANGUAGE_ID?>">
+<?if(SITE_ID == 's1' && $APPLICATION->GetCurDir() != "/vote/"  && $_COOKIE['hide_vote'] != 'Y'):?>
+<div class="vote-promo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <p class="one">Промышленный холдинг ТКС приглашает Вас принять участие в опросе.
+      </div>
+      <div class="col-md-2">
+        <a href="/vote/" class="vote-promo__action">Участвовать</a>
+      </div>
+      <div class="col-md-3 right">
+        <p>
+          <a href="#" class="vote-promo__hide vote-promo__hide--now">Скрыть объявление</a><br>
+          <a href="#" class="vote-promo__hide  vote-promo__hide--total">Не показывать больше</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<?endif;?>
 <div class="wrap">
   <div id="panel"><?$APPLICATION->ShowPanel();?></div>
   <header class="toolbar">

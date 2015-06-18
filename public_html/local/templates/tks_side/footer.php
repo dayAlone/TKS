@@ -54,7 +54,7 @@
 				    "IBLOCK_ID"    => (LANGUAGE_ID=='ru'?7:13),
 				    "TOP_DEPTH"    => "1",
 				    "CACHE_TYPE"   => "A",
-				    "TITLE"        => (LANGUAGE_ID=='ru'?"Ключевые индустрии":"Industries")
+				    "TITLE"        => (LANGUAGE_ID=='ru'?"Ключевые индустрии":"Industries"),
 				    "SECTION_USER_FIELDS" => array("UF_SVG", "UF_TEXT")
 				),
 				false

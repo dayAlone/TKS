@@ -11,7 +11,7 @@
 		      <h3>To submit your résumé to be included in our prospective employee database, please fill out the fields below: </h3>
 		      <input type="hidden" name="group_id" value="6">
 		      <input type="hidden" name="vacancy" value="">
-		      <label>Please provide your name and surname in the field below <span>*</span></label>
+		    	<h1 class="vacancy-popup__title"><?=$item['NAME']?></h1>	
 		      <input name="name" type="text" required="">
 		      <div class="row">
 		        <div class="col-sm-6">

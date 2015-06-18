@@ -8,10 +8,11 @@
 		      <p class="center">A representative of our company will contact you shortly. Thank you for applying.</p>
 		    </div>
 		    <form data-parsley-validate="" enctype="multipart/form-data" class="form visible">
-		      <h3>To submit your résumé to be included in our prospective employee database, please fill out the fields below: </h3>
+		      <div class="vacancy-popup__sub">The response to the open position</div>
+		      <h1 class="vacancy-popup__title"><?=$item['NAME']?></h1>	
 		      <input type="hidden" name="group_id" value="6">
 		      <input type="hidden" name="vacancy" value="">
-		    	<h1 class="vacancy-popup__title"><?=$item['NAME']?></h1>	
+		    	
 		      <input name="name" type="text" required="">
 		      <div class="row">
 		        <div class="col-sm-6">

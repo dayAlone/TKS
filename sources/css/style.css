@@ -5704,9 +5704,7 @@ p.vacancy {
   display: inline-block;
   vertical-align: middle;
 }
-.industries-list__arrow,
-.industries-list__title span:not(.industries-list__arrow),
-.industries-list__title span:not(.industries-list__text) {
+.industries-list__arrow {
   font-size: 8px;
   color: #63b1ff;
   display: inline-block;

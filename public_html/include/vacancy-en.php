@@ -46,23 +46,23 @@
 		          <div class="col-sm-3 hidden-xs"><span class="required">
 		          All fields<br> marked with an asterisk (<span>*</span>) are required.
 		          </span></div>
-		          <div class="col-sm-3">
-		            <label class="left">
-		              <span class="hidden-xs">Please</span> enter <span class="hidden-xs">this</span> code 
-		              </label>
-		            <?
-			        include_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/classes/general/captcha.php");
-			        $cpt = new CCaptcha();
-			        $cpt->SetCodeLength(4);
-			        $cpt->SetCode();
-			        $cpt->SetImageSize(110,35);
-			        $code=$cpt->GetSID();
-			      ?>
+		          <div class="col-xs-12 col-sm-3">
+				      <label class="left">введите данный код</label>
+				      <?
+				        include_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/classes/general/captcha.php");
+				        $cpt = new CCaptcha();
+				        $cpt->SetCodeLength(4);
+				        $cpt->SetCode();
+				        $cpt->SetImageSize(110,35);
+				        $code=$cpt->GetSID();
+				      ?>
 				      <div class="captcha" style="background-image:url(/include/captcha.php?captcha_sid=<?=$code?>)"></div>
 
-				    <input type="hidden" name="captcha_code" value="<?=$code?>">
-		            	<a href="#" class="captcha__refresh"><?=svg('refresh')?></a>
-		          </div>
+				      <input type="hidden" name="captcha_code" value="<?=$code?>">
+				      <a href="#" class="captcha_refresh">
+				        <?=svg('refresh')?>
+				      </a>
+				  </div>
 		          <div class="col-sm-3">
 		            <label class="right">into this field</label>
 		            <input name="captcha_word" type="text" required="">

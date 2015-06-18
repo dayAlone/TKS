@@ -15,6 +15,7 @@ $APPLICATION->IncludeComponent(
     "FIELD_CODE"    => Array("DETAIL_PICTURE"),
     "CACHE_TYPE"    => "A",
     "SET_TITLE"     => "N",
+    "TITLE"     => "промышленный холдинг ткс"
   ),
   false
 );

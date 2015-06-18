@@ -47,7 +47,7 @@
 		          All fields<br> marked with an asterisk (<span>*</span>) are required.
 		          </span></div>
 		          <div class="col-xs-12 col-sm-3">
-				      <label class="left">введите данный код</label>
+				      <label class="left">Enter this code</label>
 				      <?
 				        include_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/classes/general/captcha.php");
 				        $cpt = new CCaptcha();

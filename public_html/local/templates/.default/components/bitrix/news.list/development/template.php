@@ -17,7 +17,7 @@
 	       			<div class="col-sm-2">
 	       				<div class="development__title">
 	       					<?=$arResult['SECTIONS'][$section]['NAME']?>
-	       					<span>год</span>
+	       					<span><?=(LANGUAGE_ID=='ru'?"год":"year")?></span>
 	       				</div>
 	       			</div>
 	       			<div class="col-sm-10">

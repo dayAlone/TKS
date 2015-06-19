@@ -19,7 +19,7 @@ if(count($arResult['SECTIONS'])>0):
 				  "bitrix:news.list", 
 				  "industries",
 				  array(
-				    "IBLOCK_ID"                 => 7,
+				    "IBLOCK_ID"                 => (LANGUAGE_ID=="ru"?7:13),
 				    "NEWS_COUNT"                => "9999999",
 				    "SORT_BY1"                  => "SORT",
 				    "SORT_ORDER1"               => "ASC",

@@ -112,7 +112,7 @@
               <div data-variant="russian,english" class="lang-trigger <?=(LANGUAGE_ID=="ru"?"lang-trigger--lang_russian":"lang-trigger--lang_english")?>"><span class="lang-trigger__label">RU</span><span class="lang-trigger__carriage"></span><span class="lang-trigger__label">EN</span></div>
             </div>
             <div class="col-sm-5 right visible-sm">
-              <a href="tel:<?=str_replace(' ', '', COption::GetOptionString("grain.customsettings","toolbar_phone"))?>" class="toolbar__phone"><?=svg('phone')?></svg><?=COption::GetOptionString("grain.customsettings","toolbar_phone")?></a>
+              <a href="tel:<?=str_replace(' ', '', COption::GetOptionString("grain.customsettings","toolbar_phone-".LANGUAGE_ID))?>" class="toolbar__phone"><?=svg('phone')?></svg><?=COption::GetOptionString("grain.customsettings","toolbar_phone")?></a>
             </div>
             <div class="col-xs-6 col-sm-2 sm-center no-padding-left">
               <a data-toggle="modal" data-target="#Contacts" href="#Contacts" class="visible-xs-inline s-margin-right"><?=svg('phone')?></a>

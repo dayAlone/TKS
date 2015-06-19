@@ -1,3 +1,3 @@
 <?
-$sSectionName = 'Поиск по сайту';
+$sSectionName = 'Search';
 ?>

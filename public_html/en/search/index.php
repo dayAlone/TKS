@@ -1,6 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle('Поиск по сайту');
+$APPLICATION->SetTitle('Search');
 $APPLICATION->SetPageProperty('hide_right', true);
 $APPLICATION->IncludeComponent("bitrix:search.page","",Array(
     "TAGS_SORT" => "NAME",

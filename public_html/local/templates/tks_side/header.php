@@ -15,9 +15,10 @@
 		<div class="page__header-breadcrumb">
 			<?
 			$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
-	        	"START_FROM" => "0", 
-	        	"PATH" => "", 
-	        	"SITE_ID" => "s1" 
+				"START_FROM"  => "0", 
+				"PATH"        => "", 
+				"SITE_ID"     => SITE_ID,
+				"CACHE_NOTES" => SITE_ID
 			));?>
 		</div>
 	</div>

@@ -81,7 +81,7 @@ if($APPLICATION->GetPageProperty('popup')):?>
         <a href="/" class="footer__logo"><?=svg('logo_left')?></a>
       </div>
       <div class="col-xs-7 col-sm-4 col-md-2 col-lg-3">
-        <div class="copyright">© <?=date('Y')?><?=(LANGUAGE_ID=="ru"?"ООО «ТКС-Холдинг»":"TKC Industrial holding")?></div>
+        <div class="copyright">© <?=date('Y')?> <?=(LANGUAGE_ID=="ru"?"ООО «ТКС-Холдинг»":"TKC Industrial holding")?></div>
       </div>
       <div class="col-sm-3 col-lg-2">
         <div class="contacts"><span><?=(LANGUAGE_ID=="ru"?"119048, МОСКВА, УЛ. УСАЧЁВА, д. 35, стр. 1":"35, USACHEVA STR., BLDG. 1, MOSCOW, 119048, RUSSIA")?> <br></span><a href="mailto:<?=COption::GetOptionString("grain.customsettings","footer_email")?>" class="contacts_link"><?=COption::GetOptionString("grain.customsettings","footer_email")?></a></div>

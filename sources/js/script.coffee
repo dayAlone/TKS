@@ -665,7 +665,7 @@ $(document).ready ->
 				zoom: 15
 			}
 			myPlacemark = new ymaps.Placemark myMap.getCenter(), {
-				hintContent: 'Промышленный холдинг ТКС'
+				hintContent: $('.contacts #map').data('text')
 			},
 			{
 				preset: "twirl#nightDotIcon",

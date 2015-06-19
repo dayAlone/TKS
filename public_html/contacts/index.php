@@ -12,7 +12,7 @@ $APPLICATION->SetPageProperty('body_class', "contacts");?><div class="page__cont
 	  </div>
 	</div>
 </div>
-<div id="map" data-coords="55.72290917,37.56046120" class="xl-margin-top l-margin-bottom"></div>
+<div id="map" data-text='Промышленный холдинг ТКС' data-coords="55.72290917,37.56046120" class="xl-margin-top l-margin-bottom"></div>
 <script src="http://api-maps.yandex.ru/2.1/?lang=ru-RU&amp;load=package.full" type="text/javascript"></script><?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
 ?>

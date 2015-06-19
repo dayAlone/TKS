@@ -1,3 +1,3 @@
 <?
-$sSectionName = 'Карта сайта';
+$sSectionName = 'Sitemap';
 ?>

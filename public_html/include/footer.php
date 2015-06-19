@@ -87,7 +87,7 @@ if($APPLICATION->GetPageProperty('popup')):?>
         <div class="contacts"><span><?=(LANGUAGE_ID=="ru"?"119048, МОСКВА, УЛ. УСАЧЁВА, д. 35, стр. 1":"35, USACHEVA STR., BLDG. 1, MOSCOW, 119048, RUSSIA")?> <br></span><a href="mailto:<?=COption::GetOptionString("grain.customsettings","footer_email")?>" class="contacts_link"><?=COption::GetOptionString("grain.customsettings","footer_email")?></a></div>
       </div>
       <div class="col-sm-2">
-        <div class="map right"><a href="/map/"><?=(LANGUAGE_ID=="ru"?"карта сайта":"sitemap")?></a></div>
+        <div class="map right hidden-sm"><a href="/map/"><?=(LANGUAGE_ID=="ru"?"карта сайта":"sitemap")?></a></div>
       </div>
       <div class="col-xs-3 col-md-1 social">
         <nobr>

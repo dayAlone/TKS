@@ -5,7 +5,7 @@
 		
 		$obCache       = new CPHPCache();
 		$cacheLifetime = 86400; 
-		$cacheID       = $_REQUEST['SECTION_CODE']; 
+		$cacheID       = $_REQUEST['SECTION_CODE'].SITE_ID; 
 		$cachePath     = '/';
 
 

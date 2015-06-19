@@ -6,7 +6,7 @@
 <?endif?>
 <?=$section['~DESCRIPTION']?>
 <div class="page__divider l-margin-top xl-margin-bottom"></div>
-<h3 class="title--bold">Наши компетенции в данном направлении</h3>
+<h3 class="title--bold"><?=(LANGUAGE_ID=="ru"?"Наши компетенции в данном направлении":"Our competences in this area")?></h3>
 <?
 endif;
 ?>

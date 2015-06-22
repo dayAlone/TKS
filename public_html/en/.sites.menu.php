@@ -23,7 +23,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"UIC RONKTD Spektr", 
-		"http://uic-spektr.com", 
+		"http://uic-spektr.ru", 
 		Array(), 
 		Array(), 
 		"" 
@@ -37,7 +37,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"MNPO “Spektr”", 
-		"http://mnpo-spektr.com", 
+		"http://mnpo-spektr.ru", 
 		Array(), 
 		Array(), 
 		"" 
@@ -50,7 +50,7 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"LEASINGSTROYMASH", 
+		"LIZINGSTROYMASH", 
 		"http://www.lsmgroup.ru", 
 		Array(), 
 		Array(), 

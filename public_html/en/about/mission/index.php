@@ -4,39 +4,39 @@ $APPLICATION->SetTitle('Mission');
 $APPLICATION->SetPageProperty('hide_right', true);
 ?>
 <div class="page__content">
-<h2>Миссия холдинг — предоставлять клиентам решения по неразрушающему контролю и автоматической сварке, основываясь на сочетании наших ценностей:</h2>
+<h2>The mission of our holding is to provide customers with solutions for non-destructive testing and automatic welding, based on a combination of our values:</h2>
 <div class="mission">
 	<div class="mission__item">
-		<div class="mission__title">Инновационности</div>
-		<div class="mission__text">Мы стремимся первыми выводить новые продукты на рынок и разрабатывать новые технологии.</div>
+		<div class="mission__title">Innovations</div>
+		<div class="mission__text">We aim to be the first ones to present new products to the market and to develop new technologies.</div>
 	</div>
 	<div class="mission__item">
-		<div class="mission__title">Профессионализма</div>
-		<div class="mission__text">Мы постоянно работаем над тем, чтобы предоставлять нашим клиентам экспертизу высокого уровня.</div>
+		<div class="mission__title">Professionalism</div>
+		<div class="mission__text">We constantly work to provide our clients with expertise of the highest level.</div>
 	</div>
 	<div class="mission__item">
-		<div class="mission__title">Эффективности</div>
-		<div class="mission__text">Мы экономим время и деньги наших клиентов, максимизируя отдачу от вложенных ресурсов.</div>
+		<div class="mission__title">Efficiency</div>
+		<div class="mission__text">We save our clients time and money by maximising the return on invested resources.</div>
 	</div>
 	<div class="mission__item">
-		<div class="mission__title">Комплексности решений</div>
-		<div class="mission__text">Мы предлагаем комплексный подход <br>к решению задач клиента.</div>
+		<div class="mission__title">Complex solutions</div>
+		<div class="mission__text">We offer comprehensive approaches<br>to clients' needs.</div>
 	</div>
 	<div class="mission__item">
-		<div class="mission__title">Уникальности</div>
-		<div class="mission__text">Мы предлагаем продукты и технологии, которые не имеют аналогов по сочетанию качеств.</div>
+		<div class="mission__title">Exclusivity</div>
+		<div class="mission__text">We offer unique products and technologies that have no analogues in terms of features combination.</div>
 	</div>
 	<div class="mission__item">
-		<div class="mission__title">Развития кадрового<br>потенциала</div>
-		<div class="mission__text">Залог нашего успеха – развитие и благосостояние наших сотрудников, постоянная работа над построением команды мотивированных профессионалов.</div>
+		<div class="mission__title">Developing HR potential</div>
+		<div class="mission__text">Our success formula lies in the development and success of our employees; we continuously work on building the team of motivated professionals.</div>
 	</div>
 	<div class="mission__item">
-		<div class="mission__title">Взаимовыгодных партнёрских отношений</div>
-		<div class="mission__text">Мы лояльны и ценим долгосрочные отношения с клиентами и поставщиками</div>
+		<div class="mission__title">Mutually beneficial relations with our partners</div>
+		<div class="mission__text">We are loyal to our partners; we value long-term relations with clients and suppliers.</div>
 	</div>
 	<div class="mission__item">
-		<div class="mission__title">Прогрессивных стандартов</div>
-		<div class="mission__text">Мы ориентируемся на передовые технологии управления, культивируем инновационность внутренних процессов.</div>
+		<div class="mission__title">Progressive standards</div>
+		<div class="mission__text">We focus on leading management technologies and stimulate innovations in our internal processes.</div>
 	</div>
 </div>
 </div>
